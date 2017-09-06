@@ -1,24 +1,2 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# <p align="center">[Crowdfach](https://crowdfach.herokuapp.com) of the Net</p>
+### <p align="center">Copyright 2017 [lisovskey](https://vk.com/lisovskey)</p>
