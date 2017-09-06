@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.integer :rating,            null: false, default: 0
       
       t.boolean :sex
-      t.role    :role
+      t.string  :role
 
       ## Recoverable
       t.string   :reset_password_token

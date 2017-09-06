@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(version: 20170902234207) do
   create_table "projects", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
+    t.string "avatar", default: "", null: false
+    t.integer "balance", default: 0, null: false
     t.integer "target", default: 0, null: false
+    t.string "category", default: "", null: false
     t.text "full_description", default: "", null: false
     t.datetime "expiration_time", default: "2020-01-01 00:00:00", null: false
     t.datetime "created_at", null: false
@@ -31,8 +34,10 @@ ActiveRecord::Schema.define(version: 20170902234207) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "full_name", default: "", null: false
-    t.boolean "sex", default: true, null: false
+    t.string "avatar_url", default: "", null: false
     t.integer "rating", default: 0, null: false
+    t.boolean "sex"
+    t.string "role"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

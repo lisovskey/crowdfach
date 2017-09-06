@@ -1,5 +1,6 @@
 module ApplicationHelper
   def current_language
+    cookies[:language] ||= 'en'    
     case cookies[:language]
     when 'en' then 'English'
     when 'ru' then 'Russian'
@@ -7,6 +8,7 @@ module ApplicationHelper
   end
 
   def languages
+    cookies[:language] ||= 'en'
     case cookies[:language]
     when 'en' then ['Russian', 'English']
     when 'ru' then ['English', 'Russian']
