@@ -1,0 +1,33 @@
+%footer.page-footer
+  .container
+    .row
+      .col.m6.s12
+        %h5= t('.slogan')
+        %p= t('.description')
+      .col.m4.offset-l2.s12
+        %h5= t('.links')
+        %ul
+          %li
+            = link_to 'GitHub', "https://github.com/#{app_developer}", target: "_blank"
+          %li
+            = link_to 'VK', "https://vk.com/#{app_developer}", target: "_blank"
+          %li
+            = link_to 'Twitter', "https://twitter.com/#{app_developer}", target: "_blank"
+          %li
+            = link_to '500px', "https://500px.com/#{app_developer}", target: "_blank"
+  .footer-copyright
+    .container
+      .language.right
+        %a.dropdown-button.dark-hover.waves-effect#language{"data-activates" => "language-dropdown", "data-beloworigin" => "true"}
+          %i.material-icons.left language
+          = current_language
+        %ul.dropdown-content#language-dropdown
+          - languages.each do |lang|
+            %li
+              %a.waves-effect.language-point{:href => ""}= lang
+      .switch
+        %i.material-icons#sun wb_sunny
+        %label
+          %input{:type => "checkbox", :id => "theme", :checked => ActiveRecord::Type::Boolean.new.cast(cookies[:theme])}
+          %span.lever
+        %i.material-icons#moon brightness_3

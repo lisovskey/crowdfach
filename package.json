@@ -1,0 +1,7 @@
+{
+  "name": "crowdfach",
+  "private": true,
+  "dependencies": {
+    "bootstrap-material-design": "^4.0.0-beta.3"
+  }
+}

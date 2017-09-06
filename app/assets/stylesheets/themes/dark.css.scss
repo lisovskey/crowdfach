@@ -1,0 +1,138 @@
+@import "materialize/components/color"; 
+$first-color: color("grey", "darken-3");
+$second-color: color("red", "lighten-1");
+$third-color: color("grey", "darken-2");
+$background-color: color("grey", "darken-4");
+$text-color:  white;
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+@include placeholder {
+  color: $text-color;
+}
+
+#body-wrapper {
+  background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $text-color;
+}
+
+.waves-ripple {
+  background-color: $second-color;
+}
+
+.dropdown-content {
+  & li {
+    background-color: $first-color;
+
+    &:hover {
+      background-color: $third-color
+    }
+  }
+}
+
+#sun {
+  color: $third-color;
+}
+
+#moon {
+  color: $text-color;
+}
+
+input[type=checkbox]:checked {
+  & + .lever {
+    background-color: desaturate(darken($second-color, 20%), 30%);
+
+    &:after {
+      background-color: $second-color;    
+    }
+  }
+
+  & + label:after {
+    border: 2px solid $second-color;
+    background-color: $second-color;
+  }
+}
+
+nav {
+  background-color: $first-color;
+  
+  & a {
+    color: $text-color;
+  }
+
+  & .label-icon i {
+    color: $text-color;
+  }
+
+  & input[type=search] {
+    color: $text-color;
+
+    &:focus {
+      background-color: $text-color;
+
+      & + label i {
+        color: $first-color;
+      }
+    }
+  }
+}
+
+main {
+  & .card {
+    background-color: $first-color;
+    color: $text-color;
+
+    & .card-reveal {
+      background-color: $first-color;  
+    }
+
+    & a {
+      color: $second-color !important;
+    }
+  }
+
+  & .btn-large {
+    background-color: $second-color;    
+  }
+
+  & .btn-flat {
+    color: $second-color;
+  }
+
+  & .btn-large {
+    color: $background-color;    
+  }
+
+  & input:focus {
+    border-bottom: 1px solid $second-color !important;
+    box-shadow: 0 1px 0 0 $second-color !important;
+  }
+}
+
+footer {
+  background-color: $first-color;
+
+  & p {
+    color: darken($text-color, 15%);
+  }
+
+  & h5 {
+    color: $text-color;
+  }
+
+  & text {
+    color: color("grey", "darken-1");
+  }
+
+  & a {
+    color: $text-color;
+  }
+}

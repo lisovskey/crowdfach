@@ -1,0 +1,33 @@
+.navbar-fixed
+  %nav
+    .container
+      .nav-wrapper
+        = link_to app_name, root_path, class: 'brand-logo'
+        %ul#nav-mobile.right.hide-on-small-and-down
+          %li
+            %form{:action => search_path, :method => "get"}
+              .input-field
+                %input.dark-hover#search{:required => "", :type => "search", :placeholder => t('.search')}
+                %label.label-icon{:for => "search"}
+                  %i.material-icons search
+                %input{:type => "submit", :hidden => true}
+          %li
+            - if user_signed_in?
+              %a.dropdown-button.waves-effect.right-align{"data-activates" => "menu-dropdown"}
+                = current_user.first_name
+                %i.material-icons.right account_circle
+              %ul.dropdown-content#menu-dropdown
+                %li
+                  %a.waves-effect{:href => '#'}
+                    %i.material-icons.left settings
+                    = t('.settings')
+                %li
+                  %a.waves-effect{:href => '#'}
+                    %i.material-icons.left storage
+                    = t('.projects')
+                %li
+                  %a{:href => destroy_user_session_path, "data-method" => "delete"}
+                    %i.material-icons.left power_settings_new
+                    = t('.signout')
+            - else
+              = link_to t('.signin'), new_user_session_path, class: 'waves-effect'
