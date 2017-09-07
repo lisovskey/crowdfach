@@ -30,4 +30,6 @@
                     %i.material-icons.left power_settings_new
                     = t('.signout')
             - else
-              = link_to t('.signin'), new_user_session_path, class: 'waves-effect'
+              %a.waves-effect.right-align{:href => new_user_session_path}
+                %i.material-icons.right perm_identity
+                = t('.signin')
