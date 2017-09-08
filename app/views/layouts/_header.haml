@@ -11,15 +11,15 @@
                 %label.label-icon{:for => "search"}
                   %i.material-icons search
                 %input{:type => "submit", :hidden => true}
-          %li#menu
+          %li
             - if user_signed_in?
-              %a.dropdown-button.waves-effect.right-align{"data-activates" => "menu-dropdown"}
-                %i.material-icons.left arrow_drop_down
+              %a.dropdown-button.waves-effect.left-align{"data-activates" => "menu-dropdown"}
+                %i.material-icons.left account_circle
                 = current_user.first_name
-                %i.material-icons.right account_circle
+                %i.material-icons.right arrow_drop_down
               %ul.dropdown-content#menu-dropdown
                 %li
-                  %a.waves-effect{:href => '#'}
+                  %a.waves-effect{:href => edit_user_registration_path}
                     %i.material-icons.left settings
                     = t('.settings')
                 %li
@@ -31,6 +31,6 @@
                     %i.material-icons.left power_settings_new
                     = t('.signout')
             - else
-              %a.waves-effect.right-align{:href => new_user_session_path}
-                %i.material-icons.right perm_identity
+              %a.waves-effect{:href => new_user_session_path}
                 = t('.signin')
+                %i.material-icons.left perm_identity

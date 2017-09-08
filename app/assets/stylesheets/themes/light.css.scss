@@ -99,16 +99,13 @@ main {
     }
   }
 
-  & .btn-large {
-    background-color: $second-color;    
+  & .btn-large, & .btn {
+    background-color: $second-color;
+    color: $background-color;    
   }
 
   & .btn-flat {
     color: $second-color;
-  }
-
-  & .btn-large {
-    color: $background-color;    
   }
 
   & input:focus {
