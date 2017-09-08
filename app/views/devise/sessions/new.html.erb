@@ -3,7 +3,14 @@
     <div class="card-content">
       <h2 class="center-align">Log in</h2>
 
+      <ul class="center-align">
+        <% flash.each do |type, message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
         <div class="row">
           <div class="col s12 input-field">
             <%= f.label :email %>

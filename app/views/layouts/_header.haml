@@ -11,8 +11,8 @@
                 %label.label-icon{:for => "search"}
                   %i.material-icons search
                 %input{:type => "submit", :hidden => true}
-          %li
-            - if user_signed_in?
+          - if user_signed_in?
+            %li
               %a.dropdown-button.waves-effect.left-align{"data-activates" => "menu-dropdown"}
                 %i.material-icons.left account_circle
                 = current_user.first_name
@@ -30,7 +30,10 @@
                   %a{:href => destroy_user_session_path, "data-method" => "delete"}
                     %i.material-icons.left power_settings_new
                     = t('.signout')
-            - else
+          - else
+            %li
               %a.waves-effect{:href => new_user_session_path}
                 = t('.signin')
-                %i.material-icons.left perm_identity
+            %li
+              %a.waves-effect{:href => new_user_registration_path}
+                = t('.signup')
