@@ -11,9 +11,10 @@
                 %label.label-icon{:for => "search"}
                   %i.material-icons search
                 %input{:type => "submit", :hidden => true}
-          %li
+          %li#menu
             - if user_signed_in?
               %a.dropdown-button.waves-effect.right-align{"data-activates" => "menu-dropdown"}
+                %i.material-icons.left arrow_drop_down
                 = current_user.first_name
                 %i.material-icons.right account_circle
               %ul.dropdown-content#menu-dropdown

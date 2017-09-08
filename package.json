@@ -1,7 +1,8 @@
 {
   "name": "crowdfach",
+  "description": "Crowdfunding platform",
   "private": true,
-  "dependencies": {
-    "bootstrap-material-design": "^4.0.0-beta.3"
-  }
+  "license": "MIT",
+  "author": "lisovskey",
+  "dependencies": {}
 }

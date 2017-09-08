@@ -7,12 +7,12 @@
         <div class="row">
           <div class="col s12 input-field">
             <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
+            <%= f.email_field :email, autofocus: true %>
           </div>
 
           <div class="col s12 input-field">
             <%= f.label :password %>
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password %>
           </div>
 
           <% if devise_mapping.rememberable? %>

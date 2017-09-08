@@ -81,7 +81,10 @@ i.material-icons.left {
     & #nav-mobile > li {
       display: inline-block;
       height: 100%;
-      min-width: 170px;
+
+      & .dropdown-button {
+        min-width: 170px;
+      }
     }
     
     & a.waves-effect {
