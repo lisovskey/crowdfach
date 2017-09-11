@@ -25,6 +25,8 @@ body.dark-theme {
   @import "themes/dark";
 }
 
+$border-color: rgba(120, 120, 120, 0.5);
+
 @media #{$medium-and-up} {
   .brand-logo {
     left: 0 !important;
@@ -46,14 +48,26 @@ main {
   flex: 1 0 auto;
 }
 
-#search {
-  margin-bottom: 0;
-  margin-right: 0;
-  padding-left: 50px;
-  height: 64px;
-  width: 130px;
-  border-bottom: none;
-  box-shadow: none;
+nav {
+  & #search {
+    margin-bottom: 0;
+    margin-right: 0;
+    padding-left: 50px;
+    height: 64px;
+    width: 130px;
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  & #side-search {
+    height: 56px;
+    padding-left: 70px;
+    width: calc(100% - 70px);
+
+    & + .label-icon {
+      padding-left: 19px;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -70,6 +84,23 @@ i.material-icons.left {
 
 .full-width {
   width: 100%;
+}
+
+.bottom {
+  vertical-align: bottom;
+}
+
+#sidenav-overlay {
+  z-index: 100;
+}
+
+.divider {
+  background-color: $border-color;
+  margin: 0 0 20px 0 !important;
+}
+
+.fade {
+  opacity: 0.5 !important;
 }
 
 .card {
@@ -127,8 +158,8 @@ i.material-icons.left {
 
 footer {
   & .footer-copyright {
-    background-color: rgba(0, 0, 0, 0) !important;       
-    border-top: 1px solid rgba(120, 120, 120, 0.3);    
+    background-color: rgba(0, 0, 0, 0) !important;
+    border-top: 1px solid $border-color;
     height: 64px;
     padding: 0 !important;
     font-weight: 400 !important;

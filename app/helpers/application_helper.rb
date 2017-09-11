@@ -1,6 +1,6 @@
 module ApplicationHelper
   def app_name
-    'crowdfach'
+    'Crowdfach'
   end
 
   def app_developer

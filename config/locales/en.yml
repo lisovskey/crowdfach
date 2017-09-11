@@ -45,6 +45,7 @@ en:
       settings: "Settings"
       projects: "My Projects"
       signout: "Log out"
+      guest: "Guest"
   users:
     projects:
       my_projects: "My Projects"
@@ -55,4 +56,6 @@ en:
       create_project: "Create Project"
       image: "Image"
     index:
+      our_choice: "Our Choice"
       popular: "Most Popular"
+      recent: "Recently Funded"

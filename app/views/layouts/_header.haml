@@ -2,6 +2,47 @@
   %nav
     .container
       .nav-wrapper
+        %ul#slide-out.side-nav
+          %li
+            .user-view
+              %i.material-icons.left account_circle
+              - if user_signed_in?
+                %span.name= current_user.full_name
+                %span.email.fade= current_user.email
+              - else
+                %span.name= t('.guest')
+                %span.email            
+          %li
+            .divider
+          - if user_signed_in?
+            %li
+              %a.waves-effect{:href => edit_user_registration_path}
+                %i.material-icons.left settings
+                = t('.settings')
+            %li
+              %a.waves-effect{:href => projects_path}
+                %i.material-icons.left storage
+                = t('.projects')
+            %li
+              %a{:href => destroy_user_session_path, "data-method" => "delete"}
+                %i.material-icons.left power_settings_new
+                = t('.signout')
+            %li.bottom
+              %form{:action => search_path, :method => "get"}
+                .input-field
+                  %input.dark-hover#side-search{:required => "", :type => "search", :placeholder => t('.search')}
+                  %label.label-icon{:for => "search"}
+                    %i.material-icons search
+                  %input{:type => "submit", :hidden => true}
+          - else
+            %li
+              %a.waves-effect{:href => new_user_session_path}
+                = t('.signin')
+            %li
+              %a.waves-effect{:href => new_user_registration_path}
+                = t('.signup')        
+        %a.button-collapse.hide-on-med-and-up{"data-activates" => "slide-out", :href => "#"}
+          %i.material-icons menu
         = link_to app_name, root_path, class: 'brand-logo'
         %ul#nav-mobile.right.hide-on-small-and-down
           %li

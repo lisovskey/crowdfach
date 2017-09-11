@@ -46,6 +46,14 @@ a:not(.waves-light) .waves-ripple {
   color: darken($background-color, 20%);
 }
 
+.side-nav {
+  background-color: $first-color;
+
+  & i.material-icons {
+    color: $text-color !important;
+  }
+}
+
 input[type=checkbox]:checked {
   & + .lever {
     background-color: darken($second-color, 20%);
@@ -64,7 +72,7 @@ input[type=checkbox]:checked {
 nav {
   background-color: $first-color;
   
-  & a {
+  & a, & .user-view {
     color: $text-color;
   }
 

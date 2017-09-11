@@ -14,6 +14,7 @@ ru:
       settings: "Настройки"
       projects: "Мои Проекты"
       signout: "Выход"
+      guest: "Гость"
   users:
     projects:
       my_projects: "Мои Проекты"
@@ -24,4 +25,7 @@ ru:
       create_project: "Создать проект"
       image: "Изображение"
     index:
+      our_choice: "Выбор редакции"
       popular: "Самые Популярные"
+      recent: "Недавно Созданные"
+

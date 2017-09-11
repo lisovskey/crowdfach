@@ -46,6 +46,14 @@ a:not(.waves-light) .waves-ripple {
   color: $text-color;
 }
 
+.side-nav {
+  background-color: $first-color;
+
+  & i.material-icons {
+    color: $text-color !important;
+  }
+}
+
 input[type=checkbox]:checked {
   & + .lever {
     background-color: desaturate(darken($second-color, 20%), 50%);
@@ -108,7 +116,7 @@ main {
     color: $second-color;
   }
 
-  & input:focus {
+  & input:focus, & textarea:focus {
     border-bottom: 1px solid $second-color !important;
     box-shadow: 0 1px 0 0 $second-color !important;
   }

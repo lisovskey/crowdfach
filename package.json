@@ -4,5 +4,6 @@
   "private": true,
   "license": "MIT",
   "author": "lisovskey",
+  "type": "project",
   "dependencies": {}
 }
