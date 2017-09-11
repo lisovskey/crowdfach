@@ -1,0 +1,28 @@
+.row
+  .col.s12
+    .card
+      .card-content
+        %h2.center-align= t('.project_creation')
+        = form_for(@project) do |f|
+          .row
+            .col.s12.m6.input-field
+              = f.label :name
+              = f.text_field :name, required: true
+            .col.s12.m6.input-field
+              = f.label :category              
+              = f.text_field :category, required: true
+            .col.s12.input-field
+              = f.label :description
+              = f.text_area :description, required: true, class: 'materialize-textarea'
+            .col.s12.input-field
+              = f.label :full_description
+              = f.text_area :full_description, required: true, class: 'materialize-textarea'
+            .col.s12.file-field.input-field
+              .btn-large.waves-effect.waves-light
+                %span= t('.image')
+                = f.file_field :avatar, required: true
+              .file-path-wrapper
+                %input.file-path{:type => "text"}
+          .row
+            .col.s12
+              = f.button t('.create_project'), class: 'full-width waves-effect waves-light btn-large'

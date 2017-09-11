@@ -5,8 +5,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :description,        null: false, default: ""
       t.string :avatar,             null: false, default: ""
 
-      t.integer :balance,           null: false, default: 0
       t.integer :target,            null: false, default: 0
+      t.integer :balance,           null: false, default: 0
 
       t.string :category,           null: false, default: ""
 

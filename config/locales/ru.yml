@@ -1,4 +1,7 @@
 ru:
+  language:
+    english: "Английский"
+    russian: "Русский"
   layouts:
     footer:
       slogan: "Из Заславля с любовью"
@@ -11,3 +14,14 @@ ru:
       settings: "Настройки"
       projects: "Мои Проекты"
       signout: "Выход"
+  users:
+    projects:
+      my_projects: "Мои Проекты"
+      new_project: "Новый Проект"
+  projects:
+    new:
+      project_creation: "Создание Проекта"
+      create_project: "Создать проект"
+      image: "Изображение"
+    index:
+      popular: "Самые Популярные"

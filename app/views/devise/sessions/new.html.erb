@@ -1,45 +1,47 @@
-<div class="col s12 m8 offset-m2 l6 offset-l3">
-  <div class="card">
-    <div class="card-content">
-      <h2 class="center-align">Log in</h2>
+<div class="row">
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card">
+      <div class="card-content">
+        <h2 class="center-align">Log in</h2>
 
-      <ul class="center-align">
-        <% flash.each do |type, message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="row">
-          <div class="col s12 input-field">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true %>
-          </div>
-
-          <div class="col s12 input-field">
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-          </div>
-
-          <% if devise_mapping.rememberable? %>
-            <div class="col s12 field">
-              <%= f.check_box :remember_me, class: 'filled-in' %>
-              <%= f.label :remember_me %>
-            </div>
+        <ul class="center-align">
+          <% flash.each do |type, message| %>
+            <li><%= message %></li>
           <% end %>
-        </div>
+        </ul>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="row">
+            <div class="col s12 input-field">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+
+            <div class="col s12 input-field">
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="col s12 field">
+                <%= f.check_box :remember_me, class: 'filled-in' %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <%= f.button "Log in", class: "full-width waves-effect waves-light btn-large" %>
+            </div>
+          </div>
+        <% end %>
 
         <div class="row">
-          <div class="col s12">
-            <%= f.submit "Log in", class: "full-width waves-effect waves-light btn-large" %>
+          <div class="col s12 center-align">    
+            <%= render "devise/shared/links" %>
           </div>
-        </div>
-      <% end %>
-
-      <div class="row">
-        <div class="col s12 center-align">    
-          <%= render "devise/shared/links" %>
         </div>
       </div>
     </div>

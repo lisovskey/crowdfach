@@ -1,0 +1,19 @@
+.row
+  .col.s12
+    %h3= t('.my_projects')
+  - 1..5.times do
+    .col.s12
+      %a.card.horizontal.small.hoverable#panel{:href => "#"}
+        .card-image
+          .image.hide-on-med-and-up{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}          
+          .image.hide-on-small-and-down{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
+        .card-stacked
+          .card-content
+            %span.card-title
+              Card Title
+            %p.hide-on-small-and-down Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+.row
+  .col.s12
+    .row
+      .col.s12.m6.offset-m3
+        = link_to t('.new_project'), new_project_path, class: 'full-width waves-effect waves-light btn-large'

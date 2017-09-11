@@ -1,6 +1,6 @@
 @import "materialize/components/color"; 
 $first-color: white;
-$second-color: color("red", "darken-1");
+$second-color: color("red", "accent-2");
 $third-color: color("grey", "darken-2");
 $background-color: color("grey", "lighten-3");
 $text-color:  color("grey", "darken-4");
@@ -21,10 +21,10 @@ $text-color:  color("grey", "darken-4");
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $text-color;
+  color: $second-color;
 }
 
-.waves-ripple {
+a:not(.waves-light) .waves-ripple {
   background-color: $second-color !important;
 }
    
@@ -119,10 +119,6 @@ footer {
 
   & p {
     color: $text-color;
-  }
-
-  & h5 {
-    color: lighten($text-color, 15%);
   }
 
   & text {

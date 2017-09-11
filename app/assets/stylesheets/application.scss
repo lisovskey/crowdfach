@@ -56,6 +56,10 @@ main {
   box-shadow: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
 i.material-icons.left {
   margin-right: 14px !important;
 }
@@ -71,6 +75,30 @@ i.material-icons.left {
 .card {
   & a {
     margin: 0 !important;
+  }
+
+  & .image {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &#index .image {
+    border-radius: 2px 2px 0 0;    
+    height: 12em !important;
+    width: 100% !important;
+  }
+
+  &#panel .image {
+    border-radius: 2px 0 0 2px;
+    height: 100% !important;
+
+    &.hide-on-med-and-up {
+      min-width: 8em;    
+    }
+
+    &.hide-on-small-and-down {
+      min-width: 14em;    
+    }
   }
 }
 
@@ -99,10 +127,11 @@ i.material-icons.left {
 
 footer {
   & .footer-copyright {
+    background-color: rgba(0, 0, 0, 0) !important;       
+    border-top: 1px solid rgba(120, 120, 120, 0.3);    
     height: 64px;
-    border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 0 !important;
-    font-weight: 400 !important;  
+    font-weight: 400 !important;
 
     & .switch, & .language {
       line-height: 64px;        

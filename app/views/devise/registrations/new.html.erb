@@ -1,50 +1,46 @@
-<div class="col s12 m8 offset-m2 l6 offset-l3">
-  <div class="card">
-    <div class="card-content">
-      <h2 class="center-align">Sign up</h2>
+<div class="row">
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <div class="card">
+      <div class="card-content">
+        <h2 class="center-align">Sign up</h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="row">
-          <div class="col s12 input-field">
-            <%= f.label :email %>
-            <%= f.email_field :email, autocomplete: "off", autofocus: true, required: true %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="row">
+            <div class="col s12 input-field">
+              <%= f.label :email %>
+              <%= f.email_field :email, autocomplete: "off", autofocus: true, required: true %>
+            </div>
+
+            <div class="col s12 m6 input-field">
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "off", required: true %>
+            </div>
+
+            <div class="col s12 m6 input-field">
+              <%= f.label :password_confirmation, value: "Password again" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
+            </div>
+
+            <div class="col s12 m6 input-field">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, autocomplete: "off", required: true %>
+            </div>
+
+            <div class="col s12 m6 input-field">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, autocomplete: "off", required: true %>
+            </div>
           </div>
 
-          <div class="col s12 m6 input-field">
-            <%= f.label :password %>
-            <%= f.password_field :password, autocomplete: "off", required: true %>
+          <%# <%= recaptcha_tags %>
+
+          <div class="row">
+            <div class="col s12">
+              <%= f.button "Sign up", class: "full-width waves-effect waves-light btn-large" %>
+            </div>
           </div>
-
-          <div class="col s12 m6 input-field">
-            <%= f.label :password_confirmation, value: "Password again" %>
-            <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
-          </div>
-
-          <div class="col s12 m6 input-field">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name, autocomplete: "off", required: true %>
-          </div>
-
-          <div class="col s12 m6 input-field">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name, autocomplete: "off", required: true %>
-          </div>
-        </div>
-
-        <%# <%= recaptcha_tags %>
-
-        <div class="row">
-          <div class="col s12">
-            <%= f.submit "Sign up", class: "full-width waves-effect waves-light btn-large" %>
-          </div>
-        </div>
-      <% end %>
-
-      <div class="row">
-        <div class="col s12 center-align">    
-          <%= render "devise/shared/links" %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :rememberable, :trackable, :validatable, :confirmable
 
   has_many :projects
+  
+  validates_presence_of :email, :encrypted_password, :first_name, :last_name
 
   before_save :capitalize_name
   before_save :set_full_name

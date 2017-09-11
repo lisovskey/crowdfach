@@ -1,55 +1,57 @@
-<div class="col s12 m6 offset-m3">
-  <div class="card">
-    <div class="card-content">
-      <h2 class="center-align">Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card">
+      <div class="card-content">
+        <h2 class="center-align">Edit <%= resource_name.to_s.humanize %></h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
 
-        <div class="col s12 input-field">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
-        </div>
+          <div class="col s12 input-field">
+            <%= f.label :email %>
+            <%= f.email_field :email, required: true %>
+          </div>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="col s12 m6 input-field">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, required: true %>
+          </div>
+
+          <div class="col s12 m6 input-field">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, required: true %>
+          </div>
+
+          <div class="col s12 input-field">
+            <%= f.label :current_password %>
+            <%= f.password_field :current_password, required: true, autocomplete: "off" %>
+          </div>
+
+          <div class="col s12 m6 input-field">
+            <%= f.label :password, value: "New password" %>
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+
+          <div class="col s12 m6 input-field">
+            <%= f.label :password_confirmation, value: "Password again" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <%= f.button "Update", class: "full-width waves-effect waves-light btn-large" %>
+            </div>
+          </div>
         <% end %>
 
-         <div class="col s12 m6 input-field">
-          <%= f.label :first_name, value: "New name" %>
-          <%= f.text_field :first_name %>
-        </div>
-
-        <div class="col s12 m6 input-field">
-          <%= f.label :last_name, value: "New surname" %>
-          <%= f.text_field :last_name %>
-        </div>
-
-        <div class="col s12 input-field">
-          <%= f.label :current_password %>
-          <%= f.password_field :current_password, autocomplete: "off" %>
-        </div>
-
-        <div class="col s12 m6 input-field">
-          <%= f.label :password, value: "New password" %>
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-
-        <div class="col s12 m6 input-field">
-          <%= f.label :password_confirmation, value: "Password again" %>
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
         <div class="row">
-          <div class="col s12">
-            <%= f.submit "Update", class: "full-width waves-effect waves-light btn-large" %>
+          <div class="col s12 center-align">
+            <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "waves-effect waves-teal btn-flat" %>
           </div>
-        </div>
-      <% end %>
-
-      <div class="row">
-        <div class="col s12 center-align">
-          <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "waves-effect waves-teal btn-flat" %>
         </div>
       </div>
     </div>

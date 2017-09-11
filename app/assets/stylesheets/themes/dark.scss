@@ -1,6 +1,6 @@
 @import "materialize/components/color"; 
 $first-color: color("grey", "darken-3");
-$second-color: color("red", "lighten-1");
+$second-color: color("red", "accent-2");
 $third-color: color("grey", "darken-2");
 $background-color: color("grey", "darken-4");
 $text-color:  white;
@@ -21,10 +21,10 @@ $text-color:  white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: $text-color;
+  color: $second-color;
 }
 
-.waves-ripple {
+a:not(.waves-light) .waves-ripple {
   background-color: $second-color !important;
 }
 
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 
 input[type=checkbox]:checked {
   & + .lever {
-    background-color: desaturate(darken($second-color, 20%), 30%);
+    background-color: desaturate(darken($second-color, 20%), 50%);
 
     &:after {
       background-color: $second-color;    
@@ -119,10 +119,6 @@ footer {
 
   & p {
     color: darken($text-color, 15%);
-  }
-
-  & h5 {
-    color: $text-color;
   }
 
   & text {

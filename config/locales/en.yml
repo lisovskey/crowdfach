@@ -30,6 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  language:
+    english: "English"
+    russian: "Russian"
   layouts:
     footer:
       slogan: "From Zaslavl with love"
@@ -42,3 +45,14 @@ en:
       settings: "Settings"
       projects: "My Projects"
       signout: "Log out"
+  users:
+    projects:
+      my_projects: "My Projects"
+      new_project: "New Project"
+  projects:
+    new:
+      project_creation: "Project Creation"
+      create_project: "Create Project"
+      image: "Image"
+    index:
+      popular: "Most Popular"

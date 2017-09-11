@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
+  def projects
+    @projects = current_user.projects
+  end
+
   protected
-    def verify_captcha response
+    def verify_captcha(response)
       result = RestClient.post(
                   'https://www.google.com/recaptcha/api/siteverify',
                   secret: Rails.application.secrets[:recaptcha][:secret_key],

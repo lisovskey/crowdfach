@@ -1,9 +1,7 @@
 document.addEventListener "turbolinks:load", ->
   $(".language-point").click ->
     switch @.text
-      when "English"
+      when "English", "Английский"
         Cookies.set "language", "en"
-        $("#language").text "English"
-      when "Russian"
+      when "Russian", "Русский"
         Cookies.set "language", "ru"
-        $("#language").text "Russian"

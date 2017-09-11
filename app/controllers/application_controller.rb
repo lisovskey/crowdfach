@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
+  before_action :set_languages
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   protected  
@@ -10,6 +11,18 @@ class ApplicationController < ActionController::Base
     end
 
   private
+    def set_languages
+      cookies[:language] ||= 'en'
+      case cookies[:language]
+      when 'en'
+        @current_language = I18n.t('language.english')
+        @languages = [I18n.t('language.russian'), I18n.t('language.english')]
+      when 'ru'
+        @current_language = I18n.t('language.russian')
+        @languages = [I18n.t('language.english'), I18n.t('language.russian')]
+      end
+    end
+
     def set_locale
       I18n.locale = cookies[:language] || I18n.default_locale
     end

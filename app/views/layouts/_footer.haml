@@ -19,10 +19,10 @@
     .container
       .language.right
         %a.dropdown-button.dark-hover.waves-effect#language{"data-activates" => "language-dropdown", "data-beloworigin" => "true"}
-          = current_language
+          = @current_language
           %i.material-icons.left language
         %ul.dropdown-content#language-dropdown
-          - languages.each do |lang|
+          - @languages.each do |lang|
             %li
               %a.waves-effect.language-point{:href => ""}= lang
       .switch

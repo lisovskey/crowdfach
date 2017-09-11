@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require js.cookie
 //= require materialize-sprockets
+//= require materialize
 //= require_tree .
