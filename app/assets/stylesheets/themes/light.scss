@@ -14,6 +14,7 @@ $text-color:  color("grey", "darken-4");
 
 @include placeholder {
   color: $text-color;
+  font-weight: 500;  
 }
 
 #body-wrapper {
@@ -38,19 +39,15 @@ a:not(.waves-light) .waves-ripple {
   }
 }
 
-#sun {
+input[type=search] {
   color: $text-color;
-}
 
-#moon {
-  color: darken($background-color, 20%);
-}
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.1);
 
-.side-nav {
-  background-color: $first-color;
-
-  & i.material-icons {
-    color: $text-color !important;
+    & label i {
+      color: $text-color;
+    }
   }
 }
 
@@ -80,15 +77,11 @@ nav {
     color: $text-color;
   }
 
-  & input[type=search] {
-    color: $text-color;
-
-    &:focus {
-      background-color: rgba(0, 0, 0, 0.1);
-
-      & label i {
-        color: $text-color;
-      }
+  & .side-nav {
+    background-color: $first-color;
+  
+    & i.material-icons {
+      color: $text-color !important;
     }
   }
 }
@@ -135,5 +128,13 @@ footer {
 
   & a {
     color: $text-color;
+  }
+
+  & #sun {
+    color: $text-color;
+  }
+  
+  & #moon {
+    color: darken($background-color, 20%);
   }
 }
