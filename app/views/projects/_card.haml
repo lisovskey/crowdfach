@@ -1,17 +1,27 @@
 .col.s12.m6.l4
-  .card.medium.sticky-action.hoverable#index
-    .card-image.waves-effect.waves-block.waves-light
-      .image{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
+  .card.sticky-action.hoverable#index
+    %a.card-image{:href => "#"}
+      .image.waves-effect{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
     .card-content
       %span.card-title.activator
-        Card Title
+        Lorem Ipsum
         %i.material-icons.right more_vert
-      %p
-        %a{:href => "#"} This is a link
-    .card-action.right-align
-      %a{:href => "#"} More
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    .card-progress
+      .current-progress{:style => "width: 64%;"}
+    .card-action.fix
+      %ul.fade
+        %li
+          %b 5.12BTC
+          = t('project.invested')
+        %li
+          %b 64%
+          = t('project.raised')
+        %li
+          %b 78h
+          = t('project.remains')
     .card-reveal
       %span.card-title
-        Card Title
+        Lorem Ipsum
         %i.material-icons.right close
-      %p Here is some more information about this product that is only revealed once clicked on.
+      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

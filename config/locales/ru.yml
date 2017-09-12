@@ -25,7 +25,12 @@ ru:
       create_project: "Создать проект"
       image: "Изображение"
     index:
+      more: "Ещё"
       our_choice: "Выбор редакции"
       popular: "Самые Популярные"
       recent: "Недавно Созданные"
+  project:
+    invested: "Вложено"
+    raised: "Собрано"
+    remains: "Осталось"
 

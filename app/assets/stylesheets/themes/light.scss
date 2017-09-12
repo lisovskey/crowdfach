@@ -14,7 +14,6 @@ $text-color:  color("grey", "darken-4");
 
 @include placeholder {
   color: $text-color;
-  font-weight: 500;  
 }
 
 #body-wrapper {
@@ -79,6 +78,7 @@ nav {
 
   & .side-nav {
     background-color: $first-color;
+    color: $text-color !important;    
   
     & i.material-icons {
       color: $text-color !important;
@@ -97,6 +97,10 @@ main {
 
     & a {
       color: $second-color !important;
+    }
+
+    .card-content > p::after {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);      
     }
   }
 

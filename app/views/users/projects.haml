@@ -4,14 +4,29 @@
   - 1..5.times do
     .col.s12
       %a.card.horizontal.small.hoverable#panel{:href => "#"}
-        .card-image
+        .card-image.hide-on-small-and-down
           .image.hide-on-med-and-up{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}          
           .image.hide-on-small-and-down{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
         .card-stacked
           .card-content
             %span.card-title
-              Card Title
-            %p.hide-on-small-and-down Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Lorem Ipsum
+            .card-progress
+              .current-progress{:style => "width: 64%;"}
+          .card-action.fix
+            .row.fade.fix
+              .col.s4
+                %b 5.12BTC
+                %br
+                = t('project.invested')
+              .col.s4                  
+                %b 64%
+                %br
+                = t('project.raised')
+              .col.s4    
+                %b 78h
+                %br
+                = t('project.remains')
 .row
   .col.s12
     .row

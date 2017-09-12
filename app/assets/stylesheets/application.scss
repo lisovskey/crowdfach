@@ -26,7 +26,7 @@ body.dark-theme {
   @import "themes/dark";
 }
 
-$border-color: rgba(120, 120, 120, 0.5);
+$border-color: rgba(150, 150, 150, 0.4);
 
 @media #{$medium-and-up} {
   .brand-logo {
@@ -78,10 +78,18 @@ nav {
     border-bottom: none !important;
     box-shadow: none !important;
   }
+
+  & .side-nav li a {
+    font-weight: 400 !important;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
+  font-weight: 500;
+}
+
+.row.fix {
+  margin-bottom: 0;
 }
 
 i.material-icons.left {
@@ -94,6 +102,10 @@ i.material-icons.left {
 
 .full-width {
   width: 100%;
+}
+
+.hoverable:active {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 4px 0 rgba(0, 0, 0, 0.3)
 }
 
 .bottom {
@@ -123,6 +135,20 @@ i.material-icons.left {
     background-size: cover;
   }
 
+  & .card-title {
+    font-size: 22px;
+  }
+
+  & .card-progress {
+    height: 4px;
+    width: 100%;
+    background-color: $border-color;
+  }
+
+  & .card-action.fix {
+    border-top: none;
+  }
+
   &#index .image {
     border-radius: 2px 2px 0 0;    
     height: 12em !important;
@@ -140,6 +166,26 @@ i.material-icons.left {
     &.hide-on-small-and-down {
       min-width: 14em;    
     }
+  }
+
+  & .card-content > p {
+    position: relative;
+    overflow: hidden;
+    height: 4.4rem;
+
+    &::after {
+      content: "";
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 70%;
+      height: 1.4rem;
+    }
+  }
+
+  & ul {
+    margin: 0 !important;
   }
 }
 

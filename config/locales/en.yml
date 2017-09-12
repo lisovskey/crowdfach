@@ -56,6 +56,11 @@ en:
       create_project: "Create Project"
       image: "Image"
     index:
+      more: "More"
       our_choice: "Our Choice"
       popular: "Most Popular"
-      recent: "Recently Funded"
+      recent: "Recently Established"
+  project:
+    invested: "Invested"
+    raised: "Raised"
+    remains: "Remains"
