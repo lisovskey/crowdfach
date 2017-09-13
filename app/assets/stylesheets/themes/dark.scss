@@ -122,6 +122,10 @@ main {
     border-bottom: 1px solid $second-color !important;
     box-shadow: 0 1px 0 0 $second-color !important;
   }
+
+  & .picker__date-display, & .picker__day--selected {
+    background-color: $second-color;
+  }
 }
 
 footer {

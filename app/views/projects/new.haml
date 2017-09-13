@@ -3,11 +3,13 @@
     .card
       .card-content
         %h2.center-align= t('.project_creation')
+        - flash.each do |type, message|
+          %li= message
         = form_for(@project) do |f|
           .row
             .col.s12.m6.input-field
               = f.label :name
-              = f.text_field :name, required: true
+              = f.text_field :name, required: true, 'data-length': 20
             .col.s12.m6.input-field
               = f.label :category              
               = f.text_field :category, required: true
@@ -17,12 +19,12 @@
             .col.s12.input-field
               = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
-            .col.s12.file-field.input-field
-              .btn-large.waves-effect.waves-light
-                %span= t('.image')
-                = f.file_field :avatar, required: true
-              .file-path-wrapper
-                %input.file-path{:type => "text"}
+            .col.s12.m6.input-field
+              = f.label :target, value: 'Target BTC'
+              = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
+            .col.s12.m6.input-field
+              = f.label :expiration_time
+              = f.text_field :expiration_time, class: 'datepicker', required: true
           .row
             .col.s12
               = f.button t('.create_project'), class: 'full-width waves-effect waves-light btn-large'
