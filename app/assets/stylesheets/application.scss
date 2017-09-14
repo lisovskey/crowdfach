@@ -152,8 +152,10 @@ input[type=number] {
   }
 
   & .card-progress {
+    position: relative;
     height: 4px;
     width: 100%;
+    z-index: 10;
     background-color: $border-color;
   }
 
@@ -180,7 +182,7 @@ input[type=number] {
     }
   }
 
-  & .card-content > p {
+  & .card-content.fade-text > p {
     position: relative;
     overflow: hidden;
     height: 4.4rem;
@@ -196,8 +198,25 @@ input[type=number] {
     }
   }
 
+  & .card-reveal p {
+    max-height: 12rem;
+    overflow: hidden;
+  }
+
   & ul {
     margin: 0 !important;
+  }
+
+  & .author {
+    position: absolute;
+    bottom: 8rem;
+    left: 0;
+    width: 100%;
+    padding: 0 28px;
+
+    & .chip {
+      background-color: $border-color;
+    }
   }
 }
 
@@ -271,7 +290,7 @@ footer {
   }
 }
 
-.dropdown-content {
+.dropdown-button + .dropdown-content {
   & li {
     height: 64px;
     
@@ -281,4 +300,8 @@ footer {
       height: 100%;
     }
   }
+}
+
+.select-wrapper ul {
+  z-index: 996;
 }

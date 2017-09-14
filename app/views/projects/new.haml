@@ -11,8 +11,8 @@
               = f.label :name
               = f.text_field :name, required: true, 'data-length': 20
             .col.s12.m6.input-field
-              = f.label :category              
-              = f.text_field :category, required: true
+              = f.label :category_id, class: 'active'
+              = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
             .col.s12.input-field
               = f.label :description
               = f.text_area :description, required: true, class: 'materialize-textarea'
@@ -23,7 +23,7 @@
               = f.label :target, value: 'Target BTC'
               = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
             .col.s12.m6.input-field
-              = f.label :expiration_time
+              = f.label :expiration_time, class: 'active'
               = f.text_field :expiration_time, class: 'datepicker', required: true
           .row
             .col.s12

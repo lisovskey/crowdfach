@@ -18,6 +18,6 @@ class User < ApplicationRecord
     end
 
     def set_full_name
-      full_name = "#{first_name} #{last_name}".strip
+      self.full_name = "#{first_name} #{last_name}".strip
     end
 end

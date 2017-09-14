@@ -105,7 +105,15 @@ main {
     }
 
     & .card-content > p::after {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);      
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%); 
+      background: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);
+      background: -o-linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);    
+      background: -webkit-linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);
+      background: -ms-linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);
+    }
+
+    & .chip {
+      color: $text-color;
     }
   }
 
@@ -125,6 +133,23 @@ main {
 
   & .picker__date-display, & .picker__day--selected {
     background-color: $second-color;
+  }
+
+  & .select-wrapper {
+    & .caret {
+      color: $text-color;
+    }
+
+    & ul li {
+      & span {
+        color: $text-color;
+      }
+
+      &.selected span {
+        color: $second-color;
+        background-color: $third-color;
+      }
+    }
   }
 }
 

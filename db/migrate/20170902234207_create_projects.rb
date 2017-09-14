@@ -8,10 +8,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.float :target,              null: false, default: 0
       t.float :balance,             null: false, default: 0
 
-      t.string :category,           null: false, default: ""
-
       t.text :full_description,     null: false, default: ""
-      t.datetime :expiration_time,  null: false, default: "2020-01-01 00:00:00"
+      t.datetime :expiration_time
 
       t.timestamps null: false
     end

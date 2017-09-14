@@ -1,0 +1,8 @@
+.row.fix
+  .col.s12
+    %h2= @project.name
+.row
+  .col.s12
+    .card
+      .card-content
+        %p= to_markdown(@project.full_description)

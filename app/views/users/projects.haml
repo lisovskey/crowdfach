@@ -3,7 +3,7 @@
     %h3= t('.my_projects')
   - @projects.each do |project|
     .col.s12
-      %a.card.horizontal.small.hoverable#panel{:href => "#"}
+      %a.card.horizontal.small.hoverable#panel{:href => project_path(project)}
         .card-image.hide-on-small-and-down
           .image.hide-on-med-and-up{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}          
           .image.hide-on-small-and-down{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
@@ -15,13 +15,15 @@
           .card-action.fix
             .row.fade.fix
               .col.s4
-                %b= project.balance
-                BTC
+                %b
+                  = project.balance
+                  BTC
                 %br
                 = t('project.invested')
               .col.s4
-                %b= project.progress
-                \%
+                %b
+                  = project.progress
+                  \%
                 %br
                 = t('project.raised')
               .col.s4
