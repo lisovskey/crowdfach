@@ -7,10 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.new
-user.email = 'user@google.com'
-user.password = 'motherfucker'
-user.first_name = 'Max'
-user.last_name = 'Titovich'
-user.role = 'admin'
+user.email = "user@google.com"
+user.password = "motherfucker"
+user.first_name = "Max"
+user.last_name = "Titovich"
 user.skip_confirmation!
 user.save
+
+project = Project.new
+project.name = "Lorem ipsum"
+project.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+project.full_description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+project.target = 5.12
+project.balance = 1.28
+project.category = "People"
+project.user_id = user.id
+project.save

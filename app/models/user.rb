@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :trackable, :validatable, :confirmable
+         :rememberable, :validatable, :confirmable
 
   has_many :projects
   
@@ -13,11 +13,11 @@ class User < ApplicationRecord
   
   private
     def capitalize_name
-      self.first_name.capitalize!
-      self.last_name.capitalize!
+      first_name.capitalize!
+      last_name.capitalize!
     end
 
     def set_full_name
-      self.full_name = "#{self.first_name} #{self.last_name}".strip
+      full_name = "#{first_name} #{last_name}".strip
     end
 end

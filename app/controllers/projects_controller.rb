@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
+    @last_projects = Project.last(3).reverse
   end
 
   def new

@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913165312) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20170913172649) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -23,10 +20,10 @@ ActiveRecord::Schema.define(version: 20170913165312) do
     t.float "balance", default: 0.0, null: false
     t.string "category", default: "", null: false
     t.text "full_description", default: "", null: false
-    t.datetime "expiration_time", default: "2017-09-13 16:47:46", null: false
+    t.datetime "expiration_time", default: "2020-01-01 00:00:00", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -43,11 +40,6 @@ ActiveRecord::Schema.define(version: 20170913165312) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "confirmation_token"
@@ -58,5 +50,4 @@ ActiveRecord::Schema.define(version: 20170913165312) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "projects", "users"
 end

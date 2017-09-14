@@ -5,7 +5,7 @@
     %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
 .row.fix
   - 1..3.times do
-    = render 'card'
+    = render 'sample_card'
 .row.valign-wrapper.fix      
   .col.s8
     %h4= t('.popular')
@@ -13,12 +13,12 @@
     %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
 .row.fix
   - 1..3.times do
-    = render 'card'
+    = render 'sample_card'
 .row.valign-wrapper.fix
   .col.s8
     %h4= t('.recent')
   .col.s4
     %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
 .row
-  - 1..3.times do
-    = render 'card'
+  - @last_projects.each do |project|
+    = render 'card', project: project

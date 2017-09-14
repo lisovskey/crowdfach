@@ -1,7 +1,7 @@
 .row
   .col.s12
     %h3= t('.my_projects')
-  - 1..5.times do
+  - @projects.each do |project|
     .col.s12
       %a.card.horizontal.small.hoverable#panel{:href => "#"}
         .card-image.hide-on-small-and-down
@@ -9,21 +9,22 @@
           .image.hide-on-small-and-down{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
         .card-stacked
           .card-content
-            %span.card-title
-              Lorem Ipsum
+            %span.card-title= project.name
             .card-progress
-              .current-progress{:style => "width: 64%;"}
+              .current-progress{:style => "width: " << project.progress << "%;"}
           .card-action.fix
             .row.fade.fix
               .col.s4
-                %b 5.12BTC
+                %b= project.balance
+                BTC
                 %br
                 = t('project.invested')
-              .col.s4                  
-                %b 64%
+              .col.s4
+                %b= project.progress
+                \%
                 %br
                 = t('project.raised')
-              .col.s4    
+              .col.s4
                 %b 78h
                 %br
                 = t('project.remains')

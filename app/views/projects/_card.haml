@@ -4,24 +4,30 @@
       .image.waves-effect{:style => "background-image: url('http://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"}
     .card-content
       %span.card-title.activator
-        Lorem Ipsum
+        = project.name
         %i.material-icons.right more_vert
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      %p
+        = project.description
     .card-progress
-      .current-progress{:style => "width: 64%;"}
+      .current-progress{:style => "width: " << project.progress << "%;"}
     .card-action.fix
       %ul.fade
         %li
-          %b 5.12BTC
+          %b
+            = project.balance
+            BTC
           = t('project.invested')
         %li
-          %b 64%
+          %b
+            = project.progress
+            \%
           = t('project.raised')
         %li
-          %b 78h
+          %b 
+            78h
           = t('project.remains')
     .card-reveal
       %span.card-title
-        Lorem Ipsum
+        = project.name
         %i.material-icons.right close
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      %p= project.description
