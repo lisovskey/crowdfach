@@ -2,18 +2,35 @@ class Project < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates_presence_of :name, :description, :full_description, :target, :balance
+  validates_presence_of :name, :category_id, :description, :full_description, :target, :balance, :expiration_time
   validate :check_expiration_time
 
   before_save :capitalize_name
 
-  def progress
-    (balance / target * 100).round.to_s
+  def progress_percent
+    (balance / target * 100).round.to_s << '%'
   end
 
-  def author
+  def author_name
     puts User.find(user_id).full_name
     User.find(user_id).full_name
+  end
+
+  def remain
+    time = expiration_time - DateTime.now
+    if time < 60
+      I18n.t('datetime.few')
+    elsif time / 60 < 60
+      (time / 60).round.to_s << I18n.t('datetime.minutes')
+    elsif time / 60 / 60 < 24
+      (time / 60 / 60).round.to_s << I18n.t('datetime.hours')
+    elsif time / 60 / 60 / 24 < 30
+      (time / 60 / 60 / 24).round.to_s << I18n.t('datetime.days')
+    elsif time / 60 / 60 / 24 / 30 < 12
+      (time / 60 / 60 / 24 / 30).round.to_s << I18n.t('datetime.months')
+    else
+      (time / 60 / 60 / 24 / 30 / 12).round.to_s << I18n.t('datetime.years')
+    end
   end
 
   private

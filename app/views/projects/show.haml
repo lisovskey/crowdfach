@@ -1,8 +1,18 @@
 .row.fix
   .col.s12
-    %h2= @project.name
+    %h2.center-align= @project.name
 .row
   .col.s12
-    .card
-      .card-content
-        %p= to_markdown(@project.full_description)
+    .card#project_page
+      .card-stacked
+        .card-content
+          %p= to_markdown(@project.full_description)
+        .card-action
+          .row.fix
+            .col.s6
+              - if current_user
+                - if current_user.author @project
+                  = link_to t('.edit'), edit_project_path, class: 'waves-effect btn-flat narrow'
+            .col.s6.right-align
+              .chip.fade= @project.category.name
+              .chip.fade= @project.author_name

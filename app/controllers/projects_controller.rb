@@ -1,15 +1,22 @@
 class ProjectsController < ApplicationController
+  load_and_authorize_resource
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @projects = Project.all
     @last_projects = Project.last(3).reverse
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find params[:id]
   end
 
   def new
     @project = Project.new
+  end
+
+  def edit
+    @project = Project.find params[:id]
   end
 
   def create
@@ -20,6 +27,17 @@ class ProjectsController < ApplicationController
       else
         print @project.errors.full_messages
         format.html { render :new }
+      end
+    end
+  end
+
+  def update
+    @project = Project.find params[:id]
+    respond_to do |format|
+      if @project.update project_params
+        format.html { redirect_to @project, notice: 'Project was successfully updated' }
+      else
+        format.html { render :edit }
       end
     end
   end

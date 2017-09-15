@@ -2,9 +2,7 @@
   .col.s12
     .card
       .card-content
-        %h2.center-align= t('.project_creation')
-        - flash.each do |type, message|
-          %li= message
+        %h3.center-align= t('.project_creation')
         = form_for(@project) do |f|
           .row
             .col.s12.m6.input-field

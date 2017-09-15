@@ -1,8 +1,17 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin_only, except: [:show, :projects]
 
   def projects
     @projects = current_user.projects
+  end
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   protected
@@ -16,13 +25,9 @@ class UsersController < ApplicationController
     end
 
   private
-    def authenticate_user!
-      unless current_user
-        if request.xhr?
-          render json: { msg: 'Вы не авторизованы' }, status: 403            
-        else
-          redirect_to root_path
-        end
+    def admin_only
+      unless current_user.admin?
+        redirect_to root_path, :alert => "Access denied."
       end
     end
 end

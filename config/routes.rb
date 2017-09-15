@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     end
     
     member do
-      get 'projects'
       put 'rate'
       put 'ban'
       put 'unban'

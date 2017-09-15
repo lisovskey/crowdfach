@@ -1,5 +1,5 @@
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'waves-effect waves-teal btn-flat' %><br />
+  <%= link_to t('.forgot_pass'), new_password_path(resource_name), class: 'waves-effect btn-flat' %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>

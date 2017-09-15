@@ -2,6 +2,13 @@ ru:
   language:
     english: "Английский"
     russian: "Русский"
+  datetime:
+    few: "пару сек"
+    minutes: "мин"
+    hours: "ч"
+    days: "дн"
+    months: "мес"
+    years: "г"
   layouts:
     footer:
       slogan: "Из Заславля с любовью"
@@ -19,6 +26,8 @@ ru:
     projects:
       my_projects: "Мои Проекты"
       new_project: "Новый Проект"
+      not_validated: "Вы не можете создавать проекты, так как Ваш аккаунт не верифицирован"
+      validate: "Пройти Валидацию"
   projects:
     new:
       project_creation: "Создание Проекта"

@@ -2,7 +2,7 @@
   .col.s8
     %h4= t('.our_choice')
   .col.s4
-    %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
+    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
 .row.fix
   - 1..3.times do
     = render 'sample_card'
@@ -10,7 +10,7 @@
   .col.s8
     %h4= t('.popular')
   .col.s4
-    %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
+    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
 .row.fix
   - 1..3.times do
     = render 'sample_card'
@@ -18,7 +18,7 @@
   .col.s8
     %h4= t('.recent')
   .col.s4
-    %a.btn-flat.waves-effect.right{:href => "#"}= t('.more')
+    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
 .row
   - @last_projects.each do |project|
     = render 'card', project: project

@@ -2,13 +2,7 @@
   <div class="col s12 m8 offset-m2 l6 offset-l3">
     <div class="card">
       <div class="card-content">
-        <h2 class="center-align">Log in</h2>
-
-        <ul class="center-align">
-          <% flash.each do |type, message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+        <h3 class="center-align"><%= t('.new') %></h3>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
@@ -33,7 +27,7 @@
 
           <div class="row">
             <div class="col s12">
-              <%= f.button "Log in", class: "full-width waves-effect waves-light btn-large" %>
+              <%= f.button t('.log_in'), class: "full-width waves-effect waves-light btn-large" %>
             </div>
           </div>
         <% end %>

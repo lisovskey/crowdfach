@@ -100,6 +100,10 @@ i.material-icons.left {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
+.disabled {
+  pointer-events: auto !important;
+}
+
 .full-width {
   width: 100%;
 }
@@ -120,8 +124,8 @@ input[type=number] {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 4px 0 rgba(0, 0, 0, 0.3)
 }
 
-.bottom {
-  vertical-align: bottom;
+.narrow {
+  padding: 0 12px;
 }
 
 #sidenav-overlay {
@@ -213,9 +217,21 @@ input[type=number] {
     left: 0;
     width: 100%;
     padding: 0 28px;
+  }
 
-    & .chip {
-      background-color: $border-color;
+  & .chip {
+    background-color: $border-color;
+  }
+
+  &#project_page {
+    & ul {
+      padding-left: 32px;
+      margin: 10px 0 !important;
+      
+      & li {
+        list-style-type: initial;
+        display: list-item;
+      }
     }
   }
 }

@@ -7,12 +7,12 @@ class ApplicationController < ActionController::Base
   
   protected  
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+      devise_parameter_sanitizer.permit(:sign_up,
+        keys: [:first_name, :last_name, :expiration_time])
     end
 
   private
     def set_languages
-      cookies[:language] ||= 'en'
       case cookies[:language]
       when 'en'
         @current_language = I18n.t('language.english')
@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_locale
-      I18n.locale = cookies[:language] || I18n.default_locale
+      cookies[:language] ||= 'en'
+      I18n.locale = cookies[:language]
     end
 end

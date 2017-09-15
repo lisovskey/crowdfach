@@ -11,6 +11,7 @@ user.email = 'user@google.com'
 user.password = 'motherfucker'
 user.first_name = 'Max'
 user.last_name = 'Titovich'
+user.validated = true
 user.skip_confirmation!
 user.save
 
@@ -23,12 +24,19 @@ project = Project.new
 project.name = 'Bitcoin Cash'
 project.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
 project.full_description = <<-END.strip_heredoc
-  ## Lorem ipsum
-  #### Lorem ipsum dolor sit amet
-  ```
-  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  ```
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  ## Lorem ipsum\r
+  #### Lorem ipsum dolor sit amet\r
+  ```\r
+  Ut enim ad minim veniam,\r
+    quis nostrud exercitation ullamco laboris nisi\r
+    ut aliquip ex ea commodo consequat.\r
+  ```\r
+  \r
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r
+  \r
+   - first\r
+   - second\r
+   - third\r
 END
 project.target = 5.12
 project.balance = 1.28

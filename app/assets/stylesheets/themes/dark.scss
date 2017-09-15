@@ -95,10 +95,6 @@ main {
       background-color: $first-color;  
     }
 
-    & a {
-      color: $second-color !important;
-    }
-
     & .current-progress {
       height: inherit;
       background-color: $second-color;
@@ -123,7 +119,7 @@ main {
   }
 
   & .btn-flat {
-    color: $second-color;
+    color: $second-color !important;
   }
 
   & input:focus, & textarea:focus {

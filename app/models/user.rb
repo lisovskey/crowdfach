@@ -10,6 +10,10 @@ class User < ApplicationRecord
 
   before_save :capitalize_name
   before_save :set_full_name
+
+  def author(project)
+    id == project.user_id
+  end
   
   private
     def capitalize_name

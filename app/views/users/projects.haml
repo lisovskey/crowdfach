@@ -11,7 +11,7 @@
           .card-content
             %span.card-title= project.name
             .card-progress
-              .current-progress{:style => "width: " << project.progress << "%;"}
+              .current-progress{:style => "width: " << project.progress_percent << ";"}
           .card-action.fix
             .row.fade.fix
               .col.s4
@@ -22,16 +22,23 @@
                 = t('project.invested')
               .col.s4
                 %b
-                  = project.progress
-                  \%
+                  = project.progress_percent
                 %br
                 = t('project.raised')
               .col.s4
-                %b 78h
+                %b= project.remain
                 %br
                 = t('project.remains')
 .row
   .col.s12
-    .row
-      .col.s12.m6.offset-m3
-        = link_to t('.new_project'), new_project_path, class: 'full-width waves-effect waves-light btn-large'
+    - if current_user.validated?
+      .row
+        .col.s12.m6.offset-m3
+          = link_to t('.new_project'), new_project_path, class: 'full-width waves-effect waves-light btn-large'
+    - else
+      .row
+        .col.s12.m6.offset-m3          
+          %a.full-width.btn-large.disabled.tooltipped{"data-position" => "top", "data-tooltip" => t('.not_validated')}= t('.new_project')
+      .row.fix
+        .col.s12.m6.offset-m3
+          = link_to t('.validate'), '#', class: 'full-width waves-effect waves-light btn-large'
