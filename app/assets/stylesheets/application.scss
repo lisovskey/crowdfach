@@ -49,47 +49,16 @@ main {
   flex: 1 0 auto;
 }
 
-nav {
-  & .brand-logo {
-    line-height: 58px;
-    padding-bottom: 6px;
-    font-family: 'Amaranth', sans-serif;
-  }
-
-  & #search {
-    margin-bottom: 0;
-    margin-right: 0;
-    padding-left: 50px;
-    height: 64px;
-    width: 130px;
-  }
-
-  & #side-search {
-    height: 56px;
-    padding-left: 70px;
-    width: calc(100% - 70px);
-
-    & + .label-icon {
-      padding-left: 19px;
-    }
-  }
-
-  & input {
-    border-bottom: none !important;
-    box-shadow: none !important;
-  }
-
-  & .side-nav li a {
-    font-weight: 400 !important;
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
 .row.fix {
   margin-bottom: 0;
+}
+
+.input-field.fix {
+  margin-top: 0;
 }
 
 i.material-icons.left {
@@ -124,8 +93,24 @@ input[type=number] {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 4px 0 rgba(0, 0, 0, 0.3)
 }
 
+.parallax-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  
+  & .parallax {
+    position: static !important;
+    pointer-events: none;
+  }
+}
+
 .narrow {
-  padding: 0 12px;
+  padding: 0 16px;
+}
+
+.super-narrow {
+  padding: 0 10px;
 }
 
 #sidenav-overlay {
@@ -238,8 +223,42 @@ input[type=number] {
 
 .navbar-fixed {
   margin-bottom: 10px;
-  
+
   & nav {
+    height: 64px;
+    line-height: 64px;
+  
+    & .brand-logo {
+      font-family: 'Amaranth', 'Roboto', sans-serif;
+    }
+  
+    & #search {
+      margin-bottom: 0;
+      margin-right: 0;
+      padding-left: 50px;
+      height: 64px;
+      width: 130px;
+    }
+  
+    & #side-search {
+      height: 56px;
+      padding-left: 70px;
+      width: calc(100% - 70px);
+  
+      & + .label-icon {
+        padding-left: 19px;
+      }
+    }
+  
+    & input {
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+  
+    & .side-nav li a {
+      font-weight: 400 !important;
+    }
+
     & #nav-mobile > li {
       display: inline-block;
       height: 100%;
@@ -248,14 +267,23 @@ input[type=number] {
         min-width: 180px;
       }
     }
-    
+
     & a.waves-effect {
       display: block;
     }
 
     & .label-icon {
       margin-top: -12px;
-    }    
+    }
+
+    & .button-collapse {
+      margin: 0 8px;
+
+      & i {
+        line-height: 64px;
+        font-size: 32px;
+      }
+    }
   }
 }
 

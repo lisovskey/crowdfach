@@ -4,7 +4,7 @@ First clone the repository:
 ```
 git clone https://github.com/lisovskey/crowdfach.git
 ```
-Be sure that you have ruby 2.4.1 installed
+Be sure that you have ruby 2.4.x installed
 
 Then go ahead and update gems:
 ```

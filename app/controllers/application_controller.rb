@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_languages
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   protected  
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up,
-        keys: [:first_name, :last_name, :expiration_time])
+        keys: [:first_name, :last_name, :avatar, :avatar_cache, :remove_avatar])
     end
 
   private

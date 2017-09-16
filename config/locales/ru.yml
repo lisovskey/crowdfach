@@ -38,8 +38,18 @@ ru:
       our_choice: "Выбор редакции"
       popular: "Самые Популярные"
       recent: "Недавно Созданные"
+    show:
+      edit: "Изменить"
   project:
     invested: "Вложено"
     raised: "Собрано"
     remains: "Осталось"
-
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "Слишком короткий пароль"
+            password_confirmation:
+              confirmation: "Пароли не совпадают"

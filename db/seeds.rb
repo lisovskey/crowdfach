@@ -15,7 +15,7 @@ user.validated = true
 user.skip_confirmation!
 user.save
 
-category_names = [:art, :food, :games, :music, :people, :tech, :video]
+category_names = [:art, :games, :music, :people, :tech, :video]
 category_names.each do |category_name|
   Category.create name: category_name
 end
@@ -28,7 +28,8 @@ project.full_description = <<-END.strip_heredoc
   #### Lorem ipsum dolor sit amet\r
   ```\r
   Ut enim ad minim veniam,\r
-    quis nostrud exercitation ullamco laboris nisi\r
+    quis nostrud exercitation\r
+    ullamco laboris nisi\r
     ut aliquip ex ea commodo consequat.\r
   ```\r
   \r

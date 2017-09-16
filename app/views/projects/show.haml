@@ -9,10 +9,12 @@
           %p= to_markdown(@project.full_description)
         .card-action
           .row.fix
-            .col.s6
+            .col.s4
               - if current_user
                 - if current_user.author @project
-                  = link_to t('.edit'), edit_project_path, class: 'waves-effect btn-flat narrow'
-            .col.s6.right-align
+                  %a.waves-effect.btn-flat.super-narrow{:href => edit_project_path}
+                    %i.material-icons.hide-on-med-and-up edit
+                    %span.left.hide-on-small-and-down= t('.edit')
+            .col.s8.right-align
               .chip.fade= @project.category.name
               .chip.fade= @project.author_name

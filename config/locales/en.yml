@@ -69,7 +69,18 @@ en:
       our_choice: "Our Choice"
       popular: "Most Popular"
       recent: "Recently Established"
+    show:
+      edit: "Edit"
   project:
     invested: "Invested"
     raised: "Raised"
     remains: "Remains"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "Password is too short"
+            password_confirmation:
+              confirmation: "Пароли не совпадают"
