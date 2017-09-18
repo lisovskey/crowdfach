@@ -1,24 +1,4 @@
-.row.valign-wrapper.fix
-  .col.s8
-    %h4= t('.our_choice')
-  .col.s4
-    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
-.row.fix
-  - 1..3.times do
-    = render 'sample_card'
-.row.valign-wrapper.fix      
-  .col.s8
-    %h4= t('.popular')
-  .col.s4
-    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
-.row.fix
-  - 1..3.times do
-    = render 'sample_card'
-.row.valign-wrapper.fix
-  .col.s8
-    %h4= t('.recent')
-  .col.s4
-    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
-.row
-  - @last_projects.each do |project|
-    = render 'card', project: project
+= render 'section', title: t('.our_choice'), projects: @chosen_projects
+= render 'section', title: t('.popular'), projects: @popular_projects
+= render 'section', title: t('.recent'), projects: @last_projects
+= render 'section', title: t('.successful'), projects: @successful_projects

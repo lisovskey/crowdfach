@@ -4,7 +4,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @chosen_projects = Project.last(3).reverse
+    @popular_projects = Project.last(3).reverse
     @last_projects = Project.last(3).reverse
+    @successful_projects = Project.last(3).reverse
   end
 
   def show

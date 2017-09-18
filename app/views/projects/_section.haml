@@ -1,0 +1,13 @@
+.row.valign-wrapper.fix
+  .col.s12.hide-on-med-and-up
+    %h4= title
+  .col.s8.hide-on-small-and-down
+    %h4= title
+  .col.s4.hide-on-small-and-down
+    %a.btn-flat.waves-effect.right.narrow{:href => "#"}= t('.more')
+.row.fix
+  - projects.each do |project|
+    = render 'card', project: project
+.row.hide-on-med-and-up
+  .col.s12.center-align
+    %a.btn-flat.waves-effect{:href => "#"}= t('.more')

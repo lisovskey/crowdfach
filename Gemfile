@@ -37,6 +37,7 @@ gem 'materialize-sass'
 gem 'material_icons'
 gem 'jquery-rails'
 gem 'js_cookie_rails'
+gem 'therubyracer', :platforms => :ruby
 
 gem 'hamlit'
 gem 'hamlit-rails'

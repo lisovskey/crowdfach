@@ -35,14 +35,11 @@ $border-color: rgba(150, 150, 150, 0.4);
   }
 }
 
-body {
+#body-wrapper {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-
-  & #body-wrapper {
-    transition: 0.1s background-color;  
-  }
+  transition: 0.1s background-color;  
 }
 
 main {
@@ -230,6 +227,24 @@ input[type=number] {
   
     & .brand-logo {
       font-family: 'Amaranth', 'Roboto', sans-serif;
+      line-height: 60px;
+      padding-bottom: 4px;
+    }
+
+    & #avatar {
+      height: 28px;
+      width: 28px;
+      margin: 18px 12px 18px 0;
+      background-position: center;
+      background-size: cover;
+    }
+
+    & #side-avatar {
+      height: 32px;
+      width: 32px;
+      margin: 16px 12px 0 12px;
+      background-position: center;
+      background-size: cover;
     }
   
     & #search {
@@ -241,12 +256,13 @@ input[type=number] {
     }
   
     & #side-search {
-      height: 56px;
+      height: 48px;
       padding-left: 70px;
       width: calc(100% - 70px);
   
       & + .label-icon {
         padding-left: 19px;
+        margin-top: -16px;
       }
     }
   
@@ -288,6 +304,8 @@ input[type=number] {
 }
 
 footer {
+  margin-top: 30px;
+
   & .footer-copyright {
     background-color: rgba(0, 0, 0, 0) !important;
     border-top: 1px solid $border-color;

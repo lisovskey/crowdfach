@@ -9,7 +9,7 @@
       %p
         = project.description
     .card-progress
-      .current-progress{:style => "width: " << project.progress_percent << ";"}
+      .current-progress{:style => "width: " << project.limited_progress << ";"}
     .card-action.fix
       %ul.fade
         %li
@@ -19,7 +19,7 @@
           = t('project.invested')
         %li
           %b
-            = project.progress_percent
+            = project.progress
           = t('project.raised')
         %li
           %b= project.remain
@@ -30,4 +30,4 @@
         %i.material-icons.right close
       %p= project.description
       .author.right-align
-        .chip.fade= project.author_name
+        .chip.fade= project.user.full_name

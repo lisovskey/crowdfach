@@ -7,13 +7,12 @@ class Project < ApplicationRecord
 
   before_save :capitalize_name
 
-  def progress_percent
+  def progress
     (balance / target * 100).round.to_s << '%'
   end
 
-  def author_name
-    puts User.find(user_id).full_name
-    User.find(user_id).full_name
+  def limited_progress
+    [(balance / target * 100).round, 100].min.to_s << '%'
   end
 
   def remain

@@ -20,28 +20,53 @@ category_names.each do |category_name|
   Category.create name: category_name
 end
 
+description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+full_description = <<-END.strip_heredoc
+## Lorem ipsum\r
+#### Lorem ipsum dolor sit amet\r
+```\r
+Ut enim ad minim veniam,\r
+  quis nostrud exercitation\r
+  ullamco laboris nisi\r
+  ut aliquip ex ea commodo consequat.\r
+```\r
+\r
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r
+\r
+ - first\r
+ - second\r
+ - third\r
+END
+
 project = Project.new
 project.name = 'Bitcoin Cash'
-project.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-project.full_description = <<-END.strip_heredoc
-  ## Lorem ipsum\r
-  #### Lorem ipsum dolor sit amet\r
-  ```\r
-  Ut enim ad minim veniam,\r
-    quis nostrud exercitation\r
-    ullamco laboris nisi\r
-    ut aliquip ex ea commodo consequat.\r
-  ```\r
-  \r
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r
-  \r
-   - first\r
-   - second\r
-   - third\r
-END
+project.description = description
+project.full_description = full_description
 project.target = 5.12
 project.balance = 1.28
 project.category_id = 1
 project.expiration_time = "2020-01-01 00:00:00"
+project.user_id = user.id
+project.save
+
+project = Project.new
+project.name = 'Etherium Classic'
+project.description = description
+project.full_description = full_description
+project.target = 3.84
+project.balance = 7.93
+project.category_id = 2
+project.expiration_time = "2018-01-01 00:00:00"
+project.user_id = user.id
+project.save
+
+project = Project.new
+project.name = 'Litecoin Cash'
+project.description = description
+project.full_description = full_description
+project.target = 4.44
+project.balance = 0.68
+project.category_id = 3
+project.expiration_time = "2017-10-10 00:00:00"
 project.user_id = user.id
 project.save

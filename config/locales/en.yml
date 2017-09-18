@@ -65,10 +65,12 @@ en:
       create_project: "Create Project"
       image: "Image"
     index:
-      more: "More"
       our_choice: "Our Choice"
       popular: "Most Popular"
+      successful: "Successfully financed"
       recent: "Recently Established"
+    section:
+      more: "More"
     show:
       edit: "Edit"
   project:

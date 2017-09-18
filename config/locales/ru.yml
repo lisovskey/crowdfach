@@ -34,10 +34,12 @@ ru:
       create_project: "Создать проект"
       image: "Изображение"
     index:
-      more: "Ещё"
       our_choice: "Выбор редакции"
       popular: "Самые Популярные"
+      successful: "Успешно Завершенные"
       recent: "Недавно Созданные"
+    section:
+      more: "Ещё"
     show:
       edit: "Изменить"
   project:

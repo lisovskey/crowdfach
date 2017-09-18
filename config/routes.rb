@@ -11,12 +11,12 @@ Rails.application.routes.draw do
       put 'unban'
     end
   end
-  
+
   get '/projects' => 'users#projects'
-
-  resources :projects
-
   get 'search' => 'search#index'
+  
+  resources :identification, only: [:new, :create]  
+  resources :projects
 
   root 'projects#index'
 end
