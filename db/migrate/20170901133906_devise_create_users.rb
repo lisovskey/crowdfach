@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       t.string  :avatar_url,        null: false, default: ""      
       t.integer :rating,            null: false, default: 0
-      
+
       t.boolean :admin,             null: false, default: false
       t.boolean :validated,         null: false, default: false
       t.boolean :sex

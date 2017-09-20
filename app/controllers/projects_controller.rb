@@ -3,11 +3,10 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @projects = Project.all
     @chosen_projects = Project.last(3).reverse
-    @popular_projects = Project.last(3).reverse
-    @last_projects = Project.last(3).reverse
-    @successful_projects = Project.last(3).reverse
+    @popular_projects = @chosen_projects
+    @last_projects = @chosen_projects
+    @successful_projects = Project.where(successful: true).last(3).reverse
   end
 
   def show

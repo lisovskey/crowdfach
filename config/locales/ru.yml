@@ -46,6 +46,9 @@ ru:
     invested: "Вложено"
     raised: "Собрано"
     remains: "Осталось"
+    status:
+      successful: "Успешный"
+      failed: "Неудачный"
   activerecord:
     errors:
       models:

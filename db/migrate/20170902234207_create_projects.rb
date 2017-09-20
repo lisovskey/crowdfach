@@ -9,7 +9,10 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.float :balance,             null: false, default: 0
 
       t.text :full_description,     null: false, default: ""
-      t.datetime :expiration_time
+      t.datetime :expiration_time,  null: false, default: "11 September, 2001"
+
+      t.boolean :finished,          null: false, default: false
+      t.boolean :successful
 
       t.timestamps null: false
     end

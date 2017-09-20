@@ -14,7 +14,7 @@
       %ul.fade
         %li
           %b
-            = project.balance
+            = project.balance.round(3)
             BTC
           = t('project.invested')
         %li
@@ -22,8 +22,11 @@
             = project.progress
           = t('project.raised')
         %li
-          %b= project.remain
-          = t('project.remains')
+          - if project.finished
+            %b= project.finish_status
+          - else
+            %b= project.remain
+            = t('project.remains')
     .card-reveal
       %span.card-title
         = project.name

@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+if Rails.env.development?
+  require 'database_cleaner'
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.clean
+end
+
 user = User.new
 user.email = 'user@google.com'
 user.password = 'motherfucker'
@@ -43,9 +49,9 @@ project.name = 'Bitcoin Cash'
 project.description = description
 project.full_description = full_description
 project.target = 5.12
-project.balance = 1.28
+project.balance = 3.68
 project.category_id = 1
-project.expiration_time = "2020-01-01 00:00:00"
+project.expiration_time = Time.zone.now + 10 * 60 * 60 * 24
 project.user_id = user.id
 project.save
 
@@ -54,9 +60,9 @@ project.name = 'Etherium Classic'
 project.description = description
 project.full_description = full_description
 project.target = 3.84
-project.balance = 7.93
+project.balance = 0.68
 project.category_id = 2
-project.expiration_time = "2018-01-01 00:00:00"
+project.expiration_time = Time.zone.now + 10 * 60
 project.user_id = user.id
 project.save
 
@@ -65,8 +71,8 @@ project.name = 'Litecoin Cash'
 project.description = description
 project.full_description = full_description
 project.target = 4.44
-project.balance = 0.68
+project.balance = 7.93
 project.category_id = 3
-project.expiration_time = "2017-10-10 00:00:00"
+project.expiration_time = Time.zone.now + 10
 project.user_id = user.id
 project.save

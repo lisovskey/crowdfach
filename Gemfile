@@ -44,6 +44,7 @@ gem 'hamlit-rails'
 
 gem 'redcarpet'
 gem 'carrierwave', '~> 1.0'
+gem 'sucker_punch'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -52,6 +53,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen', '>= 3.0.5'
   gem 'sqlite3'
+  gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
   # gem 'capybara', '~> 2.13'
   # gem 'selenium-webdriver'

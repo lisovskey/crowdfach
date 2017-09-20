@@ -11,10 +11,10 @@
           .row.fix
             .col.s4#control
               - if current_user
-                - if current_user.author @project
+                - if current_user.author?(@project) && !@project.finished
                   %a.waves-effect.btn-flat.super-narrow{:href => edit_project_path}
                     %i.material-icons.hide-on-med-and-up edit
                     %span.left.hide-on-small-and-down= t('.edit')
             .col.s8.right-align
               .chip.fade= @project.category.name
-              .chip.fade= @project.author_name
+              .chip.fade= @project.user.full_name

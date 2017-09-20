@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 20170916145959) do
     t.float "target", default: 0.0, null: false
     t.float "balance", default: 0.0, null: false
     t.text "full_description", default: "", null: false
-    t.datetime "expiration_time"
+    t.datetime "expiration_time", default: "2001-09-11 00:00:00", null: false
+    t.boolean "finished", default: false, null: false
+    t.boolean "successful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

@@ -11,24 +11,27 @@
           .card-content
             %span.card-title= project.name
             .card-progress
-              .current-progress{:style => "width: " << project.progress_percent << ";"}
+              .current-progress{:style => "width: " << project.limited_progress << ";"}
           .card-action.fix
             .row.fade.fix
               .col.s4
                 %b
-                  = project.balance
+                  = project.balance.round(3)
                   BTC
                 %br
                 = t('project.invested')
               .col.s4
                 %b
-                  = project.progress_percent
+                  = project.progress
                 %br
                 = t('project.raised')
               .col.s4
-                %b= project.remain
-                %br
-                = t('project.remains')
+                - if project.finished
+                  %b= project.finish_status
+                - else
+                  %b= project.remain
+                  %br
+                  = t('project.remains')
 .row
   .col.s12
     - if current_user.validated?
