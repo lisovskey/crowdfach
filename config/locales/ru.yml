@@ -1,4 +1,15 @@
 ru:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Почтовый Ящик"
+        avatar: "Аватар"
+        password: "Пароль"
+        password_confirmation: "Пароль еще раз"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить"     
   language:
     english: "Английский"
     russian: "Русский"
@@ -11,15 +22,15 @@ ru:
     years: "г"
   layouts:
     footer:
-      slogan: "Из Заславля с любовью"
       links: "Подписывайся"
-      description: "Мы поможем воплотить в жизнь любую твою творческую задумку, будь то видео к выпускному, реклама компании или даже клип. Мы специализируемся на съёмке видео, но без труда сможем пофотографировать или нарисовать тебя, нафотошопить визитку или сделать рекламу с инфографикой. К работе мы подходим с душой, а качество всегда на уровне."
+      categories: "Категории"
     header:
       signin: "Вход"
       signup: "Регистрация"
       search: "Поиск"
       settings: "Настройки"
       projects: "Мои Проекты"
+      admin_panel: "Админка"
       signout: "Выход"
       guest: "Гость"
   users:
@@ -38,10 +49,16 @@ ru:
       popular: "Самые Популярные"
       successful: "Успешно Завершенные"
       recent: "Недавно Созданные"
+    edit:
+      edit: "Редактирование Проекта"
+      save_project: "Сохранить"
     section:
       more: "Ещё"
     show:
       edit: "Изменить"
+  sections:
+    index:
+      slogan: "из заславля с любовью"
   project:
     invested: "Вложено"
     raised: "Собрано"

@@ -3,17 +3,17 @@
     .card
       .card-content
         %h3.center-align= t('.project_creation')
-        = form_for(@project) do |f|
+        = form_for(@project, html: { multipart: true }) do |f|
           .row
             .col.s12.m6.input-field
               = f.label :name
-              = f.text_field :name, required: true, 'data-length': 20
+              = f.text_field :name, required: true, 'data-length': 24
             .col.s12.m6.input-field
               = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
             .col.s12.input-field
               = f.label :description
-              = f.text_area :description, required: true, class: 'materialize-textarea'
+              = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
             .col.s12.input-field
               = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'

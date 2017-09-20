@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if Rails.env.development?
+unless Rails.env.production?
   require 'database_cleaner'
   DatabaseCleaner.strategy = :truncation
   DatabaseCleaner.clean

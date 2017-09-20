@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable
+         :rememberable, :validatable, :confirmable, :lockable
 
   has_many :projects
   
@@ -15,10 +15,6 @@ class User < ApplicationRecord
 
   before_save :capitalize_name
   before_save :set_full_name
-
-  def author?(project)
-    admin || id == project.user_id
-  end
   
   private
     def capitalize_name

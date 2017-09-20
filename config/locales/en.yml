@@ -30,6 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        email: "Email"
+        avatar: "Avatar"
+        password: "Password"
+        password_confirmation: "Password Again"
+        current_password: "Current Password"
+        remember_me: "Remember Me"
   language:
     english: "English"
     russian: "Russian"
@@ -42,15 +53,15 @@ en:
     years: "y"
   layouts:
     footer:
-      slogan: "From Zaslavl with love"
       links: "Follow me"
-      description: "We will help to realize any your creative idea, whether it's video for graduation, advertising for the company or even a video. We specialize in shooting video, but without difficulty we will be able to take pictures or draw you, photograph a business card or make an advertisement with infographics. To work we come with a soul, and the quality is always on the level."
+      categories: "Explore"
     header:
       signin: "Log in"
       signup: "Sign up"
       search: "Search"
       settings: "Settings"
       projects: "My Projects"
+      admin_panel: "Admin Panel"
       signout: "Log out"
       guest: "Guest"
   users:
@@ -69,10 +80,16 @@ en:
       popular: "Most Popular"
       successful: "Successfully financed"
       recent: "Recently Established"
+    edit:
+      edit: "Edit Project"
+      save_project: "Save Project"
     section:
       more: "More"
     show:
       edit: "Edit"
+  sections:
+    index:
+      slogan: "from zaslavl with love"      
   project:
     invested: "Invested"
     raised: "Raised"

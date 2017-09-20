@@ -14,9 +14,17 @@
  *= require_self
  */
 
-@import url('https://fonts.googleapis.com/css?family=Amaranth');
 @import "material_icons";
 @import "materialize";
+
+@font-face {
+  font-family: "Amaranth";
+  font-weight: 400;
+  font-style: normal;
+  src: url("amaranth.woff2") format("woff2"),
+       url("amaranth.woff") format("woff"),
+       url("amaranth.ttf") format("truetype");
+}
 
 body.light-theme {
   @import "themes/light";
@@ -28,10 +36,62 @@ body.dark-theme {
 
 $border-color: rgba(150, 150, 150, 0.4);
 
+@media #{$medium-and-down} {
+  #section-row > .col:nth-last-child(-n+1) {
+    display: none;
+  }
+}
+
 @media #{$medium-and-up} {
   .brand-logo {
     left: 0 !important;
     transform: none !important;
+  }
+
+  #panel .image {
+    min-width: 14em;    
+  }
+
+  .slogan {
+    height: 115%;
+
+    p {
+      font-size: 2.5rem;    
+    }
+  }
+
+  .parallax-container {
+    height: 360px;
+  
+    & img {
+      bottom: -50px !important;
+    }
+  }
+}
+
+@media #{$small-and-down} {
+  #panel .image {
+    min-width: 8em;
+  }
+
+  .slogan {
+    height: 115%;
+
+    p {
+      font-size: 1.2rem;    
+    }
+  }
+
+  .parallax-container {
+    height: 230px;
+
+    & img {
+      bottom: -30px !important;
+    }
+  }
+
+  #content {
+    margin-top: 170px !important;
   }
 }
 
@@ -90,6 +150,16 @@ input[type=number] {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 4px 0 rgba(0, 0, 0, 0.3)
 }
 
+.slogan {
+  position: relative;
+
+  & p {
+    font-family: 'Roboto Mono', 'monospace';
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  }
+}
+
 .parallax-container {
   position: absolute;
   width: 100%;
@@ -99,7 +169,15 @@ input[type=number] {
   & .parallax {
     position: static !important;
     pointer-events: none;
+
+    & img {
+      width: 100%;
+    }
   }
+}
+
+#content {
+  margin-top: 300px;
 }
 
 .narrow {
@@ -157,15 +235,7 @@ input[type=number] {
 
   &#panel .image {
     border-radius: 2px 0 0 2px;
-    height: 100% !important;
-
-    &.hide-on-med-and-up {
-      min-width: 8em;    
-    }
-
-    &.hide-on-small-and-down {
-      min-width: 14em;    
-    }
+    height: 100% !important;    
   }
 
   & .card-content.fade-text > p {
@@ -349,6 +419,14 @@ footer {
     & #language-dropdown {
       margin-top: -1px;
     }
+  }
+
+  & ul.two-column {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+    list-style-position: inside;
   }
 }
 

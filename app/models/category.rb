@@ -6,6 +6,10 @@ class Category < ApplicationRecord
 
   before_save :capitalize_name
 
+  def to_param
+    name
+  end
+
   private
     def capitalize_name
       name.capitalize!

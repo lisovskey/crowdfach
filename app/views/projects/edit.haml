@@ -1,4 +1,24 @@
 .row
   .col.s12
-    %h3 TODO
-  
+    .card
+      .card-content
+        %h3.center-align= t('.edit')
+        = form_for(@project, html: { method: :put, multipart: true }) do |f|
+          .row.fix
+            .col.s12.m6.input-field
+              = f.label :name
+              = f.text_field :name, 'data-length': 24
+            .col.s12.m6.input-field
+              = f.label :category_id, class: 'active'
+              = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }
+          .row.fix
+            .col.s12.input-field
+              = f.label :description
+              = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
+          .row.fix
+            .col.s12.input-field
+              = f.label :full_description
+              = f.text_area :full_description, required: true, class: 'materialize-textarea'
+          .row
+            .col.s12
+              = f.button t('.save_project'), class: 'full-width waves-effect waves-light btn-large'

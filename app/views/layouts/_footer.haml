@@ -1,18 +1,18 @@
 %footer.page-footer
   .container
     .row
-      .col.m6.s12
-        %h5= t('.slogan')
-        %p= t('.description')
-      .col.m4.offset-l2.s12
+      .col.m4.s10
+        %h5= t('.categories')
+        %ul.two-column
+          - Category.all.each do |category|
+            %li= link_to category.name, category_path(category)          
+      .col.m4.offset-m2.offset-l2.s12
         %h5= t('.links')
         %ul
           %li
             = link_to 'GitHub', "https://github.com/#{app_developer}", target: "_blank"
           %li
             = link_to 'VK', "https://vk.com/#{app_developer}", target: "_blank"
-          %li
-            = link_to 'Twitter', "https://twitter.com/#{app_developer}", target: "_blank"
           %li
             = link_to '500px', "https://500px.com/#{app_developer}", target: "_blank"
   .footer-copyright
