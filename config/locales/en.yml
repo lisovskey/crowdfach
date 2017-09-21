@@ -75,11 +75,6 @@ en:
       project_creation: "Project Creation"
       create_project: "Create Project"
       image: "Image"
-    index:
-      our_choice: "Our Choice"
-      popular: "Most Popular"
-      successful: "Successfully financed"
-      recent: "Recently Established"
     edit:
       edit: "Edit Project"
       save_project: "Save Project"
@@ -90,6 +85,13 @@ en:
   sections:
     index:
       slogan: "from zaslavl with love"      
+      our_choice: "Our Choice"
+      popular: "Most Popular"
+      successful: "Successfully financed"
+      recent: "Recently Established"
+  results:
+    index:
+      nothing_found: "Nothing was found"
   project:
     invested: "Invested"
     raised: "Raised"

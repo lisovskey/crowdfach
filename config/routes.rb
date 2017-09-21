@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   get '/projects' => 'users#projects'
-  get 'search' => 'search#index'
+  get 'search' => 'results#index'
   
   resources :categories, path: '', only: :show, param: :name
   resources :identification, only: [:new, :create]  

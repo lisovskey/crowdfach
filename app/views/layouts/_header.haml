@@ -36,28 +36,26 @@
               %a{:href => destroy_user_session_path, "data-method" => "delete"}
                 %i.material-icons.left power_settings_new
                 = t('.signout')
-            %li.bottom
-              %form{:action => search_path, :method => "get"}
-                .input-field
-                  %input.dark-hover#side-search{:required => "", :type => "search", :placeholder => t('.search')}
-                  %label.label-icon{:for => "search"}
+            %li
+              .input-field
+                = form_tag(search_path, method: 'get', role: 'search') do
+                  = text_field_tag :query, nil, class: 'dark-hover', id: 'side-search', required: '', type: 'search', placeholder: t('.search')
+                  %label.label-icon{:for => "side-search"}
                     %i.material-icons search
                   %input{:type => "submit", :hidden => true}
           - else
             %li
-              %a.waves-effect{:href => new_user_session_path}
-                = t('.signin')
+              = link_to t('.signin'), new_user_session_path, class: 'waves-effect'
             %li
-              %a.waves-effect{:href => new_user_registration_path}
-                = t('.signup')        
+              = link_to t('.signup'), new_user_registration_path, class: 'waves-effect'
         %a.button-collapse.hide-on-med-and-up{"data-activates" => "slide-out", :href => "#"}
           %i.material-icons menu
         = link_to app_name, root_path, class: 'brand-logo'
         %ul#nav-mobile.right.hide-on-small-and-down
           %li
-            %form{:action => search_path, :method => "get"}
-              .input-field
-                %input.dark-hover#search{:required => "", :type => "search", :placeholder => t('.search')}
+            .input-field
+              = form_tag(search_path, method: 'get', role: 'search') do
+                = text_field_tag :query, nil, class: 'dark-hover', id: 'search', required: '', type: 'search', placeholder: t('.search')
                 %label.label-icon{:for => "search"}
                   %i.material-icons search
                 %input{:type => "submit", :hidden => true}

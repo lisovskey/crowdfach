@@ -44,11 +44,6 @@ ru:
       project_creation: "Создание Проекта"
       create_project: "Создать проект"
       image: "Изображение"
-    index:
-      our_choice: "Выбор редакции"
-      popular: "Самые Популярные"
-      successful: "Успешно Завершенные"
-      recent: "Недавно Созданные"
     edit:
       edit: "Редактирование Проекта"
       save_project: "Сохранить"
@@ -59,6 +54,13 @@ ru:
   sections:
     index:
       slogan: "из заславля с любовью"
+      our_choice: "Выбор редакции"
+      popular: "Самые Популярные"
+      successful: "Успешно Завершенные"
+      recent: "Недавно Созданные"
+  results:
+    index:
+      nothing_found: "Ничего не найдено"
   project:
     invested: "Вложено"
     raised: "Собрано"

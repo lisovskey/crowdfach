@@ -1,0 +1,7 @@
+.row
+  - unless @results.empty?
+    - @results.each do |project|
+      = render 'layouts/horizontal_card', project: project
+  - else
+    .col.s12
+      %h4= t('.nothing_found')

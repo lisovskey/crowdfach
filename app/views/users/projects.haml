@@ -2,35 +2,7 @@
   .col.s12
     %h3= t('.my_projects')
   - @projects.each do |project|
-    .col.s12
-      %a.card.horizontal.small.hoverable#panel{:href => project_path(project)}
-        .card-image.hide-on-small-and-down
-          .image{:style => "background-image: url('https://sm.ign.com/ign_ru/news/f/fallout-4-/fallout-4-survival-mode-to-enter-beta-on-pc-soon_ktf1.jpg');"} 
-        .card-stacked
-          .card-content
-            %span.card-title= project.name
-            .card-progress
-              .current-progress{:style => "width: " << project.limited_progress << ";"}
-          .card-action.fix
-            .row.fade.fix
-              .col.s4
-                %b
-                  = project.balance.round(3)
-                  BTC
-                %br
-                = t('project.invested')
-              .col.s4
-                %b
-                  = project.progress
-                %br
-                = t('project.raised')
-              .col.s4
-                - if project.finished
-                  %b= project.finish_status
-                - else
-                  %b= project.remain
-                  %br
-                  = t('project.remains')
+    = render 'layouts/horizontal_card', project: project
 .row
   .col.s12
     - if current_user.validated?
