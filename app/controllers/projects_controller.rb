@@ -19,9 +19,10 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new project_params
+    @project.avatar = params[:avatar]    
     respond_to do |format|
       if @project.save
-        format.html { redirect_to projects_path }
+        format.html { redirect_to projects_path, notice: 'Project was successfully created' }
       else
         print @project.errors.full_messages
         format.html { render :new }
@@ -31,6 +32,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find params[:id]
+    @project.avatar = params[:avatar]
     respond_to do |format|
       if @project.update project_params
         format.html { redirect_to @project, notice: 'Project was successfully updated' }
@@ -43,7 +45,7 @@ class ProjectsController < ApplicationController
   private
     def project_params
       params.require(:project).permit(:name, :description, :target,
-        :category_id, :full_description, :expiration_time).merge({
+        :category_id, :full_description, :expiration_time, :avatar).merge({
           user_id: current_user.id
         })
     end

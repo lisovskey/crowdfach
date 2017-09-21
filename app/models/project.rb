@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
+
   if Rails.env.production?
     include PgSearch
     pg_search_scope :search_everywhere, against: [:name, :description, :full_description]

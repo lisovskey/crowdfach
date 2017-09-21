@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916145959) do
+ActiveRecord::Schema.define(version: 20170921181958) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20170916145959) do
   create_table "projects", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
-    t.string "avatar", default: "", null: false
     t.float "target", default: 0.0, null: false
     t.float "balance", default: 0.0, null: false
     t.text "full_description", default: "", null: false
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170916145959) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "category_id"
+    t.string "avatar"
     t.index ["category_id"], name: "index_projects_on_category_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end

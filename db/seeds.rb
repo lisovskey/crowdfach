@@ -15,9 +15,24 @@ end
 user = User.new
 user.email = 'user@google.com'
 user.password = 'motherfucker'
+user.first_name = 'Chester'
+user.last_name = 'Bennington'
+user.admin = true
+File.open('public/uploads/user/avatar/1/vb.jpg') do |f|
+  user.avatar = f
+end
+user.skip_confirmation!
+user.save
+
+user = User.new
+user.email = 'user@apple.com'
+user.password = 'motherfucker'
 user.first_name = 'Max'
 user.last_name = 'Titovich'
 user.validated = true
+File.open('public/uploads/user/avatar/2/vabo.png') do |f|
+  user.avatar = f
+end
 user.skip_confirmation!
 user.save
 
@@ -51,8 +66,11 @@ project.full_description = full_description
 project.target = 5.12
 project.balance = 3.68
 project.category_id = 1
+File.open('public/uploads/project/avatar/1/vaultboy.jpg') do |f|
+  project.avatar = f
+end
 project.expiration_time = Time.zone.now + 10 * 60 * 60 * 24
-project.user_id = user.id
+project.user_id = 1
 project.save
 
 project = Project.new
@@ -62,8 +80,11 @@ project.full_description = full_description
 project.target = 3.84
 project.balance = 0.68
 project.category_id = 2
+File.open('public/uploads/project/avatar/2/boy.png') do |f|
+  project.avatar = f
+end
 project.expiration_time = Time.zone.now + 10 * 60
-project.user_id = user.id
+project.user_id = 1
 project.save
 
 project = Project.new
@@ -73,6 +94,9 @@ project.full_description = full_description
 project.target = 4.44
 project.balance = 7.93
 project.category_id = 3
+File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
+  project.avatar = f
+end
 project.expiration_time = Time.zone.now + 10
-project.user_id = user.id
+project.user_id = 2
 project.save

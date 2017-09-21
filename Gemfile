@@ -45,6 +45,7 @@ gem 'hamlit-rails'
 gem 'redcarpet'
 gem 'carrierwave', '~> 1.0'
 gem 'sucker_punch'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

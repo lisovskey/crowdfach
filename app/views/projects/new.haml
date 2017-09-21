@@ -17,6 +17,14 @@
             .col.s12.input-field
               = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
+            .col.s12.input-field.file-field
+              .btn.waves-effect.waves-light
+                %span= t('.image')
+                = f.file_field :avatar
+                = f.hidden_field :avatar_cache
+              .file-path-wrapper.input-field.fix
+                %label{:for => "filename"}= t('.avatar')
+                %input.file-path{:type => "text", :id => "filename"}
             .col.s12.m6.input-field
               = f.label :target, value: 'Target BTC'
               = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
