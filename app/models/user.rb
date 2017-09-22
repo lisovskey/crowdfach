@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   has_many :projects
   
-  validates_presence_of :email, :encrypted_password, :first_name, :last_name
+  validates_presence_of :email, :encrypted_password, :first_name, :last_name, :wallet
   validates :first_name, format: { with: /\A[a-zA-Z]+\z/, message: 'only letters allowed' },
                          length: { minimum: 2, maximum: 15 }
   validates :last_name, format: { with: /\A[a-zA-Z]+\z/, message: 'only letters allowed' },

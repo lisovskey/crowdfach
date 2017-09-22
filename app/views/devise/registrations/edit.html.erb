@@ -27,21 +27,25 @@
             </div>
 
             <div class="col s12 input-field">
-              <%= f.label :current_password %>
-              <%= f.password_field :current_password, required: true, autocomplete: "off" %>
+              <%= f.label :wallet %>
+              <%= f.text_field :wallet, required: true %>
             </div>
 
             <div class="col s12 input-field file-field">
               <div class="btn waves-effect waves-light">
-                <span><%= t('.image') %></span>
+                <span><%= t('form.image') %></span>
                 <%= f.file_field :avatar %>
-                <%= f.hidden_field :avatar_cache %>
               </div>
 
               <div class="file-path-wrapper input-field fix">
                 <label for="filename"><%= t('.avatar') %></label>
                 <input class="file-path" type="text" id="filename" value="<%= current_user.avatar_identifier %>">
               </div>
+            </div>
+
+            <div class="col s12 input-field">
+              <%= f.label :current_password %>
+              <%= f.password_field :current_password, required: true, autocomplete: "off" %>
             </div>
 
             <div class="col s12 m6 input-field">

@@ -15,5 +15,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
 
       t.timestamps null: false
     end
+
+    add_index :projects, :name
+    add_index :projects, :description
   end
 end

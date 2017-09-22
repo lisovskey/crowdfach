@@ -8,8 +8,9 @@ class Project < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
+  has_many :donations
 
-  validates_presence_of :name, :category_id, :description, :full_description, :target, :balance, :expiration_time
+  validates_presence_of :name, :category_id, :description, :full_description, :target, :balance, :expiration_time, :avatar
   validates :target, numericality: { greater_than_or_equal_to: 0.1, less_than_or_equal_to: 1000 }
   validates :name, length: { minimum: 2, maximum: 24 }  
   validates :description, length: { minimum: 128, maximum: 255 }
@@ -17,7 +18,7 @@ class Project < ApplicationRecord
   validate :check_expiration_time, on: :create
 
   before_save :capitalize_name
-  before_create :set_finilizer
+  after_create :set_finilizer
 
   def progress
     (balance / target * 100).round.to_s << '%'

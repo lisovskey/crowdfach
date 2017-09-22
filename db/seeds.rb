@@ -18,6 +18,7 @@ user.password = 'motherfucker'
 user.first_name = 'Chester'
 user.last_name = 'Bennington'
 user.admin = true
+user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
 File.open('public/uploads/user/avatar/1/vb.jpg') do |f|
   user.avatar = f
 end
@@ -30,6 +31,7 @@ user.password = 'motherfucker'
 user.first_name = 'Max'
 user.last_name = 'Titovich'
 user.validated = true
+user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
 File.open('public/uploads/user/avatar/2/vabo.png') do |f|
   user.avatar = f
 end
@@ -52,11 +54,17 @@ Ut enim ad minim veniam,\r
   ut aliquip ex ea commodo consequat.\r
 ```\r
 \r
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r
+Lorem ipsum dolor sit amet, consectetur **adipiscing** elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud **exercitation** ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r
 \r
- - first\r
- - second\r
- - third\r
+#### Lorem Lorem Lorem\r
+ - first dolor\r
+ - second dolor\r
+ - third dolor\r
+ - fourth dolor\r
+\r
+Excepteur sint occaecat cupidatat non proident, sunt in *culpa qui officia* deserunt mollit anim id est laborum.\r
+##### laborum laborum laborum\r
+###### deserunt deserunt
 END
 
 project = Project.new

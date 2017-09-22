@@ -3,8 +3,6 @@ class Ability
 
   def initialize(user)
     alias_action :create, :read, :update, :destroy, to: :crud
-    # Define abilities for the passed in user here. For example:
-    #
     user ||= User.new
     if user.admin
       can :manage, :all
@@ -14,6 +12,7 @@ class Ability
       can :crud, Project, user_id: user.id
     end
     can :read, :all
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

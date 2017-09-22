@@ -19,8 +19,8 @@
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
             .col.s12.input-field.file-field
               .btn.waves-effect.waves-light
-                %span= t('.image')
-                = f.file_field :avatar
+                %span= t('form.image')
+                = f.file_field :avatar, required: true
                 = f.hidden_field :avatar_cache
               .file-path-wrapper.input-field.fix
                 %label{:for => "filename"}= t('.avatar')
@@ -33,4 +33,4 @@
               = f.text_field :expiration_time, class: 'datepicker', required: true
           .row
             .col.s12
-              = f.button t('.create_project'), class: 'full-width waves-effect waves-light btn-large'
+              = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large'

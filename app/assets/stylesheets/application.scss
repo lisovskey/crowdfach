@@ -133,6 +133,11 @@ i.material-icons.left {
   width: 100%;
 }
 
+.recaptcha {
+  display: table;
+  margin: 0 auto;
+}
+
 input[type=number] {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -297,6 +302,7 @@ input[type=number] {
     & .brand-logo {
       font-family: 'Amaranth', 'Roboto', sans-serif;
       line-height: 60px;
+      font-size: 2.2rem;
       padding-bottom: 4px;
     }
 

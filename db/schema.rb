@@ -10,12 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921181958) do
+ActiveRecord::Schema.define(version: 20170922111736) do
+
+  create_table "bitcoin_payment_transactions", force: :cascade do |t|
+    t.integer "estimated_value"
+    t.string "transaction_hash"
+    t.string "block_hash"
+    t.datetime "block_time"
+    t.datetime "estimated_time"
+    t.integer "bitcoin_payment_id"
+    t.integer "btc_conversion"
+    t.index ["bitcoin_payment_id"], name: "index_bitcoin_payment_transactions_on_bitcoin_payment_id"
+  end
+
+  create_table "bitcoin_payments", force: :cascade do |t|
+    t.string "payable_type"
+    t.integer "payable_id"
+    t.string "currency"
+    t.string "reason"
+    t.integer "price"
+    t.float "btc_amount_due", default: 0.0
+    t.string "address"
+    t.string "state", default: "pending"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "btc_conversion"
+    t.index ["payable_type", "payable_id"], name: "index_bitcoin_payments_on_payable_type_and_payable_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "currency_conversions", force: :cascade do |t|
+    t.float "currency"
+    t.integer "btc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "donations", force: :cascade do |t|
+    t.float "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "product_id"
+    t.index ["product_id"], name: "index_donations_on_product_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -33,6 +74,8 @@ ActiveRecord::Schema.define(version: 20170921181958) do
     t.integer "category_id"
     t.string "avatar"
     t.index ["category_id"], name: "index_projects_on_category_id"
+    t.index ["description"], name: "index_projects_on_description"
+    t.index ["name"], name: "index_projects_on_name"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -42,7 +85,6 @@ ActiveRecord::Schema.define(version: 20170921181958) do
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "full_name", default: "", null: false
-    t.string "avatar_url", default: "", null: false
     t.integer "rating", default: 0, null: false
     t.boolean "admin", default: false, null: false
     t.boolean "validated", default: false, null: false
@@ -57,9 +99,26 @@ ActiveRecord::Schema.define(version: 20170921181958) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "avatar"
+    t.string "wallet"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "validations", force: :cascade do |t|
+    t.string "no"
+    t.date "expiration_date"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "country"
+    t.string "city"
+    t.string "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "scan"
+    t.index ["user_id"], name: "index_validations_on_user_id"
   end
 
 end

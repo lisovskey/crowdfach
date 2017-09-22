@@ -113,9 +113,13 @@ main {
     }
   }
 
-  & .btn-large, & .btn {
+  & .btn-large, & .btn, & .btn-floating {
     background-color: $second-color;
-    color: $background-color;    
+    color: $background-color; 
+    
+    & i {
+      color: $background-color; 
+    }
   }
 
   & .btn-flat {

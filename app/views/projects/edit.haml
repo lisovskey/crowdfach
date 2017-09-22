@@ -3,7 +3,7 @@
     .card
       .card-content
         %h3.center-align= t('.edit')
-        = form_for(@project, html: { method: :put, multipart: true }) do |f|
+        = form_for(@project, url: project_path(@project), html: { method: :put, multipart: true }) do |f|
           .row.fix
             .col.s12.m6.input-field
               = f.label :name
@@ -15,18 +15,20 @@
             .col.s12.input-field
               = f.label :description
               = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
-          .row.fix
             .col.s12.input-field
               = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
             .col.s12.input-field.file-field
               .btn.waves-effect.waves-light
-                %span= t('.image')
-                = f.file_field :avatar
+                %span= t('form.image')
+                = f.file_field :avatar, required: true
                 = f.hidden_field :avatar_cache
               .file-path-wrapper.input-field.fix
                 %label{:for => "filename"}= t('.avatar')
-                %input.file-path{:type => "text", :id => "filename"}
+                %input.file-path{:type => "text", :id => "filename", value: @project.avatar_identifier}
           .row
             .col.s12
-              = f.button t('.save_project'), class: 'full-width waves-effect waves-light btn-large'
+              = f.button t('.save'), class: 'full-width waves-effect waves-light btn-large'
+        .row.fix
+          .col.s12.center-align
+            = button_to t('.destroy'), project_path(@project), data: { confirm: "Are you sure?" }, method: :delete, class: 'waves-effect btn-flat'

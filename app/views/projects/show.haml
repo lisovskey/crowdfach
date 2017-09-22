@@ -1,8 +1,8 @@
 .row.fix
   .col.s12
     %h2.center-align= @project.name
-.row
-  .col.s12
+.row.fix
+  .col.s12.l8
     .card#project_page
       .card-stacked
         .card-content
@@ -18,3 +18,7 @@
             .col.s8.right-align
               .chip.fade= @project.category.name
               .chip.fade= @project.user.full_name
+  .col.s12.l4
+    - [0.0001, 0.001, 0.01].each do |price|
+      = render 'aim', project: @project, price: price, description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    

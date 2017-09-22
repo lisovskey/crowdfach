@@ -6,4 +6,24 @@
   & #control i {
     font-size: 24px !important;
   }
+
+  & .card-upper {
+    position: relative;
+    height: 3.6rem;
+    padding: 24px;
+    
+    & span {
+      line-height: 2.6rem;
+    }
+  }
+}
+
+.modal {
+  & p {
+    margin: 0 !important;
+  }
+
+  & .modal-footer {
+    padding: 4px 20px !important;
+  }
 }

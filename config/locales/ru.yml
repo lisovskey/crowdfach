@@ -9,7 +9,15 @@ ru:
         password: "Пароль"
         password_confirmation: "Пароль еще раз"
         current_password: "Текущий пароль"
-        remember_me: "Запомнить"     
+        remember_me: "Запомнить"
+      project:
+        name: "Заголовок"
+        description: "Краткое Описание"
+        full_description: "Полное Описание (с поддержкой Markdown)"
+        category: "Категория"
+        avatar: "Аватар"
+        target: "Цель в BTC"
+        expiration_time: "Дата Истечения"
   language:
     english: "Английский"
     russian: "Русский"
@@ -42,15 +50,21 @@ ru:
   projects:
     new:
       project_creation: "Создание Проекта"
-      create_project: "Создать проект"
+      create: "Создать проект"
       image: "Изображение"
     edit:
       edit: "Редактирование Проекта"
-      save_project: "Сохранить"
+      save: "Сохранить"
+      destroy: "Удалить Проект"
     section:
       more: "Ещё"
     show:
       edit: "Изменить"
+    aim:
+      from: "От"
+      transaction: "Совершение Транзакции"
+      agreement: "Мы не несем ответственность за Ваши средства. Вы делаете это на свой страх и риск."
+      submit: "Отправить"
   sections:
     index:
       slogan: "из заславля с любовью"
@@ -61,6 +75,11 @@ ru:
   results:
     index:
       nothing_found: "Ничего не найдено"
+  validations:
+    new:
+      validation: "Верификация"
+      scan: "Фотография паспорта"
+      create: "Отправить"
   project:
     invested: "Вложено"
     raised: "Собрано"

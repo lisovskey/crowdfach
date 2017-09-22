@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 1.2'
-# gem 'recaptcha', require: 'recaptcha/rails'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 gem 'materialize-sass'
 gem 'material_icons'
@@ -44,7 +44,10 @@ gem 'hamlit-rails'
 
 gem 'redcarpet'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 gem 'sucker_punch'
+
+gem 'bitcoin_payable', git: 'https://github.com/Sailias/bitcoin_payable', branch: 'releases/rails-5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -55,6 +58,7 @@ group :development, :test do
   gem 'listen', '>= 3.0.5'
   gem 'sqlite3'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
   # Adds support for Capybara system testing and selenium driver
   # gem 'capybara', '~> 2.13'
   # gem 'selenium-webdriver'

@@ -10,6 +10,7 @@ capybara-*.html
 /spec/tmp
 /test
 /public/assets
+/.vscode
 *.orig
 rerun.txt
 pickle-email-*.html
