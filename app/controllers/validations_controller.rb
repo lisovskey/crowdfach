@@ -8,7 +8,7 @@ class ValidationsController < ApplicationController
     @validation.scan = params[:validation][:scan]  
     respond_to do |format|
       if @validation.save
-        format.html { redirect_to root_path, notice: "We've recieved your information. Wait for confirmation" }
+        format.html { redirect_to projects_path, notice: "We've recieved your information. Wait for confirmation" }
       else
         flash[:error] = @validation.errors.full_messages.first
         format.html { render :new }

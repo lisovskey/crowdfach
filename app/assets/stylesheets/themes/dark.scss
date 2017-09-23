@@ -151,6 +151,10 @@ main {
       }
     }
   }
+
+  & #status {
+    color: $text-color;
+  }
 }
 
 footer {

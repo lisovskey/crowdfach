@@ -22,7 +22,10 @@
             = t('project.raised')
           .col.s4
             - if project.finished
-              %b= project.finish_status
+              %b
+                = project.finish_status
+                %br              
+                = t('project.finished')
             - else
               %b= project.remain
               %br

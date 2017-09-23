@@ -5,7 +5,6 @@
         <h3 class="center-align"><%= t('.new') %></h3>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
-          <%= devise_error_messages! %>
           <div class="row">
             <div class="col s12 input-field">
               <%= f.label :email %>

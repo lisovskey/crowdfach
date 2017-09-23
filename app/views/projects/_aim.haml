@@ -1,23 +1,26 @@
 .row.fix
   .col.s12
     .card
-      .card-upper
-        %span.card-title
-          = t('.from')
-          %b
-            = price
-            BTC
-        %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << price.to_s}
-          %i.material-icons attach_money
-      .card-content
-        %p= description
-.modal{:id => price.to_s}
-  = form_tag(:donate_project, method: 'post') do
-    .modal-content
-      %h4.center-align= t('.transaction')
-      .input-field
-        = number_field_tag :donate, price, step: 0.0001, min: 0.0001, required: true
-        = label_tag :donate, 'Amount'
-      %p.fade= t('.agreement')
-    .modal-footer
-      = button_tag t('.submit'), type: 'submit', class: 'modal-action waves-effect btn-flat'
+      %div{:class => aim_class(project.finished)}
+        .card-upper
+          %span.card-title
+            = t('.from')
+            %b
+              = price
+              BTC
+          - unless project.finished
+            %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << price.to_s}
+              %i.material-icons attach_money
+        .card-content
+          %p= description
+- unless project.finished    
+  .modal{:id => price.to_s}
+    = form_for Donation.new do |f|
+      .modal-content
+        %h4.center-align= t('.transaction')
+        .input-field
+          = f.number_field :donate, value: price, step: 0.0001, min: 0.0001, required: true
+          = f.label :donate, t('.amount')
+        %p.fade= t('.agreement')
+      .modal-footer
+        = f.button t('.submit'), class: 'modal-action waves-effect btn-flat'

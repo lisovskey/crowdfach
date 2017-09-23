@@ -1,7 +1,7 @@
 class Validation < ApplicationRecord
   mount_uploader :scan, ScanUploader
 
-  has_one :user
+  belongs_to :user
 
   validates_presence_of :no, :first_name, :last_name, :address, :city, :scan, :country, :index
   before_save :upper_name

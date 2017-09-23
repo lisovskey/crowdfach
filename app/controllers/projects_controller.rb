@@ -1,6 +1,9 @@
 class ProjectsController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!, only: [:new, :create]
+
+  def index
+    @projects = current_user.projects
+  end
 
   def show
     @project = Project.find params[:id]

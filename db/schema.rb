@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922111736) do
+ActiveRecord::Schema.define(version: 20170923145350) do
 
   create_table "bitcoin_payment_transactions", force: :cascade do |t|
     t.integer "estimated_value"
@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(version: 20170922111736) do
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
-    t.index ["product_id"], name: "index_donations_on_product_id"
+    t.integer "project_id"
+    t.integer "user_id"
+    t.index ["project_id"], name: "index_donations_on_project_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -92,6 +94,9 @@ ActiveRecord::Schema.define(version: 20170922111736) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -100,9 +105,11 @@ ActiveRecord::Schema.define(version: 20170922111736) do
     t.datetime "confirmation_sent_at"
     t.string "avatar"
     t.string "wallet"
+    t.integer "validation_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["validation_id"], name: "index_users_on_validation_id"
   end
 
   create_table "validations", force: :cascade do |t|
@@ -116,8 +123,8 @@ ActiveRecord::Schema.define(version: 20170922111736) do
     t.string "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.string "scan"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_validations_on_user_id"
   end
 

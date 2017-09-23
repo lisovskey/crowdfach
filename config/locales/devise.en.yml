@@ -48,7 +48,7 @@ en:
       edit:
         edit: "Settings"
         update: "Update"
-        destroy: "Remove Account"
+        destroy: "Remove Account"  
       new:
         new: "Sign Up"
         image: "Image"

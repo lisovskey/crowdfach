@@ -12,17 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :projects, except: :index do
-    member do
-      post 'donate'
-    end
-  end
-
-  get '/projects' => 'users#projects'
   get 'search' => 'results#index'
   
+  resources :projects
   resources :categories, path: '', only: :show, param: :name
-  resources :validations, only: [:new, :create]  
+  resources :validations, only: [:new, :create]
+  resources :donations, only: [:index, :create]
 
   root 'sections#index'
 end

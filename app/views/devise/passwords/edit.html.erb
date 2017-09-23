@@ -9,12 +9,12 @@
           <%= f.hidden_field :reset_password_token %>
 
           <div class="col s12 m6 input-field">
-            <%= f.label :password, "New password" %>
+            <%= f.label :password %>
             <%= f.password_field :password, autofocus: true, autocomplete: "off", required: true %>
           </div>
 
           <div class="col s12 m6 input-field">
-            <%= f.label :password_confirmation, "Confirm new password" %>
+            <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, autocomplete: "off", required: true %>
           </div>
 

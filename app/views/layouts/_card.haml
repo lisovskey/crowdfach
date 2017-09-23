@@ -23,7 +23,9 @@
           = t('project.raised')
         %li
           - if project.finished
-            %b= project.finish_status
+            %b
+              = project.finish_status
+              = t('project.finished')
           - else
             %b= project.remain
             = t('project.remains')

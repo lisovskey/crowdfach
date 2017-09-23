@@ -2,8 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#title {
+  margin-bottom: 6px;
+}
+
+#status {
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .card {
-  & #control i {
+  & i#edit {
     font-size: 24px !important;
   }
 

@@ -29,23 +29,23 @@ class Project < ApplicationRecord
   end
 
   def finish_status
-    successful ? I18n.t('project.status.successful') : I18n.t('project.status.failed') if finished
+    successful ? I18n.t('project.successfully') : I18n.t('project.poorly') if finished
   end
 
   def remain
     time = expiration_time - Time.zone.now
-    if time < 60
+    if time < 1.minute
       I18n.t('datetime.few')
-    elsif time / 60 < 60
-      (time / 60).round.to_s << I18n.t('datetime.minutes')
-    elsif time / 60 / 60 < 24
-      (time / 60 / 60).round.to_s << I18n.t('datetime.hours')
-    elsif time / 60 / 60 / 24 < 30
-      (time / 60 / 60 / 24).round.to_s << I18n.t('datetime.days')
-    elsif time / 60 / 60 / 24 / 30 < 12
-      (time / 60 / 60 / 24 / 30).round.to_s << I18n.t('datetime.months')
+    elsif time / 1.minute < 60
+      (time / 1.minute).round.to_s << I18n.t('datetime.minutes')
+    elsif time / 1.hour < 24
+      (time / 1.hour).round.to_s << I18n.t('datetime.hours')
+    elsif time / 1.day < 30
+      (time / 1.day).round.to_s << I18n.t('datetime.days')
+    elsif time / 1.day / 30 < 12
+      (time / 1.day / 30).round.to_s << I18n.t('datetime.months')
     else
-      (time / 60 / 60 / 24 / 30 / 12).round.to_s << I18n.t('datetime.years')
+      (time / 1.day / 30 / 12).round.to_s << I18n.t('datetime.years')
     end
   end
 
