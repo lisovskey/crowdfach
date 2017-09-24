@@ -51,12 +51,8 @@ $border-color: rgba(150, 150, 150, 0.4);
     min-width: 14em;    
   }
 
-  .slogan {
-    height: 115%;
-
-    p {
-      font-size: 2.5rem;    
-    }
+  .slogan p {
+    font-size: 2.8rem;    
   }
 
   .parallax-container {
@@ -73,12 +69,8 @@ $border-color: rgba(150, 150, 150, 0.4);
     min-width: 8em;
   }
 
-  .slogan {
-    height: 115%;
-
-    p {
-      font-size: 1.2rem;    
-    }
+  .slogan p {
+    font-size: 1.5rem;    
   }
 
   .parallax-container {
@@ -107,6 +99,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
+  position: relative;
 }
 
 .row.fix {
@@ -138,6 +131,11 @@ i.material-icons.left {
   margin: 0 auto;
 }
 
+.slogan {
+  text-transform: uppercase;
+  height: 120%;
+}
+
 input[type=number] {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -154,18 +152,16 @@ input[type=number] {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 4px 0 rgba(0, 0, 0, 0.3)
 }
 
-.slogan {
-  position: relative;
-
-  & p {
-    font-family: 'Roboto Mono', 'monospace';
-    color: white;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  }
+.shadow-header {
+  color: white !important;
+  font-weight: 600;  
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
 
-.parallax-container {
+.screen-width {
   position: absolute;
+  overflow: hidden;
   width: 100%;
   top: 0;
   left: 0;
@@ -209,14 +205,16 @@ input[type=number] {
   opacity: 0.5 !important;
 }
 
+.image {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .card {
   & a {
     margin: 0 !important;
-  }
-
-  & .image {
-    background-position: center;
-    background-size: cover;
   }
 
   & .card-title {
@@ -309,6 +307,7 @@ input[type=number] {
       line-height: 60px;
       font-size: 2.2rem;
       padding-bottom: 4px;
+      transition: 0.4s ease color;
     }
 
     & #avatar {

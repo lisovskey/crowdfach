@@ -1,4 +1,7 @@
 en:
+  unauthorized:
+    manage:
+      all: "You have no access to do this"
   form:
     image: "Image"
   language:
@@ -37,12 +40,10 @@ en:
       edit: "Edit Project"
       save: "Save Project"
       destroy: "Delete Project"
-    section:
-      more: "More"
     show:
       edit: "Edit"
       invest: "Invest"
-    aim:
+    reward:
       from: "From"
       transaction: "Make a Transaction"
       agreement: "We are not responsible for your facilities. You are making it at your own risk."
@@ -51,10 +52,8 @@ en:
   sections:
     index:
       slogan: "from zaslavl with love"      
-      our_choice: "Our Choice"
-      popular: "Most Popular"
-      successful: "Successfully financed"
-      recent: "Recently Established"
+    row:
+      more: "More"     
   results:
     index:
       nothing_found: "Nothing was found"
@@ -63,6 +62,11 @@ en:
       validation: "Validation"
       scan: "Passport Last Page"
       create: "Validate Account"
+    create:
+      success: "We've recieved your information. Wait for confirmation"
+  donations:
+    create:
+      success: "Transaction was successfully created"
   project:
     invested: "Invested"
     raised: "Raised"
@@ -70,6 +74,11 @@ en:
     finished: "Finished"
     successfully: "Successfully"
     poorly: "Poorly"
+  section:
+    our_choice: "Our Choice"
+    popular: "Most Popular"
+    successful: "Successfully financed"
+    recent: "Recently Established"
   activerecord:
     attributes:
       user:
@@ -99,4 +108,4 @@ en:
             password:
               too_short: "Password is too short"
             password_confirmation:
-              confirmation: "Password are not matching"
+              confirmation: "Passwords are not matching"

@@ -9,7 +9,7 @@ class Ability
       can :access, :rails_admin
       can :dashboard
     elsif user.validated?
-      can :crud, Project, user_id: user.id
+      can :crud, Project, finished: false, user_id: user.id
     end
     can :read, :all
 

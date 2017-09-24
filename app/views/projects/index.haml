@@ -3,7 +3,7 @@
     %h3= t('.my_projects')
   - @projects.each do |project|
     = render 'layouts/horizontal_card', project: project
-.row
+.row.fix
   .col.s12
     - if can?(:create, Project)
       .row
@@ -11,7 +11,7 @@
           = link_to t('.new_project'), new_project_path, class: 'full-width waves-effect waves-light btn-large'
     - else
       .row
-        .col.s12.m6.offset-m3          
+        .col.s12.m6.offset-m3
           %a.full-width.btn-large.disabled.tooltipped{"data-position" => "top", "data-tooltip" => t('.not_validated')}= t('.new_project')
       .row.fix
         .col.s12.m6.offset-m3

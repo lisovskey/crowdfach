@@ -1,5 +1,9 @@
 ru:
-
+  unauthorized:
+    manage:
+      all: "Не дозволено"
+  form:
+    image: "Пикча"
   language:
     english: "Английский"
     russian: "Русский"
@@ -34,15 +38,13 @@ ru:
       create: "Создать проект"
       image: "Изображение"
     edit:
-      edit: "Редактирование Проекта"
+      edit: "Изменение   Проекта"
       save: "Сохранить"
       destroy: "Удалить Проект"
-    section:
-      more: "Ещё"
     show:
       edit: "Изменить"
       invest: "Вложиться"
-    aim:
+    reward:
       from: "От"
       transaction: "Совершение Транзакции"
       agreement: "Мы не несем ответственность за Ваши средства. Вы делаете это на свой страх и риск."
@@ -51,10 +53,8 @@ ru:
   sections:
     index:
       slogan: "из заславля с любовью"
-      our_choice: "Выбор редакции"
-      popular: "Самые Популярные"
-      successful: "Успешно Завершенные"
-      recent: "Недавно Созданные"
+    row:
+      more: "Еще"  
   results:
     index:
       nothing_found: "Ничего не найдено"
@@ -63,6 +63,11 @@ ru:
       validation: "Верификация"
       scan: "Фотография паспорта"
       create: "Отправить"
+    create:
+      success: "Мы получили Ваши данные. Ожидайте подтверждения"
+  donations:
+    create:
+      success: "Транзакция совершена"
   project:
     invested: "Вложено"
     raised: "Собрано"
@@ -70,6 +75,11 @@ ru:
     finished: "Завершен"
     successfully: "Успешно"
     poorly: "Неудачно"
+  section:
+    our_choice: "Выбор редакции"
+    popular: "Самые Популярные"
+    successful: "Успешно Завершенные"
+    recent: "Недавно Созданные"
   activerecord:
     attributes:
       user:

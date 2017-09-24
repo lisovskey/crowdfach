@@ -13,7 +13,7 @@ module ProjectsHelper
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
   end
 
-  def aim_class(finished)
+  def reward_class(finished)
     'fade default-cursor' if finished
   end
 end

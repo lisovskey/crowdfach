@@ -6,10 +6,10 @@ $background-color: color("grey", "darken-4");
 $text-color:  white;
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+  ::-webkit-input-placeholder { @content };
+  :-moz-placeholder           { @content };
+  ::-moz-placeholder          { @content };
+  :-ms-input-placeholder      { @content };
 }
 
 @include placeholder {
@@ -83,6 +83,10 @@ nav {
     & i.material-icons {
       color: $text-color !important;
     }
+  }
+
+  & .brand-logo:hover {
+    color: $second-color;
   }
 }
 

@@ -1,7 +1,7 @@
 .row.fix
   .col.s12
     .card
-      %div{:class => aim_class(project.finished)}
+      %div{:class => reward_class(project.finished)}
         .card-upper
           %span.card-title
             = t('.from')
@@ -15,7 +15,7 @@
           %p= description
 - unless project.finished    
   .modal{:id => price.to_s}
-    = form_for Donation.new do |f|
+    = form_for Donation.new project_id: project.id do |f|
       .modal-content
         %h4.center-align= t('.transaction')
         .input-field

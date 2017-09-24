@@ -3,7 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #title {
-  margin-bottom: 6px;
+  margin-bottom: 2px;
+}
+
+#cover {
+  height: 650px;
+  -webkit-mask-image: -webkit-linear-gradient(rgba(0,0,0,1) 40%, rgba(0,0,0,0));
+
+  & > .image {
+    filter: blur(20px);
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
 }
 
 #status {

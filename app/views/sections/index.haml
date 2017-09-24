@@ -1,10 +1,10 @@
-.parallax-container
+.parallax-container.screen-width
   .parallax
     = image_tag 'index'
   .slogan.full-width.valign-wrapper
-    %p.full-width.center-align= '< ' << t('.slogan') << ' >'
+    %p.shadow-header.full-width.center-align= t('.slogan')
 %section#content
-  = render 'section', title: t('.our_choice'), projects: @chosen_projects
-  = render 'section', title: t('.popular'), projects: @popular_projects
-  = render 'section', title: t('.recent'), projects: @last_projects
-  = render 'section', title: t('.successful'), projects: @successful_projects
+  = render 'row', name: :our_choice, projects: @chosen_projects
+  = render 'row', name: :popular, projects: @popular_projects
+  = render 'row', name: :recent, projects: @last_projects
+  = render 'row', name: :successful, projects: @successful_projects

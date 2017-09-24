@@ -74,6 +74,7 @@ project.full_description = full_description
 project.target = 5.12
 project.balance = 3.68
 project.category_id = 1
+project.chosen = true
 File.open('public/uploads/project/avatar/1/vaultboy.jpg') do |f|
   project.avatar = f
 end
@@ -82,12 +83,13 @@ project.user_id = 1
 project.save
 
 project = Project.new
-project.name = 'Etherium Classic'
+project.name = 'Ethereum Classic'
 project.description = description
 project.full_description = full_description
 project.target = 3.84
 project.balance = 0.68
 project.category_id = 2
+project.chosen = true
 File.open('public/uploads/project/avatar/2/boy.png') do |f|
   project.avatar = f
 end
@@ -102,6 +104,7 @@ project.full_description = full_description
 project.target = 4.44
 project.balance = 7.93
 project.category_id = 3
+project.chosen = true
 File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
   project.avatar = f
 end

@@ -1,3 +1,6 @@
-.row
+.row.fix
   .col.s12
-    %h3 TODO
+    %h4= t('section.' << @name.to_s)
+    .row.fix
+      - @projects.each do |project|
+        = render 'layouts/card', project: project

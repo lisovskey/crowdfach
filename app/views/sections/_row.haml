@@ -1,13 +1,13 @@
 .row.valign-wrapper.fix
   .col.s12.hide-on-med-and-up
-    %h4= title
+    %h4= t('section.' << name.to_s)
   .col.s8.hide-on-small-and-down
-    %h4= title
+    %h4= t('section.' << name.to_s)
   .col.s4.hide-on-small-and-down
-    = link_to t('.more'), '#', class: 'btn-flat waves-effect right narrow'
+    = link_to t('.more'), section_path(name), class: 'btn-flat waves-effect right narrow'
 .row.fix#section-row
   - projects.each do |project|
     = render 'layouts/card', project: project
 .row.hide-on-med-and-up
   .col.s12.center-align
-    = link_to t('.more'), '#', class: 'btn-flat waves-effect'
+    = link_to t('.more'), section_path(name), class: 'btn-flat waves-effect'

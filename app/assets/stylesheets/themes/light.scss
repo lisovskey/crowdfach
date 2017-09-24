@@ -84,6 +84,10 @@ nav {
       color: $text-color !important;
     }
   }
+
+  & .brand-logo:hover {
+    color: $second-color;
+  }
 }
 
 main {

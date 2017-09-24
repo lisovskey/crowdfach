@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170923145350) do
+ActiveRecord::Schema.define(version: 20170924173118) do
 
   create_table "bitcoin_payment_transactions", force: :cascade do |t|
     t.integer "estimated_value"
@@ -75,7 +75,9 @@ ActiveRecord::Schema.define(version: 20170923145350) do
     t.integer "user_id"
     t.integer "category_id"
     t.string "avatar"
+    t.boolean "chosen", default: false
     t.index ["category_id"], name: "index_projects_on_category_id"
+    t.index ["chosen"], name: "index_projects_on_chosen"
     t.index ["description"], name: "index_projects_on_description"
     t.index ["name"], name: "index_projects_on_name"
     t.index ["user_id"], name: "index_projects_on_user_id"

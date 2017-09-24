@@ -2,7 +2,7 @@ class DonationsController < ApplicationController
   def create
     @donation = Donation.new donation_params
     if @donation.save
-      redirect_to Project.find(@donation.project_id), notice: 'Transaction was successfully created'
+      redirect_to Project.find(@donation.project_id), notice: I18n.t '.success'
     else
       flash[:error] = @donation.errors.full_messages.first
       redirect_to root_path
