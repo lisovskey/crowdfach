@@ -33,6 +33,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 1.2'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'commontator', git: 'https://github.com/lml/commontator', branch: 'rails5'
 
 gem 'materialize-sass'
 gem 'material_icons'
@@ -48,6 +49,7 @@ gem 'mini_magick'
 gem 'sucker_punch'
 
 gem 'bitcoin_payable', git: 'https://github.com/Sailias/bitcoin_payable', branch: 'releases/rails-5.1'
+gem 'rqrcode'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

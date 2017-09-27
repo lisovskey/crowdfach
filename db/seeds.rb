@@ -89,7 +89,7 @@ project.full_description = full_description
 project.target = 3.84
 project.balance = 0.68
 project.category_id = 2
-project.chosen = true
+project.chosen = false
 File.open('public/uploads/project/avatar/2/boy.png') do |f|
   project.avatar = f
 end
@@ -109,5 +109,20 @@ File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
   project.avatar = f
 end
 project.expiration_time = Time.zone.now + 10
+project.user_id = 2
+project.save
+
+project = Project.new
+project.name = 'Nuka Cola'
+project.description = description
+project.full_description = full_description
+project.target = 10.48
+project.balance = 8.93
+project.category_id = 4
+project.chosen = true
+File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
+  project.avatar = f
+end
+project.expiration_time = Time.zone.now + 10 * 60 * 60
 project.user_id = 2
 project.save

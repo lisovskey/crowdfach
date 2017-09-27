@@ -23,6 +23,15 @@
   font-weight: 500;
 }
 
+.comment_form_field, .comment_form_field textarea {
+  margin: 4px 0 2px 0 !important;
+}
+
+.comment_avatar {
+  height: 64px;
+  width: 64px;
+}
+
 .card {
   & i#edit {
     font-size: 24px !important;

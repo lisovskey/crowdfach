@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  acts_as_commontable
+  
   mount_uploader :avatar, AvatarUploader
 
   if Rails.env.production?

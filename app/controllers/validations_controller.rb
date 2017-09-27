@@ -1,4 +1,6 @@
 class ValidationsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @validation = Validation.new
   end
@@ -8,7 +10,7 @@ class ValidationsController < ApplicationController
     @validation.scan = params[:validation][:scan]  
     respond_to do |format|
       if @validation.save
-        format.html { redirect_to projects_path, notice: I18n.t '.success' }
+        format.html { redirect_to projects_path, notice: I18n.t('.success') }
       else
         flash[:error] = @validation.errors.full_messages.first
         format.html { render :new }

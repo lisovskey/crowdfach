@@ -65,6 +65,14 @@ input[type=checkbox]:checked {
   }
 }
 
+.turbolinks-progress-bar {
+  background-color: $second-color;
+}
+
+.thread_reply {
+  color: $text-color;
+}
+
 nav {
   background-color: $first-color;
   

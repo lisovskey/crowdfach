@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find params[:id]
+    commontator_thread_show @project
+    @donation = Donation.new
   end
 
   def new

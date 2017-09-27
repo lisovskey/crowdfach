@@ -2,6 +2,13 @@ en:
   unauthorized:
     manage:
       all: "You have no access to do this"
+  commontator:
+    comments:
+      form:
+        enter_comment: "Enter comment"
+        send: "Send"
+        update: "Update"
+        hint: "Shift+Enter - New line, Enter - Submit"
   form:
     image: "Image"
   language:
@@ -43,6 +50,7 @@ en:
     show:
       edit: "Edit"
       invest: "Invest"
+      comments: "Comments"
     reward:
       from: "From"
       transaction: "Make a Transaction"
@@ -58,12 +66,11 @@ en:
     index:
       nothing_found: "Nothing was found"
   validations:
+    success: "We've recieved your information. Wait for confirmation"
     new:
       validation: "Validation"
       scan: "Passport Last Page"
       create: "Validate Account"
-    create:
-      success: "We've recieved your information. Wait for confirmation"
   donations:
     create:
       success: "Transaction was successfully created"

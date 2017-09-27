@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+  acts_as_commontator
+  
   mount_uploader :avatar, AvatarUploader
+
   # :timeoutable :omniauthable
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :confirmable, :lockable

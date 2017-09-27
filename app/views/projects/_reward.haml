@@ -15,12 +15,12 @@
           %p= description
 - unless project.finished    
   .modal{:id => price.to_s}
-    = form_for Donation.new project_id: project.id do |f|
+    = form_for [project, @donation] do |f|
       .modal-content
         %h4.center-align= t('.transaction')
         .input-field
-          = f.number_field :donate, value: price, step: 0.0001, min: 0.0001, required: true
-          = f.label :donate, t('.amount')
+          = f.number_field :amount, value: price, step: 0.0001, min: 0.0001, required: true
+          = f.label :amount, t('.amount')
         %p.fade= t('.agreement')
       .modal-footer
         = f.button t('.submit'), class: 'modal-action waves-effect btn-flat'

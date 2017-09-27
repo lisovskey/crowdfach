@@ -8,8 +8,11 @@ class Ability
       can :manage, :all
       can :access, :rails_admin
       can :dashboard
-    elsif user.validated?
+    elsif user.validated
       can :crud, Project, finished: false, user_id: user.id
+    elsif user.confirmation_token
+      can :create, Donation, user_id: user.id
+      can :create, Validation, user_id: user.id
     end
     can :read, :all
 

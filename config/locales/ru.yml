@@ -2,6 +2,13 @@ ru:
   unauthorized:
     manage:
       all: "Не дозволено"
+  commontator:
+    comments:
+      form:
+        enter_comment: "Написать комментарий"
+        send: "Отправить"
+        update: "Обновить"
+        hint: "Shift+Enter - Новая строка, Enter - Отправить"
   form:
     image: "Пикча"
   language:
@@ -44,6 +51,7 @@ ru:
     show:
       edit: "Изменить"
       invest: "Вложиться"
+      comments: "Комментарии"
     reward:
       from: "От"
       transaction: "Совершение Транзакции"
