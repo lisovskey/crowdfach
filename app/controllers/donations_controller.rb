@@ -2,14 +2,7 @@ class DonationsController < ApplicationController
   load_and_authorize_resource
   
   def create
-    @donation = Donation.new donation_params
-    @donation.project_id = params[:project_id]
-    if @donation.save
-      redirect_to Project.find(@donation.project_id), notice: I18n.t('.success')
-    else
-      flash[:error] = @donation.errors.full_messages.first
-      redirect_to root_path
-    end
+    redirect_to Project.find(params[:project_id]), notice: 'TODO'
   end
 
   protected

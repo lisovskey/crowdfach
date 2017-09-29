@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def flash_toast
-    messages = []
-    flash.each do |type, message|
-      messages << "<script>Materialize.toast('#{message}', 3000);</script>"
+  def flash_toast(message=nil)
+    scripts = Array.new
+    (message ? {notice: message} : flash).each do |type, msg|
+      scripts << "<script>Materialize.toast('#{msg}', 3000);</script>" if msg
     end
-    messages.join('\n').html_safe
+    scripts.join('\n').html_safe
   end
 
   def app_name

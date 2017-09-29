@@ -19,7 +19,6 @@ class Project < ApplicationRecord
   validates :full_description, length: { minimum: 128, maximum: 10000 }  
   validate :check_expiration_time, on: :create
 
-  before_save :capitalize_name
   after_create :set_finilizer
 
   def progress
@@ -52,10 +51,6 @@ class Project < ApplicationRecord
   end
 
   private
-    def capitalize_name
-      name.capitalize!
-    end
-
     def check_expiration_time
       errors.add :base, 'time expired' if expiration_time < Time.zone.now
     end

@@ -23,13 +23,32 @@
   font-weight: 500;
 }
 
-.comment_form_field, .comment_form_field textarea {
-  margin: 4px 0 2px 0 !important;
+.comment_form_field{
+  margin: 8px 0 4px 0 !important;
+  
+  & textarea {
+    margin-bottom: 2px !important;  
+  }
 }
 
 .comment_avatar {
   height: 64px;
   width: 64px;
+  margin-right: 16px;
+}
+
+.comment_author {
+  padding-bottom: 4px;
+
+  & .comment_commontator {
+    font-weight: 300;
+    font-size: 22px;
+  }
+}
+
+.comment_timestamp {
+  padding-top: 4px;
+  font-size: 14px;
 }
 
 .card {

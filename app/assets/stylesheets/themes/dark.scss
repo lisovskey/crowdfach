@@ -123,6 +123,10 @@ main {
     & .chip {
       color: $text-color;
     }
+
+    & .comment_timestamp {
+      color: $text-color;
+    }
   }
 
   & .btn-large, & .btn, & .btn-floating {

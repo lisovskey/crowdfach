@@ -107,6 +107,11 @@ main {
       background-color: $first-color;
     }
 
+    & .current-progress {
+      height: inherit;
+      background-color: $second-color;
+    }
+
     & .card-content > p::after {
       background: linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%); 
       background: -moz-linear-gradient(to right, rgba(0, 0, 0, 0), $first-color 95%);
@@ -116,6 +121,10 @@ main {
     }
 
     & .chip {
+      color: $text-color;
+    }
+
+    & .comment_timestamp {
       color: $text-color;
     }
   }

@@ -1,4 +1,6 @@
 ru:
+  timestamp:
+    ago: " назад"
   unauthorized:
     manage:
       all: "Не дозволено"
@@ -89,6 +91,12 @@ ru:
     successful: "Успешно Завершенные"
     recent: "Недавно Созданные"
   activerecord:
+    models:
+      user: "Пользователь"
+      project: "Проект"
+      donation: "Вложение"
+      validation: "Валидация"
+      category: "Категория"
     attributes:
       user:
         first_name: "Имя"

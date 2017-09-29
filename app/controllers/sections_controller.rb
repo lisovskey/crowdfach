@@ -1,9 +1,9 @@
 class SectionsController < ApplicationController
   def index
-    @chosen_projects = pick_projects(:our_choice).last(3)
-    @popular_projects = pick_projects(:popular).last(3)
-    @last_projects = pick_projects(:recent).last(3)
-    @successful_projects = pick_projects(:successful).last(3)
+    @chosen_projects = pick_projects(:our_choice).first(3)
+    @popular_projects = pick_projects(:popular).first(3)
+    @last_projects = pick_projects(:recent).first(3)
+    @successful_projects = pick_projects(:successful).first(3)
   end
 
   def show

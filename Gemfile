@@ -48,9 +48,6 @@ gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'sucker_punch'
 
-gem 'bitcoin_payable', git: 'https://github.com/Sailias/bitcoin_payable', branch: 'releases/rails-5.1'
-gem 'rqrcode'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

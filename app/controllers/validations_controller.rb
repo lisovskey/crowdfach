@@ -7,7 +7,7 @@ class ValidationsController < ApplicationController
 
   def create
     @validation = Validation.new validation_params
-    @validation.scan = params[:validation][:scan]  
+    @validation.scan = params[:validation][:scan]
     respond_to do |format|
       if @validation.save
         format.html { redirect_to projects_path, notice: I18n.t('.success') }

@@ -1,4 +1,6 @@
 en:
+  timestamp:
+    ago: " ago"
   unauthorized:
     manage:
       all: "You have no access to do this"
@@ -87,6 +89,12 @@ en:
     successful: "Successfully financed"
     recent: "Recently Established"
   activerecord:
+    models:
+      user: "User"
+      project: "Project"
+      donation: "Donation"
+      validation: "Validation"
+      category: "Category"
     attributes:
       user:
         first_name: "First Name"

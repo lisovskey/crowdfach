@@ -113,14 +113,14 @@ project.user_id = 2
 project.save
 
 project = Project.new
-project.name = 'Nuka Cola'
+project.name = 'Nuka-Cola'
 project.description = description
 project.full_description = full_description
 project.target = 10.48
 project.balance = 8.93
 project.category_id = 4
 project.chosen = true
-File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
+File.open('public/uploads/project/avatar/4/nuka.jpg') do |f|
   project.avatar = f
 end
 project.expiration_time = Time.zone.now + 10 * 60 * 60
