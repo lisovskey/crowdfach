@@ -60,6 +60,7 @@ ru:
       agreement: "Мы не несем ответственность за Ваши средства. Вы делаете это на свой страх и риск."
       amount: "Сумма"
       submit: "Отправить"
+      not_authorized: "Вы не авторизированы"
   sections:
     index:
       slogan: "из заславля с любовью"
@@ -97,6 +98,15 @@ ru:
       donation: "Вложение"
       validation: "Валидация"
       category: "Категория"
+      commontator/comment: 
+        one: комментарий
+        other: комментарии
+      commontator/subscription: 
+        one: подписка
+        other: подписки
+      commontator/thread: 
+        one: обсуждение
+        other: обсуждения
     attributes:
       user:
         first_name: "Имя"
@@ -118,9 +128,30 @@ ru:
         avatar: "Аватар"
         target: "Цель в BTC"
         expiration_time: "Дата Истечения"
+      validation:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        number: "Номер и серия паспорта"
+        expiration_date: "Дата истечения"
+        scan: "Скан паспорта"
+        address: "Адрес"
+        country: "Страна"
+        city: "Город"
+        index: "Почтовый индекс"
+      commontator/comment: 
+        body: Комментарий
+        creator: Создал
+        editor: Редактировал
+        thread: Обсуждение
+      commontator/subscription: 
+        subscriber: Подписчик
+        thread: Обсуждение
+      commontator/thread: 
+        commontable: Комментируем
     errors:
       models:
         user:
+          latin: "Only latin letters allowed"
           attributes:
             password:
               too_short: "Слишком короткий пароль"

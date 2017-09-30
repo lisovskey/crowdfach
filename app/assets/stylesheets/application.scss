@@ -26,7 +26,7 @@ body.dark-theme {
 $border-color: rgba(150, 150, 150, 0.4);
 
 @media #{$medium-and-down} {
-  #section-row > .col:nth-last-child(-n+1) {
+  #section-row > .col:nth-child(3) {
     display: none;
   }
 }
@@ -41,12 +41,8 @@ $border-color: rgba(150, 150, 150, 0.4);
     min-width: 14em;    
   }
 
-  .slogan p {
-    font-size: 2.8rem;    
-  }
-
   .parallax-container {
-    height: 360px;
+    height: 16em;
   
     & img {
       bottom: -50px !important;
@@ -59,20 +55,12 @@ $border-color: rgba(150, 150, 150, 0.4);
     min-width: 8em;
   }
 
-  .slogan p {
-    font-size: 1.5rem;    
-  }
-
   .parallax-container {
     height: 230px;
 
     & img {
       bottom: -30px !important;
     }
-  }
-
-  #content {
-    margin-top: 170px !important;
   }
 }
 
@@ -104,6 +92,10 @@ i.material-icons.left {
   margin-right: 14px !important;
 }
 
+.section-header {
+  padding-top: 5em;
+}
+
 .dark-hover:hover:not(:focus) {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
@@ -119,11 +111,6 @@ i.material-icons.left {
 .recaptcha {
   display: table;
   margin: 0 auto;
-}
-
-.slogan {
-  text-transform: uppercase;
-  height: 120%;
 }
 
 input[type=number] {
@@ -153,9 +140,9 @@ input[type=number] {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  top: 0;
   left: 0;
-  
+  margin-top: -3em;
+
   & .parallax {
     position: static !important;
     pointer-events: none;
@@ -164,10 +151,6 @@ input[type=number] {
       width: 100%;
     }
   }
-}
-
-#content {
-  margin-top: 300px;
 }
 
 .narrow {
@@ -195,6 +178,12 @@ input[type=number] {
   opacity: 0.5 !important;
 }
 
+.more {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
 .image {
   background-position: center;
   background-size: cover;
@@ -203,6 +192,8 @@ input[type=number] {
 }
 
 .card {
+  z-index: 100;
+
   & a {
     margin: 0 !important;
   }
@@ -290,7 +281,7 @@ input[type=number] {
 }
 
 .navbar-fixed {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   & nav {
     height: 64px;

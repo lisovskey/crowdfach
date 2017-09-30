@@ -3,7 +3,7 @@ class Validation < ApplicationRecord
 
   has_one :user
 
-  validates_presence_of :no, :first_name, :last_name, :address, :city, :scan, :country, :index
+  validates_presence_of :number, :first_name, :last_name, :address, :city, :scan, :country, :index
   before_save :upper_name
   after_save :link_user
 

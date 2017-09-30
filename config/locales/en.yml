@@ -59,6 +59,7 @@ en:
       agreement: "We are not responsible for your facilities. You are making it at your own risk."
       amount: "Amount"
       submit: "Send"
+      not_authorized: "You are not logged in"
   sections:
     index:
       slogan: "from zaslavl with love"      
@@ -95,6 +96,15 @@ en:
       donation: "Donation"
       validation: "Validation"
       category: "Category"
+      commontator/comment: 
+        one: comment
+        other: comments
+      commontator/subscription: 
+        one: subscription
+        other: subscriptions
+      commontator/thread: 
+        one: thread
+        other: threads
     attributes:
       user:
         first_name: "First Name"
@@ -116,9 +126,30 @@ en:
         avatar: "Avatar"
         target: "Target BTC"
         expiration_time: "Expiration Time"
+      validation:
+        first_name: "First Name"
+        last_name: "Last Name"
+        number: "Passport no."
+        expiration_date: "Expiration Date"
+        scan: "Passport Scan"
+        address: "Address"
+        country: "Country"
+        city: "City"
+        index: "Postcode"
+      commontator/comment: 
+        body: Comment
+        creator: Creator
+        editor: Editor
+        thread: Discussion
+      commontator/subscription: 
+        subscriber: Subscriber
+        thread: Discussion
+      commontator/thread: 
+        commontable: Commontable
     errors:
       models:
         user:
+          latin: "Only latin letters allowed"
           attributes:
             password:
               too_short: "Password is too short"

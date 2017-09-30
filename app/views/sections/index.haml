@@ -1,8 +1,3 @@
-.parallax-container.screen-width
-  .parallax
-    = image_tag 'index'
-  .slogan.full-width.valign-wrapper
-    %p.shadow-header.full-width.center-align= t('.slogan')
 %section#content
   = render 'row', name: :our_choice, projects: @chosen_projects
   = render 'row', name: :popular, projects: @popular_projects

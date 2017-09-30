@@ -34,7 +34,6 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find params[:id]
-    @project.avatar = params[:avatar]
     respond_to do |format|
       if @project.update project_params
         format.html { redirect_to @project, notice: 'Project was successfully updated' }

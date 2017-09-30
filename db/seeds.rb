@@ -93,7 +93,7 @@ project.chosen = false
 File.open('public/uploads/project/avatar/2/boy.png') do |f|
   project.avatar = f
 end
-project.expiration_time = Time.zone.now + 10 * 60
+project.expiration_time = Time.zone.now + 60 * 24
 project.user_id = 1
 project.save
 

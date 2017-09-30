@@ -1,26 +1,4 @@
 ru: 
-  activerecord: 
-    attributes: 
-      commontator/comment: 
-        body: Комментарий
-        creator: Создал
-        editor: Редактировал
-        thread: Обсуждение
-      commontator/subscription: 
-        subscriber: Подписчик
-        thread: Обсуждение
-      commontator/thread: 
-        commontable: Комментируем
-    models: 
-      commontator/comment: 
-        one: комментарий
-        other: комментарии
-      commontator/subscription: 
-        one: подписка
-        other: подписки
-      commontator/thread: 
-        one: обсуждение
-        other: обсуждения
   commontator: 
     anonymous: Аноним
     comment: 
@@ -49,7 +27,7 @@ ru:
         subject: "%{creator_name} оставил комментарий к %{commontable_name}"
       thread_link_html: "<a href=\"%{comment_url}\">Нажмите здесь</a> чтобы посмотреть все комментарии к %{commontable_name}."
       undisclosed_recipients: "Не указан получатель"
-    require_login: "Вы должны залогиниться прежде чем оставить комментарий."
+    require_login: "Вы должны залогиниться прежде чем комментировать"
     subscription: 
       actions: 
         confirm_unsubscribe: "Вы уверены, что хотите отписать от обсуждения?"

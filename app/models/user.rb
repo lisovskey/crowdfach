@@ -12,8 +12,7 @@ class User < ApplicationRecord
 
   validates_presence_of :email, :encrypted_password, :first_name, :last_name, :wallet
   validates :email, uniqueness: { case_sensitive: false }
-  validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/, message: 'only letters allowed' },
-                                     length: { minimum: 2, maximum: 15 }
+  validates :first_name, :last_name, length: { minimum: 2, maximum: 15 }
 
   before_save :capitalize_name
   before_save :set_full_name

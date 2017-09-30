@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20170925194239) do
   end
 
   create_table "validations", force: :cascade do |t|
-    t.string "no"
+    t.string "number"
     t.date "expiration_date"
     t.string "first_name"
     t.string "last_name"

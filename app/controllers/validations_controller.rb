@@ -20,7 +20,7 @@ class ValidationsController < ApplicationController
 
   private
     def validation_params
-      params.require(:validation).permit(:no, :first_name, :last_name, :scan,
+      params.require(:validation).permit(:number, :first_name, :last_name, :scan,
         :expiration_date, :city, :country, :index, :scan_cache, :address).merge({
           user_id: current_user.id
         })
