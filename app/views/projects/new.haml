@@ -7,7 +7,7 @@
           .row
             .col.s12.m6.input-field
               = f.label :name
-              = f.text_field :name, required: true, 'data-length': 24
+              = f.text_field :name, required: true, 'data-length': 30
             .col.s12.m6.input-field
               = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
@@ -33,4 +33,4 @@
               = f.text_field :expiration_time, class: 'datepicker', required: true
           .row
             .col.s12
-              = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large'
+              = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}

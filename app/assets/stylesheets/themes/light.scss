@@ -6,10 +6,10 @@ $background-color: color("grey", "lighten-3");
 $text-color:  color("grey", "darken-4");
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}  
+  ::-webkit-input-placeholder { @content };
+  :-moz-placeholder           { @content };
+  ::-moz-placeholder          { @content };
+  :-ms-input-placeholder      { @content };  
 }
 
 @include placeholder {

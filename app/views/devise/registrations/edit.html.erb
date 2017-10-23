@@ -60,7 +60,7 @@
 
           <div class="row">
             <div class="col s12">
-              <%= f.button t('.update'), class: "full-width waves-effect waves-light btn-large" %>
+              <%= f.button t('.update'), class: "full-width waves-effect waves-light btn-large", data: {disable_with: I18n.t("form.wait")} %>
             </div>
           </div>
         <% end %>

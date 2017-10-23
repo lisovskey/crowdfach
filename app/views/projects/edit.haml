@@ -7,7 +7,7 @@
           .row.fix
             .col.s12.m6.input-field
               = f.label :name
-              = f.text_field :name, 'data-length': 24
+              = f.text_field :name, 'data-length': 30
             .col.s12.m6.input-field
               = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }
@@ -28,7 +28,7 @@
                 %input.file-path{:type => "text", :id => "filename", value: @project.avatar_identifier}
           .row
             .col.s12
-              = f.button t('.save'), class: 'full-width waves-effect waves-light btn-large'
+              = f.button t('.save'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}
         .row.fix
           .col.s12.center-align
             = button_to t('.destroy'), project_path(@project), data: { confirm: "Are you sure?" }, method: :delete, class: 'waves-effect btn-flat'

@@ -6,8 +6,8 @@ class DonationsController < ApplicationController
     @donation.project_id = params[:project_id]
     respond_to do |format|
       if @donation.save
-        @project = Project.find(params[:project_id])
-        @project.increment!(:balance, params[:donation][:amount].to_f)
+        @project = Project.find params[:project_id]
+        @project.increment! :balance, params[:donation][:amount].to_f
         format.html { redirect_to @project, notice: "Successfully donated #{@donation.amount}BTC" }        
       else
         flash[:error] = @donation.errors.full_messages.first

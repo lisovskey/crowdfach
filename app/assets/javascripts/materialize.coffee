@@ -1,6 +1,5 @@
 initialize_materialize = ->
     Waves.displayEffect()
-    Materialize.updateTextFields()
     $(".button-collapse").sideNav()
     $(".datepicker").pickadate()
     $("select").material_select()

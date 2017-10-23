@@ -26,16 +26,16 @@
                 = t('.projects')
             - if current_user.admin
               %li
-                %a{:href => rails_admin.dashboard_path}
+                %a.waves-effect{:href => rails_admin.dashboard_path}
                   %i.material-icons.left developer_board
                   = t('.admin_panel')
             - unless current_user.validated
               %li
-                %a{:href => validation_path}
+                %a.waves-effect{:href => validation_path}
                   %i.material-icons.left assignment
                   = t('.validation')
             %li
-              %a{:href => destroy_user_session_path, "data-method" => "delete"}
+              %a.waves-effect{:href => destroy_user_session_path, "data-method" => "delete"}
                 %i.material-icons.left power_settings_new
                 = t('.signout')
             %li
@@ -78,16 +78,16 @@
                     = t('.projects')
                 - if current_user.admin
                   %li
-                    %a{:href => rails_admin.dashboard_path}
+                    %a.waves-effect{:href => rails_admin.dashboard_path}
                       %i.material-icons.left developer_board
                       = t('.admin_panel')
                 - unless current_user.validated
                   %li
-                    %a{:href => validation_path}
+                    %a.waves-effect{:href => validation_path}
                       %i.material-icons.left assignment
                       = t('.validation')
                 %li
-                  %a{:href => destroy_user_session_path, "data-method" => "delete"}
+                  %a.waves-effect{:href => destroy_user_session_path, "data-method" => "delete"}
                     %i.material-icons.left power_settings_new
                     = t('.signout')
           - else

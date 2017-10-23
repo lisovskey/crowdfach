@@ -1,7 +1,7 @@
 .col.s12.m6.l4
   .card.sticky-action.hoverable#index
     %a.card-image{:href => project_path(project)}
-      .image{:style => "background-image: url('" << project.avatar_url.to_s << "');"}
+      .image{:style => "background-image: url('#{project.avatar_url.to_s}');"}
     .card-content.fade-text
       %span.card-title.activator
         = project.name
@@ -9,7 +9,7 @@
       %p
         = project.description
     .card-progress
-      .current-progress{:style => "width: " << project.limited_progress << ";"}
+      .current-progress{:style => "width: #{project.limited_progress};"}
     .card-action.fix
       %ul.fade
         %li
@@ -35,4 +35,6 @@
         %i.material-icons.right close
       %p= project.description
       .author.right-align
-        .chip.fade= project.user.full_name
+        .chip.fade
+          = project.user.full_name
+          %img.responsive-img{:src => project.user.avatar_url(:thumb)}

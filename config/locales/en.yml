@@ -12,6 +12,7 @@ en:
         update: "Update"
         hint: "Shift+Enter - New line, Enter - Submit"
   form:
+    wait: "Wait a second"  
     image: "Image"
   language:
     english: "English"
@@ -34,6 +35,7 @@ en:
       settings: "Settings"
       projects: "My Projects"
       admin_panel: "Admin Panel"
+      validation: "Validation"
       signout: "Log out"
       guest: "Guest"
   projects:
@@ -53,6 +55,7 @@ en:
       edit: "Edit"
       invest: "Invest"
       comments: "Comments"
+      deadline: "Deadline:"
     reward:
       from: "From"
       transaction: "Make a Transaction"
@@ -64,7 +67,11 @@ en:
     index:
       slogan: "from zaslavl with love"      
     row:
-      more: "More"     
+      more: "More"
+    propose:
+      propose_html: "You have an idea — We give you an opportunity.<br> Don't waste your time. Do it."
+      get_started: "Get started"
+      new: "Create Project"  
   results:
     index:
       nothing_found: "Nothing was found"

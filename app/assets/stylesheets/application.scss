@@ -26,7 +26,7 @@ body.dark-theme {
 $border-color: rgba(150, 150, 150, 0.4);
 
 @media #{$medium-and-down} {
-  #section-row > .col:nth-child(3) {
+  .section-row > .col:nth-child(3) {
     display: none;
   }
 }
@@ -42,11 +42,37 @@ $border-color: rgba(150, 150, 150, 0.4);
   }
 
   .parallax-container {
-    height: 16em;
+    height: 13em;
   
     & img {
       bottom: -50px !important;
     }
+  }
+  
+  .balance {
+    float: right;
+  }
+
+  .propose {
+    height: 20em;
+  }
+
+  .propose-text {
+    font-size: 2rem;
+    line-height: initial;
+    padding: 16px 0;  
+  }
+
+  .section-header {
+    padding-top: 2em;
+  }
+
+  .section-row {
+    margin-bottom: 4em !important;
+  }
+
+  .propose-content {
+    height: 14em;
   }
 }
 
@@ -56,11 +82,44 @@ $border-color: rgba(150, 150, 150, 0.4);
   }
 
   .parallax-container {
-    height: 230px;
+    height: 10em;
 
     & img {
       bottom: -30px !important;
     }
+  }
+
+  .balance {
+    width: 100%;
+    text-align: center;
+  }
+
+  .propose {
+    height: 12em;
+  }
+
+  .propose-text {
+    font-size: 1.2rem;   
+    line-height: 1.5rem;
+    padding: 12px 0;  
+  }
+
+  .propose-content {
+    height: 7em;
+  }
+
+  .section-header {
+    padding-top: 1em;
+    padding-bottom: 0.4em;
+    height: 5em;
+
+    & .shadow-header {
+      display: inline;  
+    }
+  }
+
+  .section-row {
+    margin-bottom: 3em !important;
   }
 }
 
@@ -88,12 +147,20 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
+.vend-align {
+  display: flex;
+  align-items: flex-end;
+}
+
 i.material-icons.left {
   margin-right: 14px !important;
 }
 
-.section-header {
-  padding-top: 5em;
+.shadow {
+  margin-top: -3em !important;
+  height: 1em;
+  z-index: 10;
+  box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.3);
 }
 
 .dark-hover:hover:not(:focus) {
@@ -141,7 +208,7 @@ input[type=number] {
   overflow: hidden;
   width: 100%;
   left: 0;
-  margin-top: -3em;
+  margin-top: -2em;
 
   & .parallax {
     position: static !important;
@@ -149,6 +216,7 @@ input[type=number] {
 
     & img {
       width: 100%;
+      filter: contrast(0.9);
     }
   }
 }
@@ -169,6 +237,10 @@ input[type=number] {
   z-index: 996 !important;
 }
 
+.more-small {
+  margin: 16px 0;
+}
+
 .divider {
   background-color: $border-color;
   margin: 0 0 20px 0 !important;
@@ -178,10 +250,14 @@ input[type=number] {
   opacity: 0.5 !important;
 }
 
+.propose-content {
+  position: relative;  
+}
+
 .more {
   font-weight: 500;
   font-size: 16px;
-  margin-top: 12px;
+  margin-bottom: 1em;
 }
 
 .image {
@@ -203,7 +279,7 @@ input[type=number] {
   }
 
   & .card-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   & .card-progress {
@@ -222,6 +298,10 @@ input[type=number] {
     border-radius: 2px 2px 0 0;    
     height: 12em !important;
     width: 100% !important;
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 
   &#panel .image {
@@ -369,6 +449,7 @@ input[type=number] {
 
 footer {
   margin-top: 30px;
+  z-index: 200;
 
   & .footer-copyright {
     background-color: rgba(0, 0, 0, 0) !important;

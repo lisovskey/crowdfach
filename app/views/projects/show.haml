@@ -1,8 +1,8 @@
 .screen-width#cover
-  .image{:style => "background-image: url('" << @project.avatar_url.to_s << "');"}
+  .image{:style => "background-image: url('#{@project.avatar_url.to_s}');"}
 .row.fix
   .col.s12
-    %h2.shadow-header.center-align#title= @project.name
+    %h3.shadow-header.center-align#title= @project.name
   .col.s12
     .center-align.fade#status
       - if @project.finished
@@ -15,6 +15,17 @@
   .col.s12.l8
     .card#project_page
       .card-stacked
+        .card-action.fix.top-bar
+          .row.fix
+            .col.s12.fade
+              %b.left.hide-on-small-and-down
+                = t('.deadline')
+                = @project.expiration_time.strftime('%e %b %Y')
+              .balance
+                = @project.balance.round(2)
+                \/
+                = @project.target.round(2)
+                BTC
         .card-content
           %p= to_markdown(@project.full_description)
         .card-action
@@ -24,9 +35,11 @@
                 %a.waves-effect.btn-flat.super-narrow.left{:href => edit_project_path}
                   %i.material-icons.hide-on-med-and-up#edit edit
                   %span.left.hide-on-small-and-down= t('.edit')
-              .chip.fade.right= @project.user.full_name
               %a.right{:href => category_path(@project.category)}
                 .chip.waves-effect.fade= @project.category.name
+              .chip.fade.right
+                = @project.user.full_name
+                %img.responsive-img{:src => @project.user.avatar_url(:thumb)}
   .col.s12.l4
     .row.fix.hide-on-large-only
       .col.s12

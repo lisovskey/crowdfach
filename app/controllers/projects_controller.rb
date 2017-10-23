@@ -52,7 +52,8 @@ class ProjectsController < ApplicationController
   private
     def project_params
       params.require(:project).permit(:name, :description, :target, :avatar,
-        :category_id, :full_description, :expiration_time, :avatar_cache).merge({
+                                      :category_id, :full_description, :expiration_time,
+                                      :avatar_cache).merge({
           user_id: current_user.id
         })
     end

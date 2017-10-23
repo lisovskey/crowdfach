@@ -3,4 +3,4 @@
     %h4= @category.name
 .row.fix
   - @projects.each do |project|
-    = render 'layouts/card', project: project
+    = render 'cards/card', project: project

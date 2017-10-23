@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def show
-    @category = Category.find_by(name: params[:name])
-    @projects = Project.where(category_id: @category.id)
+    @category = Category.find_by name: params[:name]
+    @projects = Project.where category: @category
   end
 end

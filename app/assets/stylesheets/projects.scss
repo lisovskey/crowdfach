@@ -17,9 +17,17 @@
   }
 }
 
+.top-bar {
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+}
+
+.balance {
+  font-weight: bold;
+}
+
 #status {
   margin-bottom: 22px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
 }
 

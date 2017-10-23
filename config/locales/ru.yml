@@ -12,6 +12,7 @@ ru:
         update: "Обновить"
         hint: "Shift+Enter - Новая строка, Enter - Отправить"
   form:
+    wait: "Секундочку"  
     image: "Пикча"
   language:
     english: "Английский"
@@ -34,6 +35,7 @@ ru:
       settings: "Настройки"
       projects: "Мои Проекты"
       admin_panel: "Админка"
+      validation: "Верификция"
       signout: "Выход"
       guest: "Гость"
   projects:
@@ -54,6 +56,7 @@ ru:
       edit: "Изменить"
       invest: "Вложиться"
       comments: "Комментарии"
+      deadline: "Дедлайн:"
     reward:
       from: "От"
       transaction: "Совершение Транзакции"
@@ -65,7 +68,11 @@ ru:
     index:
       slogan: "из заславля с любовью"
     row:
-      more: "Еще"  
+      more: "Еще" 
+    propose:
+      propose_html: "У тебя есть идея — Мы даем тебе возможность.<br> Не трать время. Действуй."
+      get_started: "Поехали"
+      new: "Создать Проект"   
   results:
     index:
       nothing_found: "Ничего не найдено"

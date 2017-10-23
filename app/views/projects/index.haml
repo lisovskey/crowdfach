@@ -2,7 +2,7 @@
   .col.s12
     %h3= t('.my_projects')
   - @projects.each do |project|
-    = render 'layouts/horizontal_card', project: project
+    = render 'cards/horizontal_card', project: project
 .row.fix
   .col.s12
     - if can?(:create, Project)
