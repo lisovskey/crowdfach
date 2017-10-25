@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   acts_as_commontator
+
+  enum role: [:user, :admin]
   
   mount_uploader :avatar, AvatarUploader
 
@@ -8,7 +10,7 @@ class User < ApplicationRecord
          :rememberable, :validatable, :confirmable, :lockable
 
   has_many :projects
-  has_one :validation  
+  has_one :validation
 
   validates_presence_of :email, :encrypted_password, :first_name, :last_name, :wallet
   validates :email, uniqueness: { case_sensitive: false }

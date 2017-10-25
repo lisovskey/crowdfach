@@ -48,10 +48,16 @@ ru:
       project_creation: "Создание Проекта"
       create: "Создать проект"
       image: "Изображение"
+    create:
+      success: "Проект успешно создан"
     edit:
       edit: "Изменение   Проекта"
       save: "Сохранить"
       destroy: "Удалить Проект"
+    update:
+      success: "Проект успешно обновлен"
+    destroy:
+      success: "Проект удален"
     show:
       edit: "Изменить"
       invest: "Вложиться"
@@ -81,11 +87,12 @@ ru:
       validation: "Верификация"
       scan: "Фотография паспорта"
       create: "Отправить"
+      sent: "Запрос на верификацию отправлен"
     create:
       success: "Мы получили Ваши данные. Ожидайте подтверждения"
   donations:
     create:
-      success: "Транзакция совершена"
+      success: "Успешно переведено %{amount}BTC"
   project:
     invested: "Вложено"
     raised: "Собрано"

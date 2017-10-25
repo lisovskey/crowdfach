@@ -6,10 +6,10 @@
   .col.s12
     .center-align.fade#status
       - if @project.finished
-        = @project.finish_status
+        = finish_status(@project)
         = t('project.finished')
       - else
-        = @project.remain
+        = remain(@project)
         = t('project.remains')
 .row.fix
   .col.s12.l8

@@ -9,7 +9,7 @@ user.email = 'user@google.com'
 user.password = 'motherfucker'
 user.first_name = 'Chester'
 user.last_name = 'Bennington'
-user.admin = true
+user.role = 'admin'
 user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
 File.open('public/uploads/user/avatar/1/vb.jpg') do |f|
   user.avatar = f
@@ -22,7 +22,6 @@ user.email = 'user@apple.com'
 user.password = 'motherfucker'
 user.first_name = 'Max'
 user.last_name = 'Titovich'
-user.validated = true
 user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
 File.open('public/uploads/user/avatar/2/vabo.png') do |f|
   user.avatar = f

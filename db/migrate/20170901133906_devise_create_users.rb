@@ -10,10 +10,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :full_name,          null: false, default: ""
       
       t.integer :rating,            null: false, default: 0
+      t.integer :role,              null: false, default: 0
 
-      t.boolean :admin,             null: false, default: false
       t.boolean :validated,         null: false, default: false
-      t.boolean :sex
 
       # Recoverable
       t.string   :reset_password_token
@@ -28,12 +27,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.datetime :last_sign_in_at
       # t.inet     :current_sign_in_ip
       # t.inet     :last_sign_in_ip
-
-      # Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
 
       # Lockable
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts

@@ -1,9 +1,11 @@
 class Validation < ApplicationRecord
   mount_uploader :scan, ScanUploader
 
-  has_one :user
+  belongs_to :user
 
-  validates_presence_of :number, :first_name, :last_name, :address, :city, :scan, :country, :index
+  validates_presence_of :number, :first_name, :last_name,
+                        :address, :city, :scan, :country, :index
+
   before_save :upper_name
   after_save :link_user
 
@@ -14,6 +16,6 @@ class Validation < ApplicationRecord
     end
 
     def link_user
-      User.find(user_id).update_attribute(:validation_id, id)
+      user.update_attribute(:validation_id, id)
     end
 end

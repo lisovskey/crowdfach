@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     @project.avatar = params[:project][:avatar]
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created' }
+        format.html { redirect_to @project, notice: t('.success') }
       else
         flash[:error] = @project.errors.full_messages.first
         format.html { render :new }
@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
     @project = Project.find params[:id]
     respond_to do |format|
       if @project.update project_params
-        format.html { redirect_to @project, notice: 'Project was successfully updated' }
+        format.html { redirect_to @project, notice: t('.success') }
       else
         flash[:error] = @project.errors.full_messages.first      
         format.html { render :edit }
@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     Project.find(params[:id]).destroy
-    redirect_to projects_path, notice: 'Project was successfully deleted'
+    redirect_to projects_path, notice: t('.success')
   end
 
   private

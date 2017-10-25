@@ -21,35 +21,6 @@ class Project < ApplicationRecord
 
   after_create :set_finilizer
 
-  def progress
-    (balance / target * 100).round.to_s << '%'
-  end
-
-  def limited_progress
-    [(balance / target * 100).round, 100].min.to_s << '%'
-  end
-
-  def finish_status
-    successful ? I18n.t('project.successfully') : I18n.t('project.poorly') if finished
-  end
-
-  def remain
-    time = expiration_time - Time.zone.now
-    if time < 1.minute
-      I18n.t('datetime.few')
-    elsif time / 1.minute < 60
-      (time / 1.minute).round.to_s << I18n.t('datetime.minutes')
-    elsif time / 1.hour < 24
-      (time / 1.hour).round.to_s << I18n.t('datetime.hours')
-    elsif time / 1.day < 30
-      (time / 1.day).round.to_s << I18n.t('datetime.days')
-    elsif time / 1.day / 30 < 12
-      (time / 1.day / 30).round.to_s << I18n.t('datetime.months')
-    else
-      (time / 1.day / 30 / 12).round.to_s << I18n.t('datetime.years')
-    end
-  end
-
   private
     def check_expiration_time
       errors.add :base, 'time expired' if expiration_time < Time.zone.now

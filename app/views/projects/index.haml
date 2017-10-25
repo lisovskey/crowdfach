@@ -5,7 +5,7 @@
     = render 'cards/horizontal_card', project: project
 .row.fix
   .col.s12
-    - if can?(:create, Project)
+    - if can? :create, Project
       .row
         .col.s12.m6.offset-m3
           = link_to t('.new_project'), new_project_path, class: 'full-width waves-effect waves-light btn-large'
@@ -15,7 +15,7 @@
           %a.full-width.btn-large.disabled.tooltipped{"data-position" => "top", "data-tooltip" => t('.not_validated')}= t('.new_project')
       .row.fix
         .col.s12.m6.offset-m3
-          - unless current_user.validation_id
+          - if can? :create, Validation
             = link_to t('.validate'), validation_path, class: 'full-width waves-effect waves-light btn-large'
           - else
             %a.full-width.btn-large.disabled.tooltipped{"data-position" => "top", "data-tooltip" => t('validations.create.success')}= t('.validate')

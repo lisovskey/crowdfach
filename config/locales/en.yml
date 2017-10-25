@@ -47,10 +47,16 @@ en:
     new:
       project_creation: "Project Creation"
       create: "Create Project"
+    create:
+      success: "Project was successfully created"
     edit:
       edit: "Edit Project"
       save: "Save Project"
       destroy: "Delete Project"
+    update:
+      success: "Project was successfully updated"
+    destroy:
+      success: "Project was successfully deleted"
     show:
       edit: "Edit"
       invest: "Invest"
@@ -76,14 +82,16 @@ en:
     index:
       nothing_found: "Nothing was found"
   validations:
-    success: "We've recieved your information. Wait for confirmation"
     new:
       validation: "Validation"
       scan: "Passport Last Page"
       create: "Validate Account"
+      sent: "Request for a validation has already sent"
+    create:
+      success: "We've recieved your information. Wait for confirmation"
   donations:
     create:
-      success: "Transaction was successfully created"
+      success: "Successfully donated %{amount}BTC"
   project:
     invested: "Invested"
     raised: "Raised"

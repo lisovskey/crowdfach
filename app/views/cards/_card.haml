@@ -9,7 +9,7 @@
       %p
         = project.description
     .card-progress
-      .current-progress{:style => "width: #{project.limited_progress};"}
+      .current-progress{:style => "width: #{limited_progress(project)};"}
     .card-action.fix
       %ul.fade
         %li
@@ -19,15 +19,15 @@
           = t('project.invested')
         %li
           %b
-            = project.progress
+            = progress(project)
           = t('project.raised')
         %li
           - if project.finished
             %b
-              = project.finish_status
+              = finish_status(project)
               = t('project.finished')
           - else
-            %b= project.remain
+            %b= remain(project)
             = t('project.remains')
     .card-reveal
       %span.card-title

@@ -3,40 +3,45 @@
     .card
       .card-content
         %h4.center-align= t('.validation')
-        = form_for(@validation, html: { multipart: true }) do |f|
-          .row
-            .col.s12.m6.input-field
-              = f.label :first_name
-              = f.text_field :first_name, required: true
-            .col.s12.m6.input-field
-              = f.label :last_name
-              = f.text_field :last_name, required: true
-            .col.s12.m6.input-field
-              = f.label :number
-              = f.text_field :number, required: true
-            .col.s12.m6.input-field
-              = f.label :expiration_date, class: 'active'
-              = f.text_field :expiration_date, class: 'datepicker', required: true
-            .col.s12.input-field.file-field
-              .btn.waves-effect.waves-light
-                %span= t('form.image')
-                = f.file_field :scan
-                = f.hidden_field :scan_cache
-              .file-path-wrapper.input-field.fix
-                %label{:for => "filename"}= t('.scan')
-                %input.file-path{:type => "text", :id => "filename"}
-            .col.s12.m6.input-field
-              = f.label :address
-              = f.text_field :address, required: true
-            .col.s12.m6.input-field
-              = f.label :country
-              = f.text_field :country, required: true
-            .col.s12.m6.input-field
-              = f.label :city
-              = f.text_field :city, required: true
-            .col.s12.m6.input-field
-              = f.label :index
-              = f.text_field :index, required: true
+        - unless current_user.validation
+          = form_for(@validation, html: { multipart: true }) do |f|
+            .row
+              .col.s12.m6.input-field
+                = f.label :first_name
+                = f.text_field :first_name, required: true
+              .col.s12.m6.input-field
+                = f.label :last_name
+                = f.text_field :last_name, required: true
+              .col.s12.m6.input-field
+                = f.label :number
+                = f.text_field :number, required: true
+              .col.s12.m6.input-field
+                = f.label :expiration_date, class: 'active'
+                = f.text_field :expiration_date, class: 'datepicker', required: true
+              .col.s12.input-field.file-field
+                .btn.waves-effect.waves-light
+                  %span= t('form.image')
+                  = f.file_field :scan
+                  = f.hidden_field :scan_cache
+                .file-path-wrapper.input-field.fix
+                  %label{:for => "filename"}= t('.scan')
+                  %input.file-path{:type => "text", :id => "filename"}
+              .col.s12.m6.input-field
+                = f.label :address
+                = f.text_field :address, required: true
+              .col.s12.m6.input-field
+                = f.label :country
+                = f.text_field :country, required: true
+              .col.s12.m6.input-field
+                = f.label :city
+                = f.text_field :city, required: true
+              .col.s12.m6.input-field
+                = f.label :index
+                = f.text_field :index, required: true
+            .row
+              .col.s12
+                = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}
+        - else
           .row
             .col.s12
-              = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}
+              .p.center-align.fade= t('.sent')

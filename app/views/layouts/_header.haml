@@ -6,7 +6,7 @@
           %li
             .user-view
               - if user_signed_in?
-                %i#side-avatar.circle.left{:style => 'background-image: url(' << current_user.avatar_url << ');'}
+                %i#side-avatar.circle.left{:style => 'background-image: url(' << current_user.avatar_url(:thumb) << ');'}
                 %span.name= current_user.full_name
                 %span.email.fade= current_user.email
               - else
@@ -24,12 +24,12 @@
               %a.waves-effect{:href => projects_path}
                 %i.material-icons.left storage
                 = t('.projects')
-            - if current_user.admin
+            - if current_user.admin?
               %li
                 %a.waves-effect{:href => rails_admin.dashboard_path}
                   %i.material-icons.left developer_board
                   = t('.admin_panel')
-            - unless current_user.validated
+            - unless current_user.validated?
               %li
                 %a.waves-effect{:href => validation_path}
                   %i.material-icons.left assignment
@@ -64,7 +64,7 @@
           - if user_signed_in?
             %li
               %a.dropdown-button.waves-effect.left-align{"data-activates" => "menu-dropdown"}
-                %i#avatar.circle.left{:style => 'background-image: url(' << current_user.avatar_url << ');'}
+                %i#avatar.circle.left{:style => 'background-image: url(' << current_user.avatar_url(:thumb) << ');'}
                 = current_user.first_name
                 %i.material-icons.right arrow_drop_down
               %ul.dropdown-content#menu-dropdown
@@ -76,12 +76,12 @@
                   %a.waves-effect{:href => projects_path}
                     %i.material-icons.left storage
                     = t('.projects')
-                - if current_user.admin
+                - if current_user.admin?
                   %li
                     %a.waves-effect{:href => rails_admin.dashboard_path}
                       %i.material-icons.left developer_board
                       = t('.admin_panel')
-                - unless current_user.validated
+                - unless current_user.validated?
                   %li
                     %a.waves-effect{:href => validation_path}
                       %i.material-icons.left assignment
