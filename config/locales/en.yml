@@ -47,6 +47,8 @@ en:
     new:
       project_creation: "Project Creation"
       create: "Create Project"
+      image: "Image"
+      rewards: "Rewards"
     create:
       success: "Project was successfully created"
     edit:

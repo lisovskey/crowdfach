@@ -14,7 +14,7 @@ class SectionsController < ApplicationController
   private
     def pick_projects(name)
       case name
-      when :our_choice then Project.where(chosen: true)
+      when :our_choice then Project.where.not(chosen_at: nil).order(:chosen_at)
       when :popular then Project.all
       when :recent then Project.all
       when :successful then Project.where(successful: true)

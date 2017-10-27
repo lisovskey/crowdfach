@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925194239) do
+ActiveRecord::Schema.define(version: 20171027073944) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -58,7 +58,8 @@ ActiveRecord::Schema.define(version: 20170925194239) do
   end
 
   create_table "donations", force: :cascade do |t|
-    t.float "amount"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "BTC", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "project_id"
@@ -70,8 +71,10 @@ ActiveRecord::Schema.define(version: 20170925194239) do
   create_table "projects", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "description", default: "", null: false
-    t.float "target", default: 0.0, null: false
-    t.float "balance", default: 0.0, null: false
+    t.integer "target_cents", default: 0, null: false
+    t.string "target_currency", default: "BTC", null: false
+    t.integer "balance_cents", default: 0, null: false
+    t.string "balance_currency", default: "BTC", null: false
     t.text "full_description", default: "", null: false
     t.datetime "expiration_time", default: "2001-09-11 00:00:00", null: false
     t.boolean "finished", default: false, null: false
@@ -81,12 +84,22 @@ ActiveRecord::Schema.define(version: 20170925194239) do
     t.integer "user_id"
     t.integer "category_id"
     t.string "avatar"
-    t.boolean "chosen", default: false
+    t.datetime "chosen_at"
     t.index ["category_id"], name: "index_projects_on_category_id"
-    t.index ["chosen"], name: "index_projects_on_chosen"
+    t.index ["chosen_at"], name: "index_projects_on_chosen_at"
     t.index ["description"], name: "index_projects_on_description"
     t.index ["name"], name: "index_projects_on_name"
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "rewards", force: :cascade do |t|
+    t.text "description"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "BTC", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "project_id"
+    t.index ["project_id"], name: "index_rewards_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|

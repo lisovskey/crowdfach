@@ -58,14 +58,27 @@ Excepteur sint occaecat cupidatat non proident, sunt in *culpa qui officia* dese
 ###### deserunt deserunt
 END
 
+reward_descriptions = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                       'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.']
+
+rewards_attributes = []
+rand(2..4).times do
+  rewards_attributes << {
+    description: reward_descriptions.sample,
+    price: rand(0.001..0.1)
+  }
+end
+
 project = Project.new
 project.name = 'Bitcoin Cash'
 project.description = description
 project.full_description = full_description
 project.target = 5.12
-project.balance = 3.68
+project.balance = 3.6802
 project.category_id = 1
-project.chosen = true
+project.rewards_attributes = rewards_attributes
+project.chosen_at = DateTime.now
 File.open('public/uploads/project/avatar/1/vaultboy.jpg') do |f|
   project.avatar = f
 end
@@ -73,14 +86,22 @@ project.expiration_time = Time.zone.now + 10 * 60 * 60 * 24
 project.user_id = 1
 project.save
 
+rewards_attributes = []
+rand(2..4).times do
+  rewards_attributes << {
+    description: reward_descriptions.sample,
+    price: rand(0.001..0.1)
+  }
+end
+
 project = Project.new
 project.name = 'Ethereum Classic'
 project.description = description
 project.full_description = full_description
 project.target = 3.84
-project.balance = 0.68
+project.balance = 0.6855
 project.category_id = 2
-project.chosen = false
+project.rewards_attributes = rewards_attributes
 File.open('public/uploads/project/avatar/2/boy.png') do |f|
   project.avatar = f
 end
@@ -88,14 +109,23 @@ project.expiration_time = Time.zone.now + 60 * 24
 project.user_id = 1
 project.save
 
+rewards_attributes = []
+rand(2..4).times do
+  rewards_attributes << {
+    description: reward_descriptions.sample,
+    price: rand(0.001..0.1)
+  }
+end
+
 project = Project.new
 project.name = 'Litecoin Cash'
 project.description = description
 project.full_description = full_description
 project.target = 4.44
-project.balance = 7.93
+project.balance = 7.9383
 project.category_id = 3
-project.chosen = true
+project.rewards_attributes = rewards_attributes
+project.chosen_at = DateTime.now
 File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
   project.avatar = f
 end
@@ -103,14 +133,23 @@ project.expiration_time = Time.zone.now + 10
 project.user_id = 2
 project.save
 
+rewards_attributes = []
+rand(2..4).times do
+  rewards_attributes << {
+    description: reward_descriptions.sample,
+    price: rand(0.001..0.1)
+  }
+end
+
 project = Project.new
 project.name = 'Nuka-Cola'
 project.description = description
 project.full_description = full_description
 project.target = 10.48
-project.balance = 8.93
+project.balance = 8.9337
 project.category_id = 4
-project.chosen = true
+project.rewards_attributes = rewards_attributes
+project.chosen_at = DateTime.now
 File.open('public/uploads/project/avatar/4/nuka.jpg') do |f|
   project.avatar = f
 end

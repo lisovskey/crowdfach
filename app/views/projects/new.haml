@@ -1,23 +1,28 @@
-.row
-  .col.s12
-    .card
-      .card-content
-        %h3.center-align= t('.project_creation')
-        = form_for(@project, html: { multipart: true }) do |f|
-          .row
-            .col.s12.m6.input-field
+= form_for @project, html: { multipart: true } do |f|
+  .row
+    .col.s12
+      %h3.center-align= t('.project_creation')
+      .card
+        .card-content
+          .row.fix
+            .col.s12.m6.l4.input-field
               = f.label :name
               = f.text_field :name, required: true, 'data-length': 30
-            .col.s12.m6.input-field
+            .col.s12.m6.l4.input-field
+              = f.label :target, value: 'Target BTC'
+              = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
+            .col.s12.l4.input-field
               = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
-            .col.s12.input-field
+          .row.fix       
+            .col.s12.xl6.input-field
               = f.label :description
               = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
-            .col.s12.input-field
+            .col.s12.xl6.input-field
               = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
-            .col.s12.input-field.file-field
+          .row.fix
+            .col.s12.m6.input-field.file-field
               .btn.waves-effect.waves-light
                 %span= t('form.image')
                 = f.file_field :avatar, required: true
@@ -26,11 +31,34 @@
                 %label{:for => "filename"}= t('.avatar')
                 %input.file-path{:type => "text", :id => "filename"}
             .col.s12.m6.input-field
-              = f.label :target, value: 'Target BTC'
-              = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
-            .col.s12.m6.input-field
               = f.label :expiration_time, class: 'active'
               = f.text_field :expiration_time, class: 'datepicker', required: true
-          .row
-            .col.s12
-              = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}
+  .row
+    .col.s12
+      %h4.center-align= t('.rewards')
+  .row
+    = f.nested_fields_for :rewards, wrapper_tag: :div do |ff|
+      .col.s6.m4.xl3
+        .card.reward-form
+          .card-content
+            .delete-reward
+              = ff.remove_nested_fields_link do
+                %i.material-icons
+                  close
+            .row.fix
+              .col.s12.input-field
+                = ff.label :description
+                = ff.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
+              .col.s12.input-field
+                = ff.label :price, value: 'Target BTC', class: 'active'
+                = ff.number_field :price, value: 0.001, min: 0.001, step: 0.001, required: true
+    .col.s6.m4.xl3
+      .card.hoverable.reward-form
+        = f.add_nested_fields_link :rewards, class: 'full-width waves-effect waves-light' do
+          .card-content.valign-wrapper.reward-form
+            .full-width.center-align
+              %i.material-icons.add-reward
+                add
+  .row
+    .col.s12
+      = f.button t('.create'), class: 'full-width waves-effect waves-light btn-large', data: {disable_with: I18n.t('form.wait')}

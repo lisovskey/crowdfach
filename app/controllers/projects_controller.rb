@@ -6,7 +6,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.find params[:id]
     commontator_thread_show @project
     @donation = Donation.new
   end
@@ -16,11 +15,9 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project = Project.find params[:id]
   end
 
   def create
-    @project = Project.new project_params
     @project.avatar = params[:project][:avatar]
     respond_to do |format|
       if @project.save
@@ -33,7 +30,6 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project = Project.find params[:id]
     respond_to do |format|
       if @project.update project_params
         format.html { redirect_to @project, notice: t('.success') }
@@ -45,15 +41,15 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    Project.find(params[:id]).destroy
+    @project.destroy
     redirect_to projects_path, notice: t('.success')
   end
 
   private
     def project_params
-      params.require(:project).permit(:name, :description, :target, :avatar,
+      params.require(:project).permit(:name, :description, :target, :avatar, :avatar_cache,
                                       :category_id, :full_description, :expiration_time,
-                                      :avatar_cache).merge({
+                                      rewards_attributes: [:description, :price]).merge({
           user_id: current_user.id
         })
     end

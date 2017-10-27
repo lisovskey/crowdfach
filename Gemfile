@@ -8,7 +8,7 @@ end
 ruby '2.4.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -33,7 +33,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin', '~> 1.2'
 gem 'recaptcha', require: 'recaptcha/rails'
-gem 'commontator', git: 'https://github.com/lml/commontator', branch: 'rails5'
+gem 'commontator'
 
 gem 'materialize-sass'
 gem 'material_icons'
@@ -47,6 +47,9 @@ gem 'redcarpet'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'sucker_punch'
+
+gem 'money-rails'
+gem 'nested_form_fields'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

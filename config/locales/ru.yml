@@ -48,6 +48,7 @@ ru:
       project_creation: "Создание Проекта"
       create: "Создать проект"
       image: "Изображение"
+      rewards: "Награды"
     create:
       success: "Проект успешно создан"
     edit:

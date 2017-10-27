@@ -4,8 +4,8 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :name,               null: false, default: ""
       t.string :description,        null: false, default: ""
 
-      t.float :target,              null: false, default: 0
-      t.float :balance,             null: false, default: 0
+      t.monetize :target,           null: false, default: 0
+      t.monetize :balance,          null: false, default: 0
 
       t.text :full_description,     null: false, default: ""
       t.datetime :expiration_time,  null: false, default: "11 September, 2001"

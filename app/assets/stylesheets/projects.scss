@@ -17,10 +17,6 @@
   }
 }
 
-.top-bar {
-  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
-}
-
 .balance {
   font-weight: bold;
 }
@@ -29,6 +25,30 @@
   margin-bottom: 22px;
   font-size: 20px;
   font-weight: 500;
+}
+
+.reward-form {
+  min-height: 17em;
+
+  & i.add-reward {
+    font-size: 4rem;
+  }
+
+  & .delete-reward {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 100;
+
+    & a {
+      padding: 0 4px;
+
+      & i {
+        padding: 4px 0;
+      }
+    }
+  }
 }
 
 .comment_form_field{

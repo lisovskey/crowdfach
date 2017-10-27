@@ -11,8 +11,7 @@
         .row.fade.fix
           .col.s4
             %b
-              = project.balance.round(3)
-              BTC
+              = humanized_money_with_symbol project.balance
             %br
             = t('project.invested')
           .col.s4

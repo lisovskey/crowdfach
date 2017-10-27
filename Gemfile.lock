@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/lml/commontator
-  revision: 916a28c70ceece1eb488962c8ed0d8e276de8f06
-  branch: rails5
-  specs:
-    commontator (5.0.0)
-      jquery-rails
-      rails (>= 5.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,6 +55,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    commontator (5.0.0)
+      jquery-rails
+      rails (>= 5.0)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
     database_cleaner (1.6.1)
@@ -96,8 +90,7 @@ GEM
       activesupport (>= 4.0.1)
       hamlit (>= 1.2.0)
       railties (>= 4.0.1)
-    i18n (0.9.0)
-      concurrent-ruby (~> 1.0)
+    i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -142,8 +135,21 @@ GEM
     mini_magick (4.8.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    monetize (1.7.0)
+      money (~> 6.9)
+    money (6.9.0)
+      i18n (>= 0.6.4, < 0.9)
+    money-rails (1.9.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.7.0)
+      money (~> 6.9.0)
+      railties (>= 3.0)
     multi_json (1.12.2)
     nested_form (0.3.2)
+    nested_form_fields (0.8.2)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -208,7 +214,7 @@ GEM
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
-    sass (3.5.2)
+    sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -241,7 +247,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    tzinfo (1.2.3)
+    tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -264,7 +270,7 @@ DEPENDENCIES
   cancancan
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
-  commontator!
+  commontator
   database_cleaner
   devise
   dotenv-rails
@@ -277,10 +283,12 @@ DEPENDENCIES
   material_icons
   materialize-sass
   mini_magick
+  money-rails
+  nested_form_fields
   pg (~> 0.18)
   pg_search
   puma (~> 3.7)
-  rails (~> 5.1.3)
+  rails (~> 5.1.4)
   rails_admin (~> 1.2)
   recaptcha
   redcarpet

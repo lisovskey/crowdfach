@@ -6,24 +6,23 @@
           %span.card-title
             = t('.from')
             %b
-              = price
-              BTC
+              = humanized_money_with_symbol reward.price
           - unless project.finished
             - if current_user
-              %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << price.to_s}
+              %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << reward.price.to_s}
                 %i.material-icons attach_money
             - else
               %a.btn-floating.disabled.tooltipped.right{"data-position" => "top", "data-tooltip" => t('.not_authorized')}
                 %i.material-icons attach_money
         .card-content
-          %p= description
+          %p= reward.description
 - unless project.finished
-  .modal{:id => price.to_s}
+  .modal{:id => reward.price.to_s}
     = form_for [project, @donation] do |f|
       .modal-content
         %h4.center-align= t('.transaction')
         .input-field
-          = f.number_field :amount, value: price, step: 0.0001, min: 0.0001, required: true
+          = f.number_field :amount, value: reward.price, step: 0.0001, min: 0.0001, required: true
           = f.label :amount, t('.amount')
         %p.fade= t('.agreement')
       .modal-footer

@@ -41,10 +41,10 @@ module ProjectsHelper
   end
 
   def progress(project)
-    (project.balance / project.target * 100).round.to_s << '%'
+    project.progress.round.to_s << '%'
   end
 
   def limited_progress(project)
-    [(project.balance / project.target * 100).round, 100].min.to_s << '%'
+    [project.progress.round, 100].min.to_s << '%'
   end
 end

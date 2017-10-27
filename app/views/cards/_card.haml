@@ -14,8 +14,7 @@
       %ul.fade
         %li
           %b
-            = project.balance.round(3)
-            BTC
+            = humanized_money_with_symbol project.balance
           = t('project.invested')
         %li
           %b

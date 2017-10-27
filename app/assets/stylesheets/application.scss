@@ -254,6 +254,11 @@ input[type=number] {
   position: relative;  
 }
 
+.character-counter {
+  margin-top: -12px;
+  @extend .fade;
+}
+
 .more {
   font-weight: 500;
   font-size: 16px;
@@ -269,6 +274,7 @@ input[type=number] {
 
 .card {
   z-index: 100;
+  border-radius: 3px;
 
   & a {
     margin: 0 !important;
@@ -312,17 +318,10 @@ input[type=number] {
   & .card-content.fade-text > p {
     position: relative;
     overflow: hidden;
-    height: 4.4rem;
-
-    &::after {
-      content: "";
-      text-align: right;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 70%;
-      height: 1.4rem;
-    }
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   & .card-reveal p {
@@ -348,6 +347,8 @@ input[type=number] {
   }
 
   &#project_page {
+    overflow: hidden;
+
     & ul {
       padding-left: 32px;
       margin: 10px 0 !important;
