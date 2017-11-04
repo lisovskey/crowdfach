@@ -2,7 +2,6 @@ class DonationsController < ApplicationController
   load_and_authorize_resource
   
   def create
-    @donation = Donation.new donation_params
     @donation.project_id = params[:project_id]
     respond_to do |format|
       if @donation.save

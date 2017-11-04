@@ -121,6 +121,10 @@ $border-color: rgba(150, 150, 150, 0.4);
   .section-row {
     margin-bottom: 3em !important;
   }
+
+  .card.horizontal .properties {
+    font-size: 12px;
+  }
 }
 
 #body-wrapper {

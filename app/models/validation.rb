@@ -16,6 +16,6 @@ class Validation < ApplicationRecord
     end
 
     def link_user
-      user.update_attribute(:validation_id, id)
+      user.update_attribute :validation_id, id
     end
 end

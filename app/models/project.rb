@@ -1,15 +1,14 @@
 class Project < ApplicationRecord
   acts_as_commontable
 
+  include PgSearch
+  pg_search_scope :search_projects, against: [:name, :description, :full_description]
+
   monetize :target_cents
   monetize :balance_cents
   
   mount_uploader :avatar, AvatarUploader
 
-  if Rails.env.production?
-    include PgSearch
-    pg_search_scope :search_everywhere, against: [:name, :description, :full_description]
-  end
 
   belongs_to :user
   belongs_to :category

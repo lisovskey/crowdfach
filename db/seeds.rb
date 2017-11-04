@@ -1,9 +1,3 @@
-unless Rails.env.production?
-  require 'database_cleaner'
-  DatabaseCleaner.strategy = :truncation
-  DatabaseCleaner.clean
-end
-
 user = User.new
 user.email = 'user@google.com'
 user.password = 'motherfucker'
@@ -11,9 +5,7 @@ user.first_name = 'Chester'
 user.last_name = 'Bennington'
 user.role = 'admin'
 user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
-File.open('public/uploads/user/avatar/1/vb.jpg') do |f|
-  user.avatar = f
-end
+user.avatar = Rails.root.join('public/dad1.jpg').open
 user.skip_confirmation!
 user.save
 
@@ -23,9 +15,7 @@ user.password = 'motherfucker'
 user.first_name = 'Max'
 user.last_name = 'Titovich'
 user.wallet = '1EYv3SijVkoKYx2d6kzgtRsqK5G2o5Jq4D'
-File.open('public/uploads/user/avatar/2/vabo.png') do |f|
-  user.avatar = f
-end
+user.avatar = Rails.root.join('public/dad2.jpg').open
 user.skip_confirmation!
 user.save
 
@@ -60,7 +50,7 @@ END
 
 reward_descriptions = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.']
+                       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.']
 
 rewards_attributes = []
 rand(2..4).times do
@@ -79,9 +69,7 @@ project.balance = 3.6802
 project.category_id = 1
 project.rewards_attributes = rewards_attributes
 project.chosen_at = DateTime.now
-File.open('public/uploads/project/avatar/1/vaultboy.jpg') do |f|
-  project.avatar = f
-end
+project.avatar = Rails.root.join('public/vaultboy1.jpg').open
 project.expiration_time = Time.zone.now + 10 * 60 * 60 * 24
 project.user_id = 1
 project.save
@@ -102,9 +90,7 @@ project.target = 3.84
 project.balance = 0.6855
 project.category_id = 2
 project.rewards_attributes = rewards_attributes
-File.open('public/uploads/project/avatar/2/boy.png') do |f|
-  project.avatar = f
-end
+project.avatar = Rails.root.join('public/vaultboy2.png').open
 project.expiration_time = Time.zone.now + 60 * 24
 project.user_id = 1
 project.save
@@ -126,9 +112,7 @@ project.balance = 7.9383
 project.category_id = 3
 project.rewards_attributes = rewards_attributes
 project.chosen_at = DateTime.now
-File.open('public/uploads/project/avatar/3/vault.jpg') do |f|
-  project.avatar = f
-end
+project.avatar = Rails.root.join('public/vaultboy3.jpg').open
 project.expiration_time = Time.zone.now + 10
 project.user_id = 2
 project.save
@@ -150,9 +134,7 @@ project.balance = 8.9337
 project.category_id = 4
 project.rewards_attributes = rewards_attributes
 project.chosen_at = DateTime.now
-File.open('public/uploads/project/avatar/4/nuka.jpg') do |f|
-  project.avatar = f
-end
+project.avatar = Rails.root.join('public/nuka.jpg').open
 project.expiration_time = Time.zone.now + 10 * 60 * 60
 project.user_id = 2
 project.save

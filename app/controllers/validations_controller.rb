@@ -2,11 +2,9 @@ class ValidationsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @validation = Validation.new
   end
 
   def create
-    @validation = Validation.new validation_params
     @validation.scan = params[:validation][:scan]
     respond_to do |format|
       if @validation.save

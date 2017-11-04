@@ -17,13 +17,14 @@
 default: &default
   encoding: unicode
   host: localhost
+  username: crowdfach  
+  adapter: postgresql  
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  adapter: sqlite3  
   database: crowdfach_development
 
   # The specified database role being used to connect to postgres.
@@ -58,7 +59,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  adapter: sqlite3  
   database: crowdfach_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -82,7 +82,5 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql  
   database: crowdfach_production
-  username: user  
   password: <%= ENV['CROWDFACH_DATABASE_PASSWORD'] %>

@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20171027073944) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "commontator_comments", force: :cascade do |t|
+  create_table "commontator_comments", id: :serial, force: :cascade do |t|
     t.string "creator_type"
     t.integer "creator_id"
     t.string "editor_type"
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.index ["thread_id", "created_at"], name: "index_commontator_comments_on_thread_id_and_created_at"
   end
 
-  create_table "commontator_subscriptions", force: :cascade do |t|
+  create_table "commontator_subscriptions", id: :serial, force: :cascade do |t|
     t.string "subscriber_type", null: false
     t.integer "subscriber_id", null: false
     t.integer "thread_id", null: false
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.index ["thread_id"], name: "index_commontator_subscriptions_on_thread_id"
   end
 
-  create_table "commontator_threads", force: :cascade do |t|
+  create_table "commontator_threads", id: :serial, force: :cascade do |t|
     t.string "commontable_type"
     t.integer "commontable_id"
     t.datetime "closed_at"
@@ -62,8 +65,8 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.string "amount_currency", default: "BTC", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "project_id"
-    t.integer "user_id"
+    t.bigint "project_id"
+    t.bigint "user_id"
     t.index ["project_id"], name: "index_donations_on_project_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
@@ -81,8 +84,8 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.boolean "successful"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "category_id"
+    t.bigint "user_id"
+    t.bigint "category_id"
     t.string "avatar"
     t.datetime "chosen_at"
     t.index ["category_id"], name: "index_projects_on_category_id"
@@ -98,7 +101,7 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.string "price_currency", default: "BTC", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "project_id"
+    t.bigint "project_id"
     t.index ["project_id"], name: "index_rewards_on_project_id"
   end
 
@@ -125,7 +128,7 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.datetime "confirmation_sent_at"
     t.string "avatar"
     t.string "wallet"
-    t.integer "validation_id"
+    t.bigint "validation_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -144,8 +147,15 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scan"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_validations_on_user_id"
   end
 
+  add_foreign_key "donations", "projects"
+  add_foreign_key "donations", "users"
+  add_foreign_key "projects", "categories"
+  add_foreign_key "projects", "users"
+  add_foreign_key "rewards", "projects"
+  add_foreign_key "users", "validations"
+  add_foreign_key "validations", "users"
 end

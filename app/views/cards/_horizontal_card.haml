@@ -8,7 +8,7 @@
         .card-progress
           .current-progress{:style => "width: #{limited_progress(project)};"}
       .card-action.fix
-        .row.fade.fix
+        .row.fix.properties.fade
           .col.s4
             %b
               = humanized_money_with_symbol project.balance
