@@ -7,19 +7,21 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="row">
             <div class="col s12 input-field">
-              <%= f.label :email %>
               <%= f.email_field :email, autofocus: true %>
+              <%= f.label :email %>
             </div>
 
             <div class="col s12 input-field">
-              <%= f.label :password %>
               <%= f.password_field :password %>
+              <%= f.label :password %>
             </div>
 
             <% if devise_mapping.rememberable? %>
               <div class="col s12 field">
-                <%= f.check_box :remember_me, class: 'filled-in' %>
-                <%= f.label :remember_me %>
+                <%= f.label :remember_me do %>
+                  <%= f.check_box :remember_me, class: 'filled-in' %>
+                  <span><%= t('.remember_me') %></span>
+                <% end %>
               </div>
             <% end %>
           </div>

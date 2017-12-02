@@ -2,7 +2,7 @@
   %nav
     .container
       .nav-wrapper
-        %ul#slide-out.side-nav
+        %ul#slide-out.sidenav
           %li
             .user-view
               - if user_signed_in?
@@ -50,7 +50,7 @@
               = link_to t('.signin'), new_user_session_path, class: 'waves-effect'
             %li
               = link_to t('.signup'), new_user_registration_path, class: 'waves-effect'
-        %a.button-collapse.hide-on-med-and-up{"data-activates" => "slide-out", :href => "#"}
+        %a.button-collapse.hide-on-med-and-up{"data-target" => "slide-out", :href => "#"}
           %i.material-icons menu
         = link_to app_name, root_path, class: 'brand-logo'
         %ul#nav-mobile.right.hide-on-small-and-down
@@ -63,7 +63,7 @@
                 %input{:type => "submit", :hidden => true}
           - if user_signed_in?
             %li
-              %a.dropdown-button.waves-effect.left-align{"data-activates" => "menu-dropdown"}
+              %a.dropdown-trigger.waves-effect.left-align{"data-target" => "menu-dropdown"}
                 %i#avatar.circle.left{:style => 'background-image: url(' << current_user.avatar_url(:thumb) << ');'}
                 = current_user.first_name
                 %i.material-icons.right arrow_drop_down

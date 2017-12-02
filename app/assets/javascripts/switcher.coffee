@@ -1,5 +1,5 @@
-$(document).on "turbolinks:load", ->
-  $("#theme").click ->
+document.addEventListener "turbolinks:load", ->
+  $("#theme").on "click", ->
     if $(@).prop "checked"
       Cookies.set "theme", "true"
       $(@).attr "checked", true

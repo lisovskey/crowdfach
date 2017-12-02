@@ -241,6 +241,11 @@ input[type=number] {
   z-index: 996 !important;
 }
 
+.file-path-wrapper {
+  display: block !important;
+  margin: 0 !important;
+}
+
 .more-small {
   margin: 16px 0;
 }
@@ -402,6 +407,10 @@ input[type=number] {
       padding-left: 50px;
       height: 64px;
       width: 130px;
+
+      & + label {
+        cursor: text;      
+      }
     }
   
     & #side-search {
@@ -420,7 +429,7 @@ input[type=number] {
       box-shadow: none !important;
     }
   
-    & .side-nav li a {
+    & .sidenav li a {
       font-weight: 400 !important;
     }
 
@@ -428,7 +437,7 @@ input[type=number] {
       display: inline-block;
       height: 100%;
 
-      & .dropdown-button {
+      & .dropdown-trigger {
         min-width: 180px;
       }
     }
@@ -437,8 +446,9 @@ input[type=number] {
       display: block;
     }
 
-    & .label-icon {
-      margin-top: -12px;
+    & .label-icon i {
+      margin-top: -63px;
+      margin-left: 16px;
     }
 
     & .button-collapse {
@@ -488,7 +498,7 @@ footer {
       }
     }
 
-    & a.dropdown-button {
+    & a.dropdown-trigger {
       padding: 0 15px;
 
       & i {
@@ -510,7 +520,7 @@ footer {
   }
 }
 
-.dropdown-button + .dropdown-content {
+.dropdown-trigger + .dropdown-content {
   & li {
     height: 64px;
     

@@ -12,7 +12,7 @@
               %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << reward.price.to_s}
                 %i.material-icons attach_money
             - else
-              %a.btn-floating.disabled.tooltipped.right{"data-position" => "top", "data-tooltip" => t('.not_authorized')}
+              %a.btn-floating.disabled.tooltipped.right{"data-position" => "bottom", "data-tooltip" => t('.not_authorized')}
                 %i.material-icons attach_money
         .card-content
           %p= reward.description

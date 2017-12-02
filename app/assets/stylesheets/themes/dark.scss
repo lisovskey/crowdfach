@@ -38,6 +38,10 @@ a:not(.waves-light) .waves-ripple {
   }
 }
 
+input:not(.browser-default):focus:not([readonly]) + label {
+  color: $second-color;
+}
+
 input[type=search] {
   color: $text-color;
 
@@ -65,6 +69,18 @@ input[type=checkbox]:checked {
   }
 }
 
+input[type=checkbox]:checked + span:not(.lever) {
+  &:before {
+    border-right: 2px solid $background-color;
+    border-bottom: 2px solid $background-color;
+  }
+
+  &:after {
+    border: 2px solid $second-color;
+    background-color: $second-color;
+  }
+}
+
 .turbolinks-progress-bar {
   background-color: $second-color;
 }
@@ -84,7 +100,7 @@ nav {
     color: $text-color;
   }
 
-  & .side-nav {
+  & .sidenav {
     background-color: $first-color;
     color: $text-color !important;
   

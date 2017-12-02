@@ -22,8 +22,8 @@
     <div class="card-content">
       <div class="row fix">  
         <div class="comment_form_field input-field col s12">
+          <%= f.text_area :body, id: 'comment-form', class: 'materialize-textarea', required: true %>
           <%= f.label :body, value: t('.enter_comment') %>
-          <%= f.text_area :body, class: 'materialize-textarea', required: true %>
           <input class="comment-submit" type="submit" hidden>
           <span class="fade"><%= t('.hint') %></span>
           <%= javascript_tag('Commontator.initMentions()') if Commontator.mentions_enabled %>

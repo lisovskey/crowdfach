@@ -38,6 +38,10 @@ a:not(.waves-light) .waves-ripple {
   }
 }
 
+input:not(.browser-default):focus:not([readonly]) + label {
+  color: $second-color;
+}
+
 input[type=search] {
   color: $text-color;
 
@@ -84,7 +88,7 @@ nav {
     color: $text-color;
   }
 
-  & .side-nav {
+  & .sidenav {
     background-color: $first-color;
     color: $text-color !important;    
   

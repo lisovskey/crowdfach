@@ -18,7 +18,7 @@
   .footer-copyright
     .container
       .language.right
-        %a.dropdown-button.dark-hover.waves-effect#language{"data-activates" => "language-dropdown", "data-beloworigin" => "true"}
+        %a.dropdown-trigger.dark-hover.waves-effect#language{"data-target" => "language-dropdown", "data-beloworigin" => "true"}
           = @current_language
           %i.material-icons.left language
         %ul.dropdown-content#language-dropdown

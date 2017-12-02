@@ -6,18 +6,18 @@
         = form_for(@project, url: project_path(@project), html: { method: :put, multipart: true }) do |f|
           .row.fix
             .col.s12.m6.input-field
-              = f.label :name
               = f.text_field :name, 'data-length': 30
+              = f.label :name
             .col.s12.m6.input-field
-              = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }
+              = f.label :category_id, class: 'active'
           .row.fix
             .col.s12.input-field
-              = f.label :description
               = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
+              = f.label :description
             .col.s12.input-field
-              = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
+              = f.label :full_description
             .col.s12.input-field.file-field
               .btn.waves-effect.waves-light
                 %span= t('form.image')

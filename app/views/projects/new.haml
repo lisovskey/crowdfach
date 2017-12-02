@@ -6,21 +6,21 @@
         .card-content
           .row.fix
             .col.s12.m6.l4.input-field
-              = f.label :name
               = f.text_field :name, required: true, 'data-length': 30
+              = f.label :name
             .col.s12.m6.l4.input-field
-              = f.label :target, value: 'Target BTC'
               = f.number_field :target, value: 0.1, min: 0.1, max: 1000, step: 0.1, required: true
+              = f.label :target, value: 'Target BTC'
             .col.s12.l4.input-field
-              = f.label :category_id, class: 'active'
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
+              = f.label :category_id, class: 'active'
           .row.fix       
             .col.s12.xl6.input-field
-              = f.label :description
               = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
+              = f.label :description
             .col.s12.xl6.input-field
-              = f.label :full_description
               = f.text_area :full_description, required: true, class: 'materialize-textarea'
+              = f.label :full_description
           .row.fix
             .col.s12.m6.input-field.file-field
               .btn.waves-effect.waves-light
@@ -28,11 +28,11 @@
                 = f.file_field :avatar, required: true
                 = f.hidden_field :avatar_cache
               .file-path-wrapper.input-field.fix
-                %label{:for => "filename"}= t('.avatar')
                 %input.file-path{:type => "text", :id => "filename"}
+                %label{:for => "filename"}= t('.avatar')
             .col.s12.m6.input-field
-              = f.label :expiration_time, class: 'active'
               = f.text_field :expiration_time, class: 'datepicker', required: true
+              = f.label :expiration_time, class: 'active'
   .row
     .col.s12
       %h4.center-align= t('.rewards')
@@ -47,11 +47,11 @@
                   close
             .row.fix
               .col.s12.input-field
-                = ff.label :description
                 = ff.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
+                = ff.label :description
               .col.s12.input-field
-                = ff.label :price, value: 'Target BTC', class: 'active'
                 = ff.number_field :price, value: 0.001, min: 0.001, step: 0.001, required: true
+                = ff.label :price, value: 'Target BTC', class: 'active'
     .col.s6.m4.xl3
       .card.hoverable.reward-form
         = f.add_nested_fields_link :rewards, class: 'full-width waves-effect waves-light' do
