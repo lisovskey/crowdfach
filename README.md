@@ -24,4 +24,4 @@ Get it started:
 $ rails s
 ```
 Congratulations, you've discovered darknet.
-### <p align="center">Copyright 2017 [lisovskey](https://telegram.me/lisovskey)
+### <p align="center">Copyright 2017-2018 [lisovskey](https://t.me/lisovskey)
