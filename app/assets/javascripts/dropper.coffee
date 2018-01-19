@@ -1,8 +1,7 @@
 document.addEventListener "turbolinks:load", ->
-  # a = getElementById 'kek'
-  # a.addEventListener 'click', go
-  $(".language-point").on "click", ->
-    switch @.text
+  point = document.querySelector ".language-point"
+  point.addEventListener "click", ->
+    switch point.text
       when "English", "Английский"
         Cookies.set "language", "en"
       when "Russian", "Русский"

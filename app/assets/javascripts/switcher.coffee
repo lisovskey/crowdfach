@@ -1,10 +1,11 @@
 document.addEventListener "turbolinks:load", ->
-  $("#theme").on "click", ->
-    if $(@).prop "checked"
+  element = document.getElementById "theme"
+  element.addEventListener "click", ->
+    if element.checked
       Cookies.set "theme", "true"
-      $(@).attr "checked", true
-      $("body").addClass("dark-theme").removeClass("light-theme")
+      element.checked = true
+      document.body.className = "dark-theme"
     else
       Cookies.set "theme", "false"
-      $(@).attr "checked", null
-      $("body").addClass("light-theme").removeClass("dark-theme")
+      element.checked = false
+      document.body.className = "light-theme"

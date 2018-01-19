@@ -1,4 +1,4 @@
-@import "materialize/components/color"; 
+@import "materialize/components/color-variables"; 
 $first-color: white;
 $second-color: color("red", "accent-2");
 $third-color: color("grey", "darken-2");
@@ -38,7 +38,12 @@ a:not(.waves-light) .waves-ripple {
   }
 }
 
-input:not(.browser-default):focus:not([readonly]) + label {
+input {
+  color: $text-color;
+}
+
+input:not(.browser-default):focus:not([readonly]) + label,
+textarea:not(.browser-default):focus:not([readonly]) + label {
   color: $second-color;
 }
 

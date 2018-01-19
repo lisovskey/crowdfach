@@ -18,12 +18,9 @@
           %p= reward.description
 - unless project.finished
   .modal{:id => reward.price.to_s}
-    = form_for [project, @donation] do |f|
-      .modal-content
-        %h4.center-align= t('.transaction')
-        .input-field
-          = f.number_field :amount, value: reward.price, step: 0.0001, min: 0.0001, required: true
-          = f.label :amount, t('.amount')
-        %p.fade= t('.agreement')
-      .modal-footer
-        = f.button t('.submit'), class: 'modal-action waves-effect btn-flat'
+    .modal-content
+      .row
+        %h6.center-align.black-text.fade= project.user.wallet
+      .row
+        .center-align= raw @address
+      .center-align.fade= t('.agreement', reward: humanized_money_with_symbol(reward.price))

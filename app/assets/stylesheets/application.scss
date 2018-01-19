@@ -139,7 +139,7 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
 }
 
@@ -274,6 +274,11 @@ input[type=number] {
   margin-bottom: 1em;
 }
 
+.modal {
+  max-width: 400px;
+  max-height: 80%;
+}
+
 .image {
   background-position: center;
   background-size: cover;
@@ -307,6 +312,7 @@ input[type=number] {
 
   & .card-action.fix {
     border-top: none;
+    background-color: inherit;
   }
 
   &#index .image {
@@ -451,7 +457,7 @@ input[type=number] {
       margin-left: 16px;
     }
 
-    & .button-collapse {
+    & .sidenav-trigger {
       margin: 0 8px;
 
       & i {
@@ -520,7 +526,7 @@ footer {
   }
 }
 
-.dropdown-trigger + .dropdown-content {
+.dropdown-trigger:not(.select-dropdown) + .dropdown-content {
   & li {
     height: 64px;
     

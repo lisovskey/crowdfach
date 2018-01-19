@@ -66,10 +66,7 @@ en:
       deadline: "Deadline:"
     reward:
       from: "From"
-      transaction: "Make a Transaction"
-      agreement: "We are not responsible for your facilities. You are making it at your own risk."
-      amount: "Amount"
-      submit: "Send"
+      agreement: "You are going to send %{reward}. Use the address from above. We will recieve your donation and store it until the end of the campaign. If it fails we will return your coins back."
       not_authorized: "You are not logged in"
   sections:
     index:

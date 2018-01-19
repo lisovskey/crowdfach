@@ -8,6 +8,8 @@ class ProjectsController < ApplicationController
   def show
     commontator_thread_show @project
     @donation = Donation.new
+    qrcode = RQRCode::QRCode.new @project.user.wallet
+    @address = qrcode.as_svg module_size: 8
   end
 
   def new

@@ -13,7 +13,7 @@
               = f.label :target, value: 'Target BTC'
             .col.s12.l4.input-field
               = f.select :category_id, Category.all.map { |cat| [cat.name, cat.id] }, required: true
-              = f.label :category_id, class: 'active'
+              = f.label :category_id
           .row.fix       
             .col.s12.xl6.input-field
               = f.text_area :description, required: true, 'data-length': 255, class: 'materialize-textarea'
