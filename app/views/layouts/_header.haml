@@ -37,7 +37,7 @@
     %li
       .input-field
         = form_tag(search_path, method: 'get', role: 'search') do
-          = text_field_tag :query, nil, class: 'dark-hover', id: 'side-search', required: '', type: 'search', placeholder: t('.search')
+          = text_field_tag :query, nil, class: 'dark-hover', id: 'side-search', required: '', type: 'search', value: params[:query]
           %label.label-icon{:for => "side-search"}
             %i.material-icons search
           %input{:type => "submit", :hidden => true}

@@ -68,7 +68,6 @@ project.target = 5.12
 project.balance = 3.6802
 project.category_id = 1
 project.rewards_attributes = rewards_attributes
-project.chosen_at = DateTime.now
 project.avatar = Rails.root.join('public/vaultboy1.jpg').open
 project.expiration_time = Time.zone.now + 10 * 60 * 60 * 24
 project.user_id = 1
@@ -111,7 +110,6 @@ project.target = 4.44
 project.balance = 7.9383
 project.category_id = 3
 project.rewards_attributes = rewards_attributes
-project.chosen_at = DateTime.now
 project.avatar = Rails.root.join('public/vaultboy3.jpg').open
 project.expiration_time = Time.zone.now + 10
 project.user_id = 2
@@ -133,8 +131,11 @@ project.target = 10.48
 project.balance = 8.9337
 project.category_id = 4
 project.rewards_attributes = rewards_attributes
-project.chosen_at = DateTime.now
 project.avatar = Rails.root.join('public/nuka.jpg').open
 project.expiration_time = Time.zone.now + 10 * 60 * 60
 project.user_id = 2
 project.save
+
+Choice.create project_id: 3, title: 'best kek', priority: 4
+Choice.create project_id: 4, title: 'best kok', priority: 1
+Choice.create project_id: 1, title: 'best kak', priority: 4

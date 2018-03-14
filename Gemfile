@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "lisovskey/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
@@ -29,19 +29,19 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'pg', '~> 0.19'
+gem 'pg', '~> 0.20'
 gem 'pg_search'
 
 gem 'devise'
 gem 'cancancan'
-gem 'rails_admin', '~> 1.2'
+gem 'rails_admin', '~> 1.3'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'commontator'
 
-gem 'materialize-sass', '>= 1.0.0.alpha'
-gem 'material_icons'
 gem 'jquery-rails'
 gem 'js_cookie_rails'
+gem 'materialize-sass', '>= 1.0.0.alpha4'
+gem 'material_icons'
 
 gem 'hamlit'
 gem 'hamlit-rails'

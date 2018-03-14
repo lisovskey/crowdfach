@@ -99,7 +99,7 @@ ru:
     successfully: "Успешно"
     poorly: "Неудачно"
   section:
-    our_choice: "Выбор редакции"
+    chosen: "Выбор редакции"
     popular: "Самые Популярные"
     successful: "Успешно Завершенные"
     recent: "Недавно Созданные"

@@ -1,6 +1,6 @@
 %section#content
-  = render 'row', name: :our_choice, projects: @chosen_projects
+  = render 'row', name: :chosen, projects: @chosen_projects
   = render 'row', name: :popular, projects: @popular_projects
-  = render 'row', name: :recent, projects: @last_projects
+  = render 'row', name: :recent, projects: @recent_projects
   = render 'row', name: :successful, projects: @successful_projects
   = render 'propose'

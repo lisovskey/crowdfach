@@ -2,13 +2,13 @@
 .parallax-container.screen-width.propose
   .parallax
     = image_tag 'propose'
-.row.fix.propose-content.valign-wrapper
+.row.propose-content.valign-wrapper
   .col.s12.m10.offset-m1.l10.offset-l1
     .propose-text.center-align.shadow-header
       = t('.propose_html')
     .row
       .col.s12.m6.offset-m3.l4.offset-l4.center-align
         - if user_signed_in?
-          = link_to t('.new'), can?(:create, Project) ? new_project_path : validation_path, class: 'btn-large full-width waves-effect waves-light'
+          = link_to t('.new'), can?(:create, Project) ? new_project_path : validation_path, class: 'btn full-width waves-effect waves-light'
         - else
-          = link_to t('.get_started'), new_user_registration_path, class: 'btn-large full-width waves-effect waves-light hide-on-small-and-down'
+          = link_to t('.get_started'), new_user_registration_path, class: 'btn full-width waves-effect waves-light hide-on-small-and-down'

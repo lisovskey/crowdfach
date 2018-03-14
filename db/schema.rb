@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171027073944) do
+ActiveRecord::Schema.define(version: 20180120121117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "priority", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.index ["project_id"], name: "index_choices_on_project_id"
+    t.index ["user_id"], name: "index_choices_on_user_id"
   end
 
   create_table "commontator_comments", id: :serial, force: :cascade do |t|
@@ -87,9 +98,7 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.bigint "user_id"
     t.bigint "category_id"
     t.string "avatar"
-    t.datetime "chosen_at"
     t.index ["category_id"], name: "index_projects_on_category_id"
-    t.index ["chosen_at"], name: "index_projects_on_chosen_at"
     t.index ["description"], name: "index_projects_on_description"
     t.index ["name"], name: "index_projects_on_name"
     t.index ["user_id"], name: "index_projects_on_user_id"
@@ -151,6 +160,8 @@ ActiveRecord::Schema.define(version: 20171027073944) do
     t.index ["user_id"], name: "index_validations_on_user_id"
   end
 
+  add_foreign_key "choices", "projects"
+  add_foreign_key "choices", "users"
   add_foreign_key "donations", "projects"
   add_foreign_key "donations", "users"
   add_foreign_key "projects", "categories"

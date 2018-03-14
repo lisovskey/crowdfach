@@ -1,4 +1,4 @@
-<div class="row fix">
+<div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card">
       <div class="card-content">
@@ -37,12 +37,12 @@
               </div>
 
               <div class="file-path-wrapper input-field fix">
-                <label for="filename"><%= t('.avatar') %></label>
                 <input class="file-path" type="text" id="filename" value="<%= current_user.avatar_identifier %>">
+                <label for="filename"><%= t('.avatar') %></label>
               </div>
             </div>
 
-            <div class="col s12 input-field">
+            <div class="input-field col s12">
               <%= f.password_field :current_password, required: true, autocomplete: "off" %>
               <%= f.label :current_password %>
             </div>

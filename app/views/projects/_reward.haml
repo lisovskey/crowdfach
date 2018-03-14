@@ -17,7 +17,7 @@
         .card-content
           %p= reward.description
 - unless project.finished
-  .modal{:id => reward.price.to_s}
+  .modal.qr{:id => reward.price.to_s}
     .modal-content
       .row
         %h6.center-align.black-text.fade= project.user.wallet

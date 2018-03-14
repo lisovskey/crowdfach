@@ -38,7 +38,7 @@ a:not(.waves-light) .waves-ripple {
   }
 }
 
-input {
+input, textarea {
   color: $text-color;
 }
 
@@ -51,7 +51,7 @@ input[type=search] {
   color: $text-color;
 
   &:focus {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1) !important;
 
     & label i {
       color: $text-color;

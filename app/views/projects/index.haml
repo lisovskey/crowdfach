@@ -3,7 +3,7 @@
     %h3= t('.my_projects')
   - @projects.each do |project|
     = render 'cards/horizontal_card', project: project
-.row.fix
+.row
   .col.s12
     - if can? :create, Project
       .row

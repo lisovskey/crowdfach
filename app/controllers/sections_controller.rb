@@ -1,8 +1,8 @@
 class SectionsController < ApplicationController
   def index
-    @chosen_projects = pick_last_projects(:our_choice)
+    @chosen_projects = pick_last_projects(:chosen)
     @popular_projects = pick_last_projects(:popular)
-    @last_projects = pick_last_projects(:recent)
+    @recent_projects = pick_last_projects(:recent)
     @successful_projects = pick_last_projects(:successful)
   end
 
@@ -18,7 +18,7 @@ class SectionsController < ApplicationController
 
     def pick_projects(name)
       case name
-      when :our_choice then Project.where.not(chosen_at: nil).order(:chosen_at)
+      when :chosen then Project.joins(:choices).distinct
       when :popular then Project.all
       when :recent then Project.all
       when :successful then Project.where(successful: true)

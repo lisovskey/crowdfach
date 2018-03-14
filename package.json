@@ -3,7 +3,7 @@
   "description": "Crowdfunding platform",
   "private": true,
   "license": "MIT",
-  "author": "lisovskey",
+  "authors": ["lisovskey", "dyak", "koval"],
   "type": "project",
   "dependencies": {}
 }
