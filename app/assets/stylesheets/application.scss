@@ -84,7 +84,8 @@ $border-color: rgba(150, 150, 150, 0.4);
   }
 
   .parallax-container img {
-    bottom: -3em !important;
+    bottom: -2em !important;
+    width: 135% !important;
   }
 
   .balance {
@@ -409,6 +410,15 @@ input[type=number] {
     background-size: cover;
   }
 
+  & .name {
+    margin-top: 12px !important;
+  }
+
+  & .email {
+    line-height: 10px !important;
+    padding-bottom: 24px !important;
+  }
+
   & #nav-mobile > li {
     display: inline-block;
     height: 100%;
@@ -416,6 +426,10 @@ input[type=number] {
     & .dropdown-trigger {
       min-width: 180px;
     }
+  }
+
+  & .user-view i {
+    line-height: inherit;
   }
 
   & #side-search {

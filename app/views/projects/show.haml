@@ -11,7 +11,7 @@
       - else
         = remain(@project)
         = t('project.remains')
-.row.fix
+.row
   .col.s12.l8
     .card#project_page
       .card-stacked
@@ -42,6 +42,7 @@
                 = @project.user.full_name
                 %img.responsive-img{:src => @project.user.avatar_url(:thumb)}
   .col.s12.l4
+    .row.hide-on-med-and-up
     .row.fix.hide-on-large-only
       .col.s12
         %h4= t('.invest')
