@@ -47,4 +47,8 @@ module ProjectsHelper
   def limited_progress(project)
     [project.progress.round, 100].min.to_s << '%'
   end
+
+  def qrcode_size
+    7
+  end
 end

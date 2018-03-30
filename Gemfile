@@ -5,10 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.5.0'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -40,7 +40,7 @@ gem 'commontator'
 
 gem 'jquery-rails'
 gem 'js_cookie_rails'
-gem 'materialize-sass', '>= 1.0.0.alpha4'
+gem 'materialize-sass', '>= 1.0.0.beta'
 gem 'material_icons'
 
 gem 'hamlit'

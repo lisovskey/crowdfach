@@ -25,9 +25,9 @@
           - @languages.each do |lang|
             %li
               %a.waves-effect.language-point{:href => ""}= lang
-      .switch
-        %i.material-icons#sun wb_sunny
+      .switch.valign-wrapper
+        %i.material-icons.default-cursor#sun wb_sunny
         %label
           %input{:type => "checkbox", :id => "theme", :checked => ActiveRecord::Type::Boolean.new.cast(cookies[:theme])}
           %span.lever
-        %i.material-icons#moon brightness_3
+        %i.material-icons.default-cursor#moon brightness_3

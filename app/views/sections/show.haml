@@ -1,6 +1,6 @@
 .row.fix
   .col.s12
     %h4= t('section.' << @name.to_s)
-    .row.fix
-      - @projects.each do |project|
-        = render 'cards/card', project: project
+.row
+  - @projects.each do |project|
+    = render 'cards/card', project: project

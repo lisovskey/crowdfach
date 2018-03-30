@@ -132,6 +132,11 @@ $border-color: rgba(150, 150, 150, 0.4);
       padding: 20px 40px;
     }
   }
+
+  .modal {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
 #body-wrapper {
@@ -286,9 +291,14 @@ input[type=number] {
   margin-bottom: 1em;
 }
 
-.modal.qr {
-  max-width: 400px;
-  max-height: 80%;
+.modal {
+  color: #333333;
+  top: 15% !important;
+
+  &.qr {
+    max-width: 400px;
+    max-height: 80%;
+  }
 }
 
 .image {
@@ -346,6 +356,7 @@ input[type=number] {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
+    height: 4.2em;
     /* autoprefixer: off */
     -webkit-box-orient: vertical;
     /* autoprefixer: on */
@@ -454,6 +465,10 @@ input[type=number] {
       padding-left: 50px;
       height: 64px;
       width: 130px;
+
+      &, & + label {
+        cursor: text !important;
+      }
     }
 
     & .sidenav-trigger {
@@ -500,19 +515,16 @@ footer {
     font-weight: 400 !important;
 
     & .switch, & .language {
-      line-height: 64px;        
+      line-height: 64px;
+      display: flex; 
     }
 
     & .switch {
       max-width: 118px;
+      height: 64px;
 
       #theme {
         margin: 0 !important;
-      }
-      
-      & i {
-        line-height: inherit;
-        cursor: default;
       }
 
       & #sun {
@@ -521,6 +533,10 @@ footer {
       
       & #moon {
         float: right;
+      }
+
+      & label {
+        display: inline-flex;
       }
     }
 
@@ -533,7 +549,8 @@ footer {
     }
 
     & #language-dropdown {
-      margin-top: -1px;
+      overflow: hidden;
+      margin-bottom: -2px;
     }
   }
 

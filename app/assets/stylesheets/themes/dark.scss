@@ -51,7 +51,7 @@ input[type=search] {
   color: $text-color;
 
   &:focus {
-    background-color: $text-color;
+    background-color: $text-color !important;
 
     & + label i {
       color: $first-color;
@@ -86,8 +86,13 @@ input[type=checkbox]:checked + span:not(.lever) {
   }
 }
 
-.turbolinks-progress-bar {
+.turbolinks-progress-bar,
+.datepicker-date-display {
   background-color: $second-color;
+}
+
+.datepicker-table td.is-today {
+  color: $second-color;
 }
 
 .thread_reply {

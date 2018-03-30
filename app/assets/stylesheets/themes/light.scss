@@ -61,7 +61,7 @@ input[type=search] {
 
 input[type=checkbox]:checked {
   & + .lever {
-    background-color: darken($second-color, 20%);
+    background-color: desaturate(darken($second-color, 20%), 60%) !important;
 
     &:after {
       background-color: $second-color;    
@@ -74,8 +74,13 @@ input[type=checkbox]:checked {
   }
 }
 
-.turbolinks-progress-bar {
+.turbolinks-progress-bar,
+.datepicker-date-display {
   background-color: $second-color;
+}
+
+.datepicker-table td.is-today {
+  color: $second-color;
 }
 
 .thread_reply {
