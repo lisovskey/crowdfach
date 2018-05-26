@@ -23,7 +23,7 @@ body.dark-theme {
   @import "themes/dark";
 }
 
-$border-color: rgba(150, 150, 150, 0.4);
+$border-color: rgba(150, 150, 150, 0.5);
 
 @media #{$medium-and-down} {
   .section-row > .col:nth-child(3) {
@@ -321,8 +321,22 @@ input[type=number] {
     padding: 20px 24px;
   }
 
+  & .card-nav {
+    margin-bottom: 8px;
+
+    & i {
+      line-height: 32px;
+      cursor: pointer;
+    }
+  }
+
   & .card-title {
     font-size: 20px;
+
+    &.card-link {
+    color: inherit;
+    display: inline-block !important;
+    }
   }
 
   & .card-progress {
@@ -357,11 +371,13 @@ input[type=number] {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    height: 4.2em;
+    height: 4.3em;
     /* autoprefixer: off */
     -webkit-box-orient: vertical;
+    box-orient: vertical;
     /* autoprefixer: on */
     -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   & .card-reveal p {
@@ -382,6 +398,7 @@ input[type=number] {
   }
 
   & .chip {
+    font-weight: 700;
     background-color: $border-color;
     margin: 0 0 0 5px !important;
   }

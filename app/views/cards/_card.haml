@@ -3,9 +3,11 @@
     %a.card-image{:href => project_path(project)}
       .image{:style => "background-image: url('#{project.avatar_url.to_s}');"}
     .card-content.fade-text
-      %span.card-title.activator
-        = project.name
-        %i.material-icons.right more_vert
+      .card-nav
+        %a.card-title.card-link{:href => project_path(project)}
+          = project.name
+        %span.activator.right
+          %i.material-icons more_vert
       %p
         = project.description
     .card-progress
