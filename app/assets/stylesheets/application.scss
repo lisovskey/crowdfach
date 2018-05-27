@@ -321,22 +321,20 @@ input[type=number] {
     padding: 20px 24px;
   }
 
+  & .card-nav i, & .card-reveal i {
+    line-height: 32px;
+    cursor: pointer;
+  }
+
   & .card-nav {
     margin-bottom: 8px;
-
-    & i {
-      line-height: 32px;
-      cursor: pointer;
-    }
+    display: flex;
   }
 
   & .card-title {
     font-size: 20px;
-
-    &.card-link {
-      color: inherit;
-      display: inline-block !important;
-    }
+    width: 100%;
+    color: inherit;
   }
 
   & .card-progress {

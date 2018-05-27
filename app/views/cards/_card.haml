@@ -4,7 +4,7 @@
       .image{:style => "background-image: url('#{project.avatar_url.to_s}');"}
     .card-content.fade-text
       .card-nav
-        %a.card-title.card-link{:href => project_path(project)}
+        %a.card-title.truncate{:href => project_path(project)}
           = project.name
         %span.activator.right
           %i.material-icons more_vert
@@ -31,7 +31,7 @@
             %b= remain(project)
             = t('project.remains')
     .card-reveal
-      %span.card-title
+      %span.card-title.truncate
         = project.name
         %i.material-icons.right close
       %p= project.description
