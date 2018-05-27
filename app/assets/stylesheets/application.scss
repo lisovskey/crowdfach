@@ -141,7 +141,7 @@ $border-color: rgba(150, 150, 150, 0.5);
 }
 
 #body-wrapper {
-  overflow: hidden;
+  overflow: hidden;    
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -334,8 +334,8 @@ input[type=number] {
     font-size: 20px;
 
     &.card-link {
-    color: inherit;
-    display: inline-block !important;
+      color: inherit;
+      display: inline-block !important;
     }
   }
 
@@ -401,6 +401,10 @@ input[type=number] {
     font-weight: 700;
     background-color: $border-color;
     margin: 0 0 0 5px !important;
+
+    & img {
+      filter: contrast(0.8);
+    }
   }
 
   &#project_page {

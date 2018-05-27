@@ -37,8 +37,8 @@
                   %i.material-icons.hide-on-med-and-up#edit edit
                   %span.left.hide-on-small-and-down= t('.edit')
               %a.right{:href => category_path(@project.category)}
-                .chip.waves-effect.fade= @project.category.name
-              .chip.fade.right
+                .chip.waves-effect= @project.category.name
+              .chip.right
                 = @project.user.full_name
                 %img.responsive-img{:src => @project.user.avatar_url(:thumb)}
   .col.s12.l4
