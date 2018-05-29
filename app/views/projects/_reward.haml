@@ -4,16 +4,17 @@
       %div{:class => reward_class(project.finished)}
         .card-upper
           %span.card-title
-            = t('.from')
-            %b
-              = humanized_money_with_symbol reward.price
-          - unless project.finished
-            - if current_user
-              %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << reward.price.to_s}
-                %i.material-icons attach_money
-            - else
-              %a.btn-floating.disabled.tooltipped.right{"data-position" => "bottom", "data-tooltip" => t('.not_authorized')}
-                %i.material-icons attach_money
+            .card-title-text.truncate
+              = t('.from')
+              %b
+                = humanized_money_with_symbol reward.price
+            - unless project.finished
+              - if current_user
+                %a.btn-floating.waves-effect.waves-light.modal-trigger.right{:href => '#' << reward.price.to_s}
+                  %i.material-icons.pay attach_money
+              - else
+                %a.btn-floating.disabled.tooltipped.right{"data-position" => "bottom", "data-tooltip" => t('.not_authorized')}
+                  %i.material-icons.pay attach_money
         .card-content
           %p= reward.description
 - unless project.finished

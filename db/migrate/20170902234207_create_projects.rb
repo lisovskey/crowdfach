@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.monetize :balance,          null: false, default: 0
 
       t.text :full_description,     null: false, default: ""
-      t.datetime :expiration_time,  null: false, default: "11 September, 2001"
+      t.datetime :expiration_time
 
       t.boolean :finished,          null: false, default: false
       t.boolean :successful

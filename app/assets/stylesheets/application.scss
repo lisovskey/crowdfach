@@ -165,6 +165,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
+.modal input {
+  color: #333 !important;
+}
+
 .vend-align {
   display: flex;
   align-items: flex-end;
@@ -196,6 +200,10 @@ i.material-icons.left {
 .recaptcha {
   display: table;
   margin: 0 auto;
+}
+
+.datepicker-table td.is-selected {
+  background-color: $border-color;
 }
 
 input[type=number] {
@@ -317,24 +325,29 @@ input[type=number] {
     margin: 0 !important;
   }
 
-  & .card-content {
+  & .card-content, & .card-reveal {
     padding: 20px 24px;
   }
 
-  & .card-nav i, & .card-reveal i {
-    line-height: 32px;
-    cursor: pointer;
-  }
-
-  & .card-nav {
-    margin-bottom: 8px;
-    display: flex;
-  }
-
   & .card-title {
+    display: flex !important;
+    margin-bottom: 8px;
     font-size: 20px;
-    width: 100%;
-    color: inherit;
+    cursor: initial !important;
+    
+    & .card-title-text {
+      width: 100%;
+      color: inherit;
+    }
+
+    & i:not(.pay) {
+      line-height: 32px;
+      cursor: pointer;
+    }
+
+    & .btn-floating {
+      overflow: initial;
+    }
   }
 
   & .card-progress {
@@ -369,7 +382,7 @@ input[type=number] {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    height: 4.3em;
+    height: 4.4em;
     /* autoprefixer: off */
     -webkit-box-orient: vertical;
     box-orient: vertical;

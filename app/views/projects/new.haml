@@ -31,7 +31,7 @@
                 %input.file-path{:type => "text", :id => "filename"}
                 %label{:for => "filename"}= t('.avatar')
             .col.s12.m6.input-field
-              = f.text_field :expiration_time, class: 'datepicker', required: true
+              = f.text_field :expiration_time, class: 'datepicker', value: Date.today, required: true
               = f.label :expiration_time, class: 'active'
   .row
     .col.s12
