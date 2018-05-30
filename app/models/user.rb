@@ -9,7 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :confirmable, :lockable
 
-  has_many :projects
+  has_many :projects, dependent: :destroy
   has_one :validation
 
   validates_presence_of :email, :encrypted_password, :first_name, :last_name, :wallet

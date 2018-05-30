@@ -9,12 +9,11 @@ class Project < ApplicationRecord
   
   mount_uploader :avatar, AvatarUploader
 
-
   belongs_to :user
   belongs_to :category
-  has_many :choices
-  has_many :donations
-  has_many :rewards
+  has_many :choices, dependent: :destroy
+  has_many :donations, dependent: :destroy
+  has_many :rewards, dependent: :destroy
 
   accepts_nested_attributes_for :rewards, allow_destroy: true
 

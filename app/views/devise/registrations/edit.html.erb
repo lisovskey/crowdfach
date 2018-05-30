@@ -58,18 +58,12 @@
             </div>
           </div>
 
-          <div class="row">
+          <div class="row fix">
             <div class="col s12">
               <%= f.button t('.update'), class: "full-width waves-effect waves-light btn-large", data: {disable_with: I18n.t("form.wait")} %>
             </div>
           </div>
         <% end %>
-
-        <div class="row fix">
-          <div class="col s12 center-align">
-            <%= button_to t('.destroy'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "waves-effect btn-flat" %>
-          </div>
-        </div>
       </div>
     </div>
   </div>
