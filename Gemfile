@@ -5,14 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.5.1'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '>= 5.2.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '>= 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -29,12 +29,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'pg', '~> 0.20'
+gem 'pg'
 gem 'pg_search'
 
 gem 'devise'
 gem 'cancancan'
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '>= 1.3'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'commontator'
 
@@ -46,7 +46,7 @@ gem 'material_icons'
 gem 'hamlit'
 gem 'hamlit-rails'
 
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '>= 1.0'
 gem 'mini_magick'
 gem 'sucker_punch'
 gem 'carrierwave-aws'
